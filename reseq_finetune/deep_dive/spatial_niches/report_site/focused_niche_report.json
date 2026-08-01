@@ -1,0 +1,1138 @@
+{
+  "niches": [
+    {
+      "sample": "E14S",
+      "dynamics_adjacency_top": [
+        {
+          "source": "exiting_hypoxia",
+          "target": "entering_deep_hypoxia",
+          "obs_frac": 0.011934156378600824,
+          "exp_frac": 0.003609422492401216,
+          "enrichment": 3.3063894303660386,
+          "p_perm": 0.0024937655860349127,
+          "n_source": 81,
+          "sample": "E14S"
+        },
+        {
+          "source": "entering_deep_hypoxia",
+          "target": "exiting_hypoxia",
+          "obs_frac": 0.04385964912280702,
+          "exp_frac": 0.015387537993920973,
+          "enrichment": 2.850335715832792,
+          "p_perm": 0.0024937655860349127,
+          "n_source": 19,
+          "sample": "E14S"
+        },
+        {
+          "source": "entering_hypoxia",
+          "target": "entering_deep_hypoxia",
+          "obs_frac": 0.00823045267489712,
+          "exp_frac": 0.003609422492401216,
+          "enrichment": 2.2802685726662335,
+          "p_perm": 0.0024937655860349127,
+          "n_source": 81,
+          "sample": "E14S"
+        },
+        {
+          "source": "persistent_hypoxia",
+          "target": "entering_deep_hypoxia",
+          "obs_frac": 0.00814814814814815,
+          "exp_frac": 0.003609422492401216,
+          "enrichment": 2.2574658869395714,
+          "p_perm": 0.004987531172069825,
+          "n_source": 45,
+          "sample": "E14S"
+        },
+        {
+          "source": "entering_deep_hypoxia",
+          "target": "reverted_stable",
+          "obs_frac": 0.01754385964912281,
+          "exp_frac": 0.008548632218844984,
+          "enrichment": 2.0522417153996106,
+          "p_perm": 0.0199501246882793,
+          "n_source": 19,
+          "sample": "E14S"
+        },
+        {
+          "source": "reverted_stable",
+          "target": "entering_deep_hypoxia",
+          "obs_frac": 0.0074074074074074086,
+          "exp_frac": 0.003609422492401216,
+          "enrichment": 2.05224171539961,
+          "p_perm": 0.017456359102244388,
+          "n_source": 45,
+          "sample": "E14S"
+        },
+        {
+          "source": "entering_deep_hypoxia",
+          "target": "normoxic_stable",
+          "obs_frac": 0.007017543859649123,
+          "exp_frac": 0.003799392097264438,
+          "enrichment": 1.847017543859649,
+          "p_perm": 0.3167082294264339,
+          "n_source": 19,
+          "sample": "E14S"
+        },
+        {
+          "source": "entering_deep_hypoxia",
+          "target": "entering_hypoxia",
+          "obs_frac": 0.028070175438596492,
+          "exp_frac": 0.015387537993920973,
+          "enrichment": 1.8242148581329867,
+          "p_perm": 0.017456359102244388,
+          "n_source": 19,
+          "sample": "E14S"
+        },
+        {
+          "source": "transitional",
+          "target": "reverted_stable",
+          "obs_frac": 0.014705882352941176,
+          "exp_frac": 0.008548632218844984,
+          "enrichment": 1.7202614379084968,
+          "p_perm": 0.03740648379052369,
+          "n_source": 34,
+          "sample": "E14S"
+        },
+        {
+          "source": "reverted_stable",
+          "target": "transitional",
+          "obs_frac": 0.011111111111111112,
+          "exp_frac": 0.006458966565349544,
+          "enrichment": 1.7202614379084968,
+          "p_perm": 0.057356608478802994,
+          "n_source": 45,
+          "sample": "E14S"
+        },
+        {
+          "source": "exiting_hypoxia",
+          "target": "entering_hypoxia",
+          "obs_frac": 0.02633744855967078,
+          "exp_frac": 0.015387537993920973,
+          "enrichment": 1.711609002692679,
+          "p_perm": 0.0024937655860349127,
+          "n_source": 81,
+          "sample": "E14S"
+        },
+        {
+          "source": "entering_hypoxia",
+          "target": "exiting_hypoxia",
+          "obs_frac": 0.02633744855967078,
+          "exp_frac": 0.015387537993920973,
+          "enrichment": 1.711609002692679,
+          "p_perm": 0.0024937655860349127,
+          "n_source": 81,
+          "sample": "E14S"
+        }
+      ],
+      "tam_vs_core": [
+        {
+          "cell": "Il1b_TAM",
+          "median_dist_to_core": 1.6179345603551893,
+          "bg_median_dist": 1.6854202551643556,
+          "dist_ratio_vs_bg": 0.9599591291238011,
+          "p_dist": 0.2585985454559965,
+          "core_neighbor_enrichment": 0.8579803921568628,
+          "p_enrich": 0.05189620758483034,
+          "n": 850,
+          "sample": "E14S",
+          "core_def": "persistent+enter_deep"
+        },
+        {
+          "cell": "Resident_Macrophage",
+          "median_dist_to_core": 1.6295733002415185,
+          "bg_median_dist": 1.6799017360654127,
+          "dist_ratio_vs_bg": 0.9700408453998202,
+          "p_dist": 0.5596049953670883,
+          "core_neighbor_enrichment": 1.0058185404339253,
+          "p_enrich": 0.9500998003992016,
+          "n": 676,
+          "sample": "E14S",
+          "core_def": "persistent+enter_deep"
+        },
+        {
+          "cell": "Spp1_TAM",
+          "median_dist_to_core": 1.662581731802843,
+          "bg_median_dist": 1.6772056934856865,
+          "dist_ratio_vs_bg": 0.9912807583830395,
+          "p_dist": 0.9581029049871788,
+          "core_neighbor_enrichment": 1.0650320512820513,
+          "p_enrich": 0.590818363273453,
+          "n": 260,
+          "sample": "E14S",
+          "core_def": "persistent+enter_deep"
+        },
+        {
+          "cell": "Neutrophil",
+          "median_dist_to_core": 1.6755947226239323,
+          "bg_median_dist": 1.6767846040412089,
+          "dist_ratio_vs_bg": 0.9992903790895927,
+          "p_dist": 0.8296405283201422,
+          "core_neighbor_enrichment": 0.9858922558922558,
+          "p_enrich": 0.8842315369261478,
+          "n": 495,
+          "sample": "E14S",
+          "core_def": "persistent+enter_deep"
+        },
+        {
+          "cell": "Monocyte",
+          "median_dist_to_core": 1.716779193568057,
+          "bg_median_dist": 1.6653664512230897,
+          "dist_ratio_vs_bg": 1.0308717293465401,
+          "p_dist": 0.5391785524412129,
+          "core_neighbor_enrichment": 0.9217469188879336,
+          "p_enrich": 0.16766467065868262,
+          "n": 1163,
+          "sample": "E14S",
+          "core_def": "persistent+enter_deep"
+        },
+        {
+          "cell": "CD8_exhausted",
+          "median_dist_to_core": 1.7260948320337084,
+          "bg_median_dist": 1.670442101775453,
+          "dist_ratio_vs_bg": 1.0333161683359777,
+          "p_dist": 0.19708919363847288,
+          "core_neighbor_enrichment": 0.9277356902356902,
+          "p_enrich": 0.5688622754491018,
+          "n": 198,
+          "sample": "E14S",
+          "core_def": "persistent+enter_deep"
+        },
+        {
+          "cell": "C1qc_TAM",
+          "median_dist_to_core": 1.762403867144366,
+          "bg_median_dist": 1.6704153433184488,
+          "dist_ratio_vs_bg": 1.0550692522035703,
+          "p_dist": 0.26154351760077277,
+          "core_neighbor_enrichment": 0.8825555555555555,
+          "p_enrich": 0.1377245508982036,
+          "n": 525,
+          "sample": "E14S",
+          "core_def": "persistent+enter_deep"
+        },
+        {
+          "cell": "NK",
+          "median_dist_to_core": 1.8180802813231836,
+          "bg_median_dist": 1.670468860232457,
+          "dist_ratio_vs_bg": 1.0883652635525245,
+          "p_dist": 0.25759223636816375,
+          "core_neighbor_enrichment": 0.8994400527009223,
+          "p_enrich": 0.3712574850299401,
+          "n": 253,
+          "sample": "E14S",
+          "core_def": "persistent+enter_deep"
+        }
+      ],
+      "neutrophil_by_state": {
+        "normoxic_stable": {
+          "mean_neu_frac": 0.11166666666666665,
+          "global_neu_frac": 0.09403495440729483,
+          "enrichment": 1.1875016835016834,
+          "n": 20,
+          "p_perm": 0.22693266832917705
+        },
+        "exiting_hypoxia": {
+          "mean_neu_frac": 0.10452674897119339,
+          "global_neu_frac": 0.09403495440729483,
+          "enrichment": 1.1115733466350748,
+          "n": 81,
+          "p_perm": 0.13216957605985039
+        },
+        "persistent_hypoxia": {
+          "mean_neu_frac": 0.09999999999999998,
+          "global_neu_frac": 0.09403495440729483,
+          "enrichment": 1.0634343434343432,
+          "n": 45,
+          "p_perm": 0.5386533665835411
+        },
+        "entering_hypoxia": {
+          "mean_neu_frac": 0.09835390946502058,
+          "global_neu_frac": 0.09403495440729483,
+          "enrichment": 1.0459292513613503,
+          "n": 81,
+          "p_perm": 0.5311720698254364
+        },
+        "entering_deep_hypoxia": {
+          "mean_neu_frac": 0.07894736842105263,
+          "global_neu_frac": 0.09403495440729483,
+          "enrichment": 0.8395534290271133,
+          "n": 19,
+          "p_perm": 0.2743142144638404
+        },
+        "transitional": {
+          "mean_neu_frac": 0.08333333333333334,
+          "global_neu_frac": 0.09403495440729483,
+          "enrichment": 0.8861952861952863,
+          "n": 34
+        },
+        "reverted_stable": {
+          "mean_neu_frac": 0.09185185185185184,
+          "global_neu_frac": 0.09403495440729483,
+          "enrichment": 0.9767841376730265,
+          "n": 45
+        },
+        "Hypoxic_Tumor": {
+          "mean_neu_frac": 0.08275862068965517,
+          "global_neu_frac": 0.09403495440729483,
+          "enrichment": 0.8800835945663532,
+          "n": 29,
+          "p_perm": 0.3117206982543641
+        },
+        "Tumor": {
+          "mean_neu_frac": 0.09382716049382715,
+          "global_neu_frac": 0.09403495440729483,
+          "enrichment": 0.9977902481606186,
+          "n": 27
+        },
+        "Spp1_TAM": {
+          "mean_neu_frac": 0.09230769230769231,
+          "global_neu_frac": 0.09403495440729483,
+          "enrichment": 0.9816317016317018,
+          "n": 260
+        },
+        "C1qc_TAM": {
+          "mean_neu_frac": 0.0874920634920635,
+          "global_neu_frac": 0.09403495440729483,
+          "enrichment": 0.9304206509539844,
+          "n": 525
+        }
+      },
+      "interface_composition": {
+        "enter_exit": [
+          {
+            "type": "Hypoxic_Tumor",
+            "obs": 0.07496823379923762,
+            "exp": 0.04293313069908815,
+            "enrichment": 1.7461627553946317,
+            "n_on_iface": 59
+          },
+          {
+            "type": "Tumor",
+            "obs": 0.045743329097839895,
+            "exp": 0.02944528875379939,
+            "enrichment": 1.5535024798130916,
+            "n_on_iface": 36
+          },
+          {
+            "type": "T_helper",
+            "obs": 0.011435832274459974,
+            "exp": 0.0077887537993920975,
+            "enrichment": 1.4682492949453,
+            "n_on_iface": 9
+          },
+          {
+            "type": "NK",
+            "obs": 0.06607369758576874,
+            "exp": 0.048062310030395135,
+            "enrichment": 1.3747507671600263,
+            "n_on_iface": 52
+          },
+          {
+            "type": "Resident_Macrophage",
+            "obs": 0.1372299872935197,
+            "exp": 0.128419452887538,
+            "enrichment": 1.0686074750193604,
+            "n_on_iface": 108
+          },
+          {
+            "type": "B",
+            "obs": 0.0063532401524777635,
+            "exp": 0.0060790273556231,
+            "enrichment": 1.045108005082592,
+            "n_on_iface": 5
+          },
+          {
+            "type": "Neutrophil",
+            "obs": 0.09783989834815757,
+            "exp": 0.09403495440729483,
+            "enrichment": 1.0404630806155586,
+            "n_on_iface": 77
+          },
+          {
+            "type": "cDC",
+            "obs": 0.03303684879288437,
+            "exp": 0.03419452887537994,
+            "enrichment": 0.9661442891430185,
+            "n_on_iface": 26
+          },
+          {
+            "type": "Monocyte",
+            "obs": 0.204574332909784,
+            "exp": 0.22093465045592706,
+            "enrichment": 0.9259495171428228,
+            "n_on_iface": 161
+          },
+          {
+            "type": "mDC",
+            "obs": 0.029224904701397714,
+            "exp": 0.03229483282674772,
+            "enrichment": 0.9049405785185739,
+            "n_on_iface": 23
+          }
+        ],
+        "persist_exit": [
+          {
+            "type": "Hypoxic_Tumor",
+            "obs": 0.0749063670411985,
+            "exp": 0.04293313069908815,
+            "enrichment": 1.7447217526764112,
+            "n_on_iface": 40
+          },
+          {
+            "type": "Stromal",
+            "obs": 0.009363295880149813,
+            "exp": 0.0056990881458966565,
+            "enrichment": 1.6429463171036205,
+            "n_on_iface": 5
+          },
+          {
+            "type": "Tumor",
+            "obs": 0.03932584269662921,
+            "exp": 0.02944528875379939,
+            "enrichment": 1.3355563610003625,
+            "n_on_iface": 21
+          },
+          {
+            "type": "T_helper",
+            "obs": 0.009363295880149813,
+            "exp": 0.0077887537993920975,
+            "enrichment": 1.2021558417831368,
+            "n_on_iface": 5
+          },
+          {
+            "type": "Spp1_TAM",
+            "obs": 0.05805243445692884,
+            "exp": 0.04939209726443769,
+            "enrichment": 1.175338519158744,
+            "n_on_iface": 31
+          },
+          {
+            "type": "cDC",
+            "obs": 0.035580524344569285,
+            "exp": 0.03419452887537994,
+            "enrichment": 1.0405326674989597,
+            "n_on_iface": 19
+          },
+          {
+            "type": "Resident_Macrophage",
+            "obs": 0.1254681647940075,
+            "exp": 0.128419452887538,
+            "enrichment": 0.9770183720054074,
+            "n_on_iface": 67
+          },
+          {
+            "type": "Monocyte",
+            "obs": 0.21348314606741572,
+            "exp": 0.22093465045592706,
+            "enrichment": 0.9662728124667896,
+            "n_on_iface": 114
+          },
+          {
+            "type": "Neutrophil",
+            "obs": 0.0898876404494382,
+            "exp": 0.09403495440729483,
+            "enrichment": 0.9558960390421065,
+            "n_on_iface": 48
+          },
+          {
+            "type": "Il1b_TAM",
+            "obs": 0.15168539325842698,
+            "exp": 0.1614741641337386,
+            "enrichment": 0.9393787177792465,
+            "n_on_iface": 81
+          }
+        ],
+        "enter_persist": [
+          {
+            "type": "T_helper",
+            "obs": 0.016985138004246284,
+            "exp": 0.0077887537993920975,
+            "enrichment": 2.1807260110817666,
+            "n_on_iface": 8
+          },
+          {
+            "type": "Hypoxic_Tumor",
+            "obs": 0.09341825902335456,
+            "exp": 0.04293313069908815,
+            "enrichment": 2.1759013960130016,
+            "n_on_iface": 44
+          },
+          {
+            "type": "Tumor",
+            "obs": 0.04246284501061571,
+            "exp": 0.02944528875379939,
+            "enrichment": 1.4420930073282652,
+            "n_on_iface": 20
+          },
+          {
+            "type": "B",
+            "obs": 0.008492569002123142,
+            "exp": 0.0060790273556231,
+            "enrichment": 1.3970276008492568,
+            "n_on_iface": 4
+          },
+          {
+            "type": "Neutrophil",
+            "obs": 0.10191082802547771,
+            "exp": 0.09403495440729483,
+            "enrichment": 1.083754744901242,
+            "n_on_iface": 48
+          },
+          {
+            "type": "Monocyte",
+            "obs": 0.22717622080679406,
+            "exp": 0.22093465045592706,
+            "enrichment": 1.028250753505558,
+            "n_on_iface": 107
+          },
+          {
+            "type": "NK",
+            "obs": 0.04670912951167728,
+            "exp": 0.048062310030395135,
+            "enrichment": 0.9718452875473091,
+            "n_on_iface": 22
+          },
+          {
+            "type": "Il1b_TAM",
+            "obs": 0.15498938428874734,
+            "exp": 0.1614741641337386,
+            "enrichment": 0.959840139877607,
+            "n_on_iface": 73
+          },
+          {
+            "type": "CD8_exhausted",
+            "obs": 0.03397027600849257,
+            "exp": 0.037613981762917935,
+            "enrichment": 0.903128954084368,
+            "n_on_iface": 16
+          },
+          {
+            "type": "Spp1_TAM",
+            "obs": 0.044585987261146494,
+            "exp": 0.04939209726443769,
+            "enrichment": 0.9026947574718275,
+            "n_on_iface": 21
+          }
+        ]
+      },
+      "median_nn": 0.14741760833615505
+    },
+    {
+      "sample": "E15S",
+      "dynamics_adjacency_top": [
+        {
+          "source": "reverted_stable",
+          "target": "entering_deep_hypoxia",
+          "obs_frac": 0.030555555555555555,
+          "exp_frac": 0.023255813953488372,
+          "enrichment": 1.3138888888888889,
+          "p_perm": 0.0024937655860349127,
+          "n_source": 120,
+          "sample": "E15S"
+        },
+        {
+          "source": "entering_deep_hypoxia",
+          "target": "reverted_stable",
+          "obs_frac": 0.016915422885572143,
+          "exp_frac": 0.013884068031933356,
+          "enrichment": 1.2183333333333335,
+          "p_perm": 0.04239401496259352,
+          "n_source": 201,
+          "sample": "E15S"
+        },
+        {
+          "source": "exiting_hypoxia",
+          "target": "entering_deep_hypoxia",
+          "obs_frac": 0.027523602033405953,
+          "exp_frac": 0.023255813953488372,
+          "enrichment": 1.183514887436456,
+          "p_perm": 0.0024937655860349127,
+          "n_source": 459,
+          "sample": "E15S"
+        },
+        {
+          "source": "transitional",
+          "target": "persistent_hypoxia",
+          "obs_frac": 0.03557213930348259,
+          "exp_frac": 0.03031354853638783,
+          "enrichment": 1.173473282442748,
+          "p_perm": 0.007481296758104738,
+          "n_source": 268,
+          "sample": "E15S"
+        },
+        {
+          "source": "persistent_hypoxia",
+          "target": "transitional",
+          "obs_frac": 0.03625954198473282,
+          "exp_frac": 0.031007751937984496,
+          "enrichment": 1.1693702290076335,
+          "p_perm": 0.012468827930174564,
+          "n_source": 262,
+          "sample": "E15S"
+        },
+        {
+          "source": "entering_deep_hypoxia",
+          "target": "exiting_hypoxia",
+          "obs_frac": 0.062023217247097834,
+          "exp_frac": 0.05310656022214509,
+          "enrichment": 1.167901234567901,
+          "p_perm": 0.0024937655860349127,
+          "n_source": 201,
+          "sample": "E15S"
+        },
+        {
+          "source": "transitional",
+          "target": "normoxic_stable",
+          "obs_frac": 0.035074626865671636,
+          "exp_frac": 0.030429249103320608,
+          "enrichment": 1.1526615969581746,
+          "p_perm": 0.012468827930174564,
+          "n_source": 268,
+          "sample": "E15S"
+        },
+        {
+          "source": "normoxic_stable",
+          "target": "entering_hypoxia",
+          "obs_frac": 0.051330798479087454,
+          "exp_frac": 0.04477611940298507,
+          "enrichment": 1.14638783269962,
+          "p_perm": 0.00997506234413965,
+          "n_source": 263,
+          "sample": "E15S"
+        },
+        {
+          "source": "exiting_hypoxia",
+          "target": "reverted_stable",
+          "obs_frac": 0.0159041394335512,
+          "exp_frac": 0.013884068031933356,
+          "enrichment": 1.1454956427015253,
+          "p_perm": 0.05486284289276808,
+          "n_source": 459,
+          "sample": "E15S"
+        },
+        {
+          "source": "persistent_hypoxia",
+          "target": "entering_deep_hypoxia",
+          "obs_frac": 0.026590330788804073,
+          "exp_frac": 0.023255813953488372,
+          "enrichment": 1.1433842239185752,
+          "p_perm": 0.06234413965087282,
+          "n_source": 262,
+          "sample": "E15S"
+        },
+        {
+          "source": "entering_hypoxia",
+          "target": "entering_deep_hypoxia",
+          "obs_frac": 0.026442721791558994,
+          "exp_frac": 0.023255813953488372,
+          "enrichment": 1.1370370370370368,
+          "p_perm": 0.04239401496259352,
+          "n_source": 387,
+          "sample": "E15S"
+        },
+        {
+          "source": "normoxic_stable",
+          "target": "transitional",
+          "obs_frac": 0.035234474017743975,
+          "exp_frac": 0.031007751937984496,
+          "enrichment": 1.1363117870722432,
+          "p_perm": 0.032418952618453865,
+          "n_source": 263,
+          "sample": "E15S"
+        }
+      ],
+      "tam_vs_core": [
+        {
+          "cell": "Neutrophil",
+          "median_dist_to_core": 0.3793972068305729,
+          "bg_median_dist": 0.4995560391207039,
+          "dist_ratio_vs_bg": 0.7594687625003409,
+          "p_dist": 1.711386113840114e-14,
+          "core_neighbor_enrichment": 1.1281374563205677,
+          "p_enrich": 0.001996007984031936,
+          "n": 1230,
+          "sample": "E15S",
+          "core_def": "persistent+enter_deep"
+        },
+        {
+          "cell": "CAF",
+          "median_dist_to_core": 0.4360848859345002,
+          "bg_median_dist": 0.47656181076844223,
+          "dist_ratio_vs_bg": 0.9150646906249702,
+          "p_dist": 0.14471377056228157,
+          "core_neighbor_enrichment": 0.9679385649148067,
+          "p_enrich": 0.48902195608782434,
+          "n": 387,
+          "sample": "E15S",
+          "core_def": "persistent+enter_deep"
+        },
+        {
+          "cell": "NK",
+          "median_dist_to_core": 0.4488310303274995,
+          "bg_median_dist": 0.4747021200965611,
+          "dist_ratio_vs_bg": 0.9455003702873729,
+          "p_dist": 0.6848732475863564,
+          "core_neighbor_enrichment": 1.1030728450814844,
+          "p_enrich": 0.09181636726546906,
+          "n": 198,
+          "sample": "E15S",
+          "core_def": "persistent+enter_deep"
+        },
+        {
+          "cell": "Resident_Macrophage",
+          "median_dist_to_core": 0.48535412438303294,
+          "bg_median_dist": 0.47196516199038185,
+          "dist_ratio_vs_bg": 1.0283685396103959,
+          "p_dist": 0.7216936530528606,
+          "core_neighbor_enrichment": 0.9894049443786432,
+          "p_enrich": 0.7325349301397206,
+          "n": 744,
+          "sample": "E15S",
+          "core_def": "persistent+enter_deep"
+        },
+        {
+          "cell": "Monocyte",
+          "median_dist_to_core": 0.4852027263640743,
+          "bg_median_dist": 0.47174145182904,
+          "dist_ratio_vs_bg": 1.0285352802532874,
+          "p_dist": 0.5234265976125515,
+          "core_neighbor_enrichment": 0.9084969359533986,
+          "p_enrich": 0.003992015968063872,
+          "n": 713,
+          "sample": "E15S",
+          "core_def": "persistent+enter_deep"
+        },
+        {
+          "cell": "Spp1_TAM",
+          "median_dist_to_core": 0.5058351899739695,
+          "bg_median_dist": 0.46944995308165893,
+          "dist_ratio_vs_bg": 1.0775061040127136,
+          "p_dist": 0.20169614172298522,
+          "core_neighbor_enrichment": 0.9747687765623911,
+          "p_enrich": 0.5049900199600799,
+          "n": 496,
+          "sample": "E15S",
+          "core_def": "persistent+enter_deep"
+        },
+        {
+          "cell": "Il1b_TAM",
+          "median_dist_to_core": 0.5099642728134279,
+          "bg_median_dist": 0.46971482753294136,
+          "dist_ratio_vs_bg": 1.0856891094792274,
+          "p_dist": 0.9445524431884798,
+          "core_neighbor_enrichment": 0.948925485961123,
+          "p_enrich": 0.3073852295409182,
+          "n": 400,
+          "sample": "E15S",
+          "core_def": "persistent+enter_deep"
+        },
+        {
+          "cell": "CD8_exhausted",
+          "median_dist_to_core": 0.5460399308916638,
+          "bg_median_dist": 0.4721888721517238,
+          "dist_ratio_vs_bg": 1.1564015229825455,
+          "p_dist": 0.24012696907355058,
+          "core_neighbor_enrichment": 0.8711447084233263,
+          "p_enrich": 0.3253493013972056,
+          "n": 35,
+          "sample": "E15S",
+          "core_def": "persistent+enter_deep"
+        },
+        {
+          "cell": "C1qc_TAM",
+          "median_dist_to_core": 0.6325156549384406,
+          "bg_median_dist": 0.45768935966002255,
+          "dist_ratio_vs_bg": 1.3819758785921554,
+          "p_dist": 1.1276233315008355e-10,
+          "core_neighbor_enrichment": 0.8638369964583377,
+          "p_enrich": 0.001996007984031936,
+          "n": 1141,
+          "sample": "E15S",
+          "core_def": "persistent+enter_deep"
+        }
+      ],
+      "neutrophil_by_state": {
+        "normoxic_stable": {
+          "mean_neu_frac": 0.1405576679340938,
+          "global_neu_frac": 0.1423116973273169,
+          "enrichment": 0.9876747349222542,
+          "n": 263,
+          "p_perm": 0.7605985037406484
+        },
+        "exiting_hypoxia": {
+          "mean_neu_frac": 0.14858387799564274,
+          "global_neu_frac": 0.1423116973273169,
+          "enrichment": 1.0440735426962116,
+          "n": 459,
+          "p_perm": 0.14214463840399003
+        },
+        "persistent_hypoxia": {
+          "mean_neu_frac": 0.15139949109414758,
+          "global_neu_frac": 0.1423116973273169,
+          "enrichment": 1.0638583752249735,
+          "n": 262,
+          "p_perm": 0.09975062344139651
+        },
+        "entering_hypoxia": {
+          "mean_neu_frac": 0.1453919035314384,
+          "global_neu_frac": 0.1423116973273169,
+          "enrichment": 1.0216440831074975,
+          "n": 387,
+          "p_perm": 0.5062344139650873
+        },
+        "entering_deep_hypoxia": {
+          "mean_neu_frac": 0.16815920398009948,
+          "global_neu_frac": 0.1423116973273169,
+          "enrichment": 1.1816260162601624,
+          "n": 201,
+          "p_perm": 0.0024937655860349127
+        },
+        "transitional": {
+          "mean_neu_frac": 0.1407960199004975,
+          "global_neu_frac": 0.1423116973273169,
+          "enrichment": 0.9893495934959349,
+          "n": 268
+        },
+        "reverted_stable": {
+          "mean_neu_frac": 0.1527777777777778,
+          "global_neu_frac": 0.1423116973273169,
+          "enrichment": 1.0735433604336044,
+          "n": 120
+        },
+        "Hypoxic_Tumor": {
+          "mean_neu_frac": 0.12083333333333335,
+          "global_neu_frac": 0.1423116973273169,
+          "enrichment": 0.8490752032520326,
+          "n": 32,
+          "p_perm": 0.1596009975062344
+        },
+        "Tumor": {
+          "mean_neu_frac": 0.12222222222222222,
+          "global_neu_frac": 0.1423116973273169,
+          "enrichment": 0.8588346883468834,
+          "n": 27
+        },
+        "Spp1_TAM": {
+          "mean_neu_frac": 0.1373655913978495,
+          "global_neu_frac": 0.1423116973273169,
+          "enrichment": 0.9652445580907425,
+          "n": 496
+        },
+        "C1qc_TAM": {
+          "mean_neu_frac": 0.12538708735027754,
+          "global_neu_frac": 0.1423116973273169,
+          "enrichment": 0.8810736552589014,
+          "n": 1141
+        }
+      },
+      "interface_composition": {
+        "enter_exit": [
+          {
+            "type": "Hypoxic_Tumor",
+            "obs": 0.07662908465507356,
+            "exp": 0.06953604072659957,
+            "enrichment": 1.10200528897471,
+            "n_on_iface": 401
+          },
+          {
+            "type": "B",
+            "obs": 0.004968469329256641,
+            "exp": 0.004512322110378341,
+            "enrichment": 1.1010892413529525,
+            "n_on_iface": 26
+          },
+          {
+            "type": "cDC",
+            "obs": 0.007834893942289319,
+            "exp": 0.007173435149832234,
+            "enrichment": 1.0922094894065577,
+            "n_on_iface": 41
+          },
+          {
+            "type": "Neutrophil",
+            "obs": 0.1482896999808905,
+            "exp": 0.1423116973273169,
+            "enrichment": 1.0420064040120622,
+            "n_on_iface": 776
+          },
+          {
+            "type": "CAF",
+            "obs": 0.04643607873112937,
+            "exp": 0.04477611940298507,
+            "enrichment": 1.0370724249952228,
+            "n_on_iface": 243
+          },
+          {
+            "type": "Stromal",
+            "obs": 0.13472195681253582,
+            "exp": 0.13108874233483744,
+            "enrichment": 1.0277156864349046,
+            "n_on_iface": 705
+          },
+          {
+            "type": "Resident_Macrophage",
+            "obs": 0.0879036881330021,
+            "exp": 0.08608122179798681,
+            "enrichment": 1.0211714738353994,
+            "n_on_iface": 460
+          },
+          {
+            "type": "Tumor",
+            "obs": 0.16663481750429965,
+            "exp": 0.16406340391067917,
+            "enrichment": 1.0156732917416516,
+            "n_on_iface": 872
+          },
+          {
+            "type": "NK",
+            "obs": 0.02293139690426142,
+            "exp": 0.022908712252690037,
+            "enrichment": 1.000990219411775,
+            "n_on_iface": 120
+          },
+          {
+            "type": "Spp1_TAM",
+            "obs": 0.0550353525702274,
+            "exp": 0.05738748119865787,
+            "enrichment": 0.959013210210636,
+            "n_on_iface": 288
+          }
+        ],
+        "persist_exit": [
+          {
+            "type": "Neutrophil",
+            "obs": 0.1577783239125092,
+            "exp": 0.1423116973273169,
+            "enrichment": 1.108681344370583,
+            "n_on_iface": 642
+          },
+          {
+            "type": "Hypoxic_Tumor",
+            "obs": 0.07667731629392971,
+            "exp": 0.06953604072659957,
+            "enrichment": 1.1026989096978943,
+            "n_on_iface": 312
+          },
+          {
+            "type": "cDC",
+            "obs": 0.00786434013271074,
+            "exp": 0.007173435149832234,
+            "enrichment": 1.0963143833390148,
+            "n_on_iface": 32
+          },
+          {
+            "type": "Tumor",
+            "obs": 0.17252396166134185,
+            "exp": 0.16406340391067917,
+            "enrichment": 1.0515688297877133,
+            "n_on_iface": 702
+          },
+          {
+            "type": "CAF",
+            "obs": 0.04644875890882281,
+            "exp": 0.04477611940298507,
+            "enrichment": 1.037355615630376,
+            "n_on_iface": 189
+          },
+          {
+            "type": "Stromal",
+            "obs": 0.13344802162693536,
+            "exp": 0.13108874233483744,
+            "enrichment": 1.0179975736289517,
+            "n_on_iface": 543
+          },
+          {
+            "type": "Spp1_TAM",
+            "obs": 0.05726222659130007,
+            "exp": 0.05738748119865787,
+            "enrichment": 0.9978173879609002,
+            "n_on_iface": 233
+          },
+          {
+            "type": "B",
+            "obs": 0.004423691324649791,
+            "exp": 0.004512322110378341,
+            "enrichment": 0.9803580543320036,
+            "n_on_iface": 18
+          },
+          {
+            "type": "Resident_Macrophage",
+            "obs": 0.08306709265175719,
+            "exp": 0.08608122179798681,
+            "enrichment": 0.9649850561681953,
+            "n_on_iface": 338
+          },
+          {
+            "type": "Il1b_TAM",
+            "obs": 0.04374539198820349,
+            "exp": 0.04628022677311119,
+            "enrichment": 0.945228557385107,
+            "n_on_iface": 178
+          }
+        ],
+        "enter_persist": [
+          {
+            "type": "Hypoxic_Tumor",
+            "obs": 0.07628652702353246,
+            "exp": 0.06953604072659957,
+            "enrichment": 1.0970789568459085,
+            "n_on_iface": 295
+          },
+          {
+            "type": "Tumor",
+            "obs": 0.17895009050943883,
+            "exp": 0.16406340391067917,
+            "enrichment": 1.0907373993463185,
+            "n_on_iface": 692
+          },
+          {
+            "type": "CD8_exhausted",
+            "obs": 0.004396172743728989,
+            "exp": 0.004049519842647229,
+            "enrichment": 1.0856034578299902,
+            "n_on_iface": 17
+          },
+          {
+            "type": "cDC",
+            "obs": 0.007757951900698216,
+            "exp": 0.007173435149832234,
+            "enrichment": 1.081483520608624,
+            "n_on_iface": 30
+          },
+          {
+            "type": "mDC",
+            "obs": 0.004137574347039048,
+            "exp": 0.003933819275714451,
+            "enrichment": 1.0517957376899556,
+            "n_on_iface": 16
+          },
+          {
+            "type": "Neutrophil",
+            "obs": 0.14636669252650633,
+            "exp": 0.1423116973273169,
+            "enrichment": 1.0284937589484506,
+            "n_on_iface": 566
+          },
+          {
+            "type": "CAF",
+            "obs": 0.04551331781742953,
+            "exp": 0.04477611940298507,
+            "enrichment": 1.016464097922593,
+            "n_on_iface": 176
+          },
+          {
+            "type": "NK",
+            "obs": 0.023273855702094646,
+            "exp": 0.022908712252690037,
+            "enrichment": 1.0159390648141617,
+            "n_on_iface": 90
+          },
+          {
+            "type": "Stromal",
+            "obs": 0.13059219032841995,
+            "exp": 0.13108874233483744,
+            "enrichment": 0.9962120926818478,
+            "n_on_iface": 505
+          },
+          {
+            "type": "Spp1_TAM",
+            "obs": 0.05611585208171709,
+            "exp": 0.05738748119865787,
+            "enrichment": 0.9778413498836307,
+            "n_on_iface": 217
+          }
+        ]
+      },
+      "median_nn": 0.12059938340979398
+    }
+  ],
+  "claims": [
+    {
+      "id": "enter_exit_front_E14S",
+      "detail": {
+        "source": "entering_hypoxia",
+        "target": "exiting_hypoxia",
+        "obs_frac": 0.0263374485596707,
+        "exp_frac": 0.0153875379939209,
+        "enrichment": 1.711609002692679,
+        "p_perm": 0.0024937655860349,
+        "n_source": 81,
+        "sample": "E14S"
+      }
+    },
+    {
+      "id": "persist_exit_front_E14S",
+      "detail": {
+        "source": "persistent_hypoxia",
+        "target": "exiting_hypoxia",
+        "obs_frac": 0.0259259259259259,
+        "exp_frac": 0.0153875379939209,
+        "enrichment": 1.684865112025606,
+        "p_perm": 0.0024937655860349,
+        "n_source": 45,
+        "sample": "E14S"
+      }
+    },
+    {
+      "id": "enter_exit_front_E15S",
+      "detail": {
+        "source": "entering_hypoxia",
+        "target": "exiting_hypoxia",
+        "obs_frac": 0.0535745047372954,
+        "exp_frac": 0.053106560222145,
+        "enrichment": 1.00881142580489,
+        "p_perm": 0.8254364089775561,
+        "n_source": 387,
+        "sample": "E15S"
+      }
+    },
+    {
+      "id": "persist_exit_front_E15S",
+      "detail": {
+        "source": "persistent_hypoxia",
+        "target": "exiting_hypoxia",
+        "obs_frac": 0.0575063613231552,
+        "exp_frac": 0.053106560222145,
+        "enrichment": 1.08284854230072,
+        "p_perm": 0.0947630922693266,
+        "n_source": 262,
+        "sample": "E15S"
+      }
+    },
+    {
+      "id": "core_affinity_Il1b_TAM",
+      "E14_enr": 0.8579803921568628,
+      "E15_enr": 0.948925485961123,
+      "E14_p": 0.0518962075848303,
+      "E15_p": 0.3073852295409182
+    },
+    {
+      "id": "core_affinity_Spp1_TAM",
+      "E14_enr": 1.0650320512820513,
+      "E15_enr": 0.9747687765623912,
+      "E14_p": 0.590818363273453,
+      "E15_p": 0.5049900199600799
+    },
+    {
+      "id": "core_affinity_Neutrophil",
+      "E14_enr": 0.9858922558922558,
+      "E15_enr": 1.1281374563205675,
+      "E14_p": 0.8842315369261478,
+      "E15_p": 0.0019960079840319
+    },
+    {
+      "id": "core_affinity_CD8_exhausted",
+      "E14_enr": 0.9277356902356902,
+      "E15_enr": 0.8711447084233263,
+      "E14_p": 0.5688622754491018,
+      "E15_p": 0.3253493013972056
+    },
+    {
+      "id": "core_affinity_C1qc_TAM",
+      "E14_enr": 0.8825555555555555,
+      "E15_enr": 0.8638369964583377,
+      "E14_p": 0.1377245508982036,
+      "E15_p": 0.0019960079840319
+    }
+  ],
+  "headline": "Hypoxia forms contiguous enter\u2194exit fronts; C1qc/Il1b TAMs are spatially excluded from velocity-defined hypoxic cores while neutrophil/Spp1 coupling is sample-context dependent."
+}

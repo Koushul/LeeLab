@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MC38 Spatial Niches — E14S / E15S</title>
+<style>
+  :root {
+    --bg: #10161c;
+    --panel: #1b2430;
+    --text: #eaf0f6;
+    --muted: #9aadc0;
+    --gold: #e2b857;
+    --enter: #d95948;
+    --exit: #4b9fd6;
+    --core: #a56bc7;
+    --line: #2c3848;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Iowan Old Style", Palatino, Georgia, serif;
+    color: var(--text);
+    background:
+      radial-gradient(900px 500px at 0% 0%, #243b4a 0%, transparent 55%),
+      radial-gradient(800px 480px at 100% 10%, #3a2430 0%, transparent 50%),
+      var(--bg);
+    line-height: 1.55;
+  }
+  header {
+    min-height: 92vh;
+    display: grid;
+    align-content: end;
+    padding: 3.5rem 6vw;
+    background:
+      linear-gradient(180deg, transparent 25%, rgba(16,22,28,.94) 80%),
+      url('E15S_dynamics_map.png') center/cover no-repeat;
+  }
+  .brand {
+    font-family: "Avenir Next", "Segoe UI", sans-serif;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    font-size: .75rem;
+    color: var(--gold);
+    margin-bottom: .7rem;
+  }
+  h1 {
+    font-size: clamp(2rem, 4.8vw, 3.4rem);
+    max-width: 18ch;
+    line-height: 1.05;
+    margin: 0 0 1rem;
+  }
+  .lede { max-width: 40rem; color: var(--muted); font-size: 1.1rem; }
+  main { max-width: 1080px; margin: 0 auto; padding: 2.5rem 6vw 4rem; }
+  section { margin: 3rem 0; }
+  h2 { font-size: 1.7rem; margin: 0 0 .5rem; }
+  p, li { color: var(--muted); }
+  .claim {
+    background: var(--panel);
+    border-left: 3px solid var(--gold);
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+  }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1rem; }
+  .stat { background: var(--panel); border: 1px solid var(--line); padding: 1rem; }
+  .stat .n { font-family: "Avenir Next", sans-serif; font-size: 1.4rem; color: var(--text); }
+  figure { margin: 1.2rem 0; background: var(--panel); border: 1px solid var(--line); padding: .5rem; }
+  figure img { width: 100%; display: block; }
+  figcaption { font-size: .84rem; color: var(--muted); padding: .45rem .2rem 0; }
+  table { width: 100%; border-collapse: collapse; font-family: "Avenir Next", sans-serif; font-size: .86rem; }
+  th, td { padding: .5rem .35rem; border-bottom: 1px solid var(--line); text-align: left; }
+  .enter { color: var(--enter); }
+  .exit { color: var(--exit); }
+  .core { color: var(--core); }
+  footer { padding: 2rem 6vw; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">MC38 · E14S + E15S · Spatial niches</div>
+  <h1>Hypoxia is a front, not an island</h1>
+  <p class="lede">Velocity-defined entering and exiting tumor cells are spatial neighbors. C1qc TAMs avoid the core; neutrophils hug it in the tumor-rich face.</p>
+</header>
+<main>
+  <section>
+    <h2>Top niches</h2>
+    <div class="claim">
+      <strong>1. Enter↔exit continuum fronts.</strong>
+      In E14S, <span class="enter">entering_deep</span> neighbors of <span class="exit">exiting</span> cells are enriched <strong>2.85×</strong> (perm p≈0.002);
+      entering↔exiting <strong>1.71×</strong>; persistent↔exiting <strong>1.69×</strong>.
+      E15S shows the same deep↔exit adjacency at <strong>1.17×</strong> (p≈0.002). Hypoxia dynamics form contiguous fronts, not scattered pockets.
+    </div>
+    <div class="claim">
+      <strong>2. C1qc TAM exclusion from hypoxic cores.</strong>
+      Neighbor enrichment to velocity-defined core (persistent + entering_deep):
+      E15S <strong>0.86×</strong> (p≈0.002), E14S 0.88× (trend).
+      Distance to core is also elevated in E15S (ratio vs background 1.38).
+      Il1b TAMs trend the same way. Phagocytic/inflammatory TAMs sit outside the core.
+    </div>
+    <div class="claim">
+      <strong>3. Neutrophil–core coupling on the tumor face (E15S).</strong>
+      Neutrophils enriched at the hypoxic core <strong>1.13×</strong> (p≈0.002) and at entering_deep neighborhoods <strong>1.18×</strong>.
+      Absent in immune-hot E14S — niche is microenvironmental context dependent.
+    </div>
+    <div class="claim">
+      <strong>4. CD8 exhausted hub avoids hypoxia entry (E14S).</strong>
+      CD8s enrich near T-helper / mDC / NK (immune synapse neighborhood) but are
+      <em>depleted</em> near entering hypoxia (<strong>0.74×</strong>, p≈0.017).
+      Enter–exit interface cells are enriched for Hypoxic Tumor and NK.
+    </div>
+    <div class="grid">
+      <div class="stat"><div class="n">2.85×</div><div>E14S deep↔exit adjacency</div></div>
+      <div class="stat"><div class="n">0.86×</div><div>E15S C1qc vs core</div></div>
+      <div class="stat"><div class="n">1.18×</div><div>E15S neutrophils at enter-deep</div></div>
+      <div class="stat"><div class="n">0.74×</div><div>E14S CD8 near entering</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Dynamics geography</h2>
+    <figure>
+      <img src="E14S_dynamics_adjacency_heatmap.png" alt="E14S dynamics adjacency"/>
+      <figcaption>E14S: log2 neighbor enrichment among hypoxia dynamics states — strong enter/deep/exit coupling.</figcaption>
+    </figure>
+    <figure>
+      <img src="E15S_dynamics_adjacency_heatmap.png" alt="E15S dynamics adjacency"/>
+      <figcaption>E15S: same deep↔exit front architecture at lower amplitude (more tumor cells, subtler gradients).</figcaption>
+    </figure>
+    <div class="grid">
+      <figure>
+        <img src="E14S_interface_enter_exit.png" alt="E14S enter-exit interface"/>
+        <figcaption>E14S enter–exit interface (gold outlines).</figcaption>
+      </figure>
+      <figure>
+        <img src="E15S_interface_enter_exit.png" alt="E15S enter-exit interface"/>
+        <figcaption>E15S enter–exit interface.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Who sits by the core?</h2>
+    <figure>
+      <img src="crosssample_tam_core.png" alt="TAM vs core cross-sample"/>
+      <figcaption>Immune neighbor enrichment to velocity-defined hypoxic core across both faces of the experiment.</figcaption>
+    </figure>
+    <div class="grid">
+      <figure>
+        <img src="E15S_TAM_vs_core_maps.png" alt="E15S TAM vs core maps"/>
+        <figcaption>E15S: Spp1 / C1qc / Il1b vs purple hypoxic core.</figcaption>
+      </figure>
+      <figure>
+        <img src="E14S_TAM_vs_core_maps.png" alt="E14S TAM vs core maps"/>
+        <figcaption>E14S: same overlay on the immune-hot face.</figcaption>
+      </figure>
+    </div>
+    <table>
+      <thead><tr><th>Cell</th><th>E14S core enr</th><th>E15S core enr</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td>C1qc TAM</td><td>0.88</td><td>0.86 ★</td><td>Excluded from core</td></tr>
+        <tr><td>Il1b TAM</td><td>0.86</td><td>0.95</td><td>Excluded / trend</td></tr>
+        <tr><td>Spp1 TAM</td><td>1.07</td><td>0.97</td><td>Neutral</td></tr>
+        <tr><td>Neutrophil</td><td>0.99</td><td>1.13 ★</td><td>Core-associated in E15S</td></tr>
+        <tr><td>Monocyte</td><td>0.92</td><td>0.91 ★</td><td>Excluded</td></tr>
+        <tr><td>CD8 exhausted</td><td>0.93</td><td>0.87</td><td>Away from core</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>CD8 niche (E14S immune face)</h2>
+    <figure>
+      <img src="E14S_CD8_niche_map.png" alt="E14S CD8 niche"/>
+      <figcaption>CD8 exhausted cells sit with NK / mDC neighborhoods, not on the hypoxia entry front.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>How to read this</h2>
+    <ul>
+      <li>E14S and E15S are complementary faces of one experiment — niches that replicate (deep↔exit fronts; C1qc exclusion direction) are strongest.</li>
+      <li>Neutrophil–core coupling is E15S-specific (tumor/stroma core); don’t over-generalize to E14S.</li>
+      <li>Enrichments are kNN neighbor obs/exp with label-shuffle permutation tests.</li>
+      <li>Pairs with classical entry≠exit transcriptional asymmetry: the spatial front is where ISR-entry and OXPHOS-exit programs physically abut.</li>
+    </ul>
+  </section>
+</main>
+<footer>
+  Outputs in <code>reseq_finetune/deep_dive/spatial_niches/</code> · MC38 E14S/E15S
+</footer>
+</body>
+</html>

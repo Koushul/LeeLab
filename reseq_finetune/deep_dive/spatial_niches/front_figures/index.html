@@ -3,136 +3,228 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Point 1 — Hypoxia is a front</title>
+<title>Point 1 — Hypoxia is a front · Rosé Pine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
   :root {
-    --bg:#0f1419; --panel:#1a222d; --text:#eaf0f6; --muted:#9aadc0;
-    --gold:#e2b857; --enter:#c0392b; --exit:#2980b9; --line:#2c3848; --ok:#3dba7a; --gfp:#7dcea0;
+    --base: #191724;
+    --surface: #1f1d2e;
+    --overlay: #26233a;
+    --muted: #6e6a86;
+    --subtle: #908caa;
+    --text: #e0def4;
+    --love: #eb6f92;
+    --gold: #f6c177;
+    --rose: #ebbcba;
+    --pine: #31748f;
+    --foam: #9ccfd8;
+    --iris: #c4a7e7;
+    --hl: #403d52;
   }
-  *{box-sizing:border-box}
-  body{
-    margin:0; color:var(--text);
-    font-family:"Iowan Old Style",Palatino,Georgia,serif;
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    color: var(--text);
+    font-family: "IBM Plex Sans", system-ui, sans-serif;
     background:
-      radial-gradient(900px 480px at 10% 0%, #243b4a 0%, transparent 55%),
-      radial-gradient(700px 420px at 100% 0%, #3a2430 0%, transparent 50%),
-      var(--bg);
-    line-height:1.55;
+      radial-gradient(900px 520px at 8% -10%, rgba(49,116,143,.28), transparent 55%),
+      radial-gradient(800px 480px at 100% 0%, rgba(235,111,146,.16), transparent 50%),
+      radial-gradient(700px 400px at 50% 100%, rgba(196,167,231,.10), transparent 45%),
+      var(--base);
+    line-height: 1.6;
   }
-  header{
-    min-height:88vh; display:grid; align-content:end; padding:3rem 6vw 2.5rem;
+  header {
+    min-height: 92vh;
+    display: grid;
+    align-content: end;
+    padding: 3.5rem 7vw 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: "";
+    position: absolute; inset: 0;
     background:
-      linear-gradient(180deg, transparent 20%, rgba(15,20,25,.94) 78%),
+      linear-gradient(180deg, transparent 15%, rgba(25,23,36,.55) 55%, rgba(25,23,36,.96) 88%),
       url('point1_hero_board.png') center/cover no-repeat;
+    opacity: .95;
+    z-index: 0;
   }
-  .brand{font-family:"Avenir Next","Segoe UI",sans-serif; letter-spacing:.16em; text-transform:uppercase; font-size:.72rem; color:var(--gold); margin-bottom:.6rem}
-  h1{font-size:clamp(2rem,4.6vw,3.3rem); max-width:16ch; line-height:1.05; margin:0 0 .8rem}
-  .lede{max-width:42rem; color:var(--muted); font-size:1.08rem}
-  .cta{display:flex; gap:.7rem; flex-wrap:wrap; margin-top:1.2rem}
-  .cta a{
-    font-family:"Avenir Next","Segoe UI",sans-serif; text-decoration:none;
-    background:var(--gold); color:var(--bg); padding:.65rem 1rem; font-size:.88rem; font-weight:600;
+  header > * { position: relative; z-index: 1; }
+  .brand {
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    font-size: .72rem;
+    font-weight: 500;
+    color: var(--gold);
+    margin-bottom: .85rem;
   }
-  .cta a.ghost{background:transparent; color:var(--text); border:1px solid var(--line)}
-  main{max-width:1100px; margin:0 auto; padding:2rem 6vw 4rem}
-  section{margin:2.8rem 0}
-  h2{font-size:1.6rem; margin:0 0 .5rem}
-  h3{font-size:1.05rem; color:var(--gold); margin:1.2rem 0 .4rem}
-  p,li{color:var(--muted)}
-  .claim{background:var(--panel); border-left:3px solid var(--gold); padding:1rem 1.15rem; margin:1rem 0}
-  .claim.gfp{border-left-color:var(--gfp)}
-  .claim strong{color:var(--text)}
-  figure{margin:1.1rem 0; background:var(--panel); border:1px solid var(--line); padding:.5rem}
-  figure img{width:100%; display:block}
-  figcaption{font-size:.84rem; color:var(--muted); padding:.4rem .2rem 0}
-  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem}
-  .stat{background:var(--panel); border:1px solid var(--line); padding:1rem}
-  .stat .n{font-family:"Avenir Next",sans-serif; font-size:1.35rem; color:var(--text)}
-  table{width:100%; border-collapse:collapse; font-family:"Avenir Next",sans-serif; font-size:.86rem; margin:1rem 0}
-  th,td{padding:.55rem .4rem; border-bottom:1px solid var(--line); text-align:left}
-  th{color:var(--text)}
-  .sig{color:var(--ok)}
-  .ns{color:var(--muted)}
-  footer{padding:2rem 6vw; border-top:1px solid var(--line); color:var(--muted); font-size:.85rem}
-  code{font-family:ui-monospace,Menlo,monospace; font-size:.86em; color:#cde}
+  h1 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(2.6rem, 6vw, 4.2rem);
+    max-width: 14ch;
+    line-height: 1.02;
+    margin: 0 0 1rem;
+    color: var(--text);
+  }
+  .lede {
+    max-width: 38rem;
+    color: var(--subtle);
+    font-size: 1.08rem;
+    font-weight: 400;
+  }
+  .cta { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1.5rem; }
+  .cta a {
+    text-decoration: none;
+    font-size: .86rem;
+    font-weight: 500;
+    padding: .7rem 1.15rem;
+    border-radius: 2px;
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .cta a.primary { background: var(--gold); color: var(--base); }
+  .cta a.primary:hover { background: var(--rose); }
+  .cta a.ghost { color: var(--text); border: 1px solid var(--hl); background: rgba(31,29,46,.55); }
+  .cta a.ghost:hover { border-color: var(--foam); color: var(--foam); }
+  main { max-width: 1080px; margin: 0 auto; padding: 2.5rem 7vw 4.5rem; }
+  section { margin: 3.4rem 0; }
+  h2 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 0 .55rem;
+    letter-spacing: .01em;
+  }
+  h3 {
+    font-size: .95rem;
+    font-weight: 500;
+    color: var(--gold);
+    margin: 1.4rem 0 .45rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+  p, li { color: var(--subtle); }
+  .claim {
+    background: linear-gradient(135deg, rgba(31,29,46,.95), rgba(38,35,58,.75));
+    border: 1px solid var(--hl);
+    border-left: 3px solid var(--gold);
+    padding: 1.15rem 1.25rem;
+    margin: 1.1rem 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .claim.foam { border-left-color: var(--foam); }
+  .claim.love { border-left-color: var(--love); }
+  .claim strong { color: var(--text); font-weight: 600; }
+  figure {
+    margin: 1.25rem 0;
+    background: var(--surface);
+    border: 1px solid var(--hl);
+    border-radius: 6px;
+    padding: .55rem;
+    overflow: hidden;
+  }
+  figure img { width: 100%; display: block; border-radius: 3px; }
+  figcaption {
+    font-size: .82rem;
+    color: var(--muted);
+    padding: .55rem .35rem .15rem;
+  }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--hl);
+    border-radius: 6px;
+    padding: 1.05rem 1.1rem;
+  }
+  .stat .n {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 1.85rem;
+    color: var(--text);
+    line-height: 1.1;
+  }
+  .stat .n.love { color: var(--love); }
+  .stat .n.foam { color: var(--foam); }
+  .stat .n.gold { color: var(--gold); }
+  .stat .n.iris { color: var(--iris); }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .86rem;
+    margin: 1rem 0 1.4rem;
+  }
+  th, td {
+    padding: .65rem .45rem;
+    border-bottom: 1px solid var(--hl);
+    text-align: left;
+  }
+  th { color: var(--subtle); font-weight: 500; letter-spacing: .03em; }
+  td { color: var(--muted); }
+  .sig { color: var(--foam); }
+  .ns { color: var(--muted); }
+  footer {
+    padding: 2rem 7vw 3rem;
+    border-top: 1px solid var(--hl);
+    color: var(--muted);
+    font-size: .82rem;
+  }
+  code { font-family: ui-monospace, "IBM Plex Mono", monospace; font-size: .84em; color: var(--foam); }
 </style>
 </head>
 <body>
 <header>
-  <div class="brand">MC38 · ImageIT sort · E14S GFP− / E15S GFP+</div>
+  <div class="brand">MC38 · ImageIT · E14S GFP− / E15S GFP+</div>
   <h1>Hypoxia is a front, not an island</h1>
-  <p class="lede">Same experiment, split by ImageIT hypoxia marker: E15S = GFP+ (marker+), E14S = GFP−. RNA velocity then resolves which marked cells are still hypoxic, exiting, or already reverted.</p>
+  <p class="lede">Same experiment, split by ImageIT hypoxia marker. RNA velocity then resolves which marked cells are still hypoxic, exiting, or already reverted — and shows they organize along a spatial continuum.</p>
   <div class="cta">
-    <a href="#design">Sort design</a>
-    <a class="ghost" href="#meaning">What “front” means</a>
+    <a class="primary" href="#design">Sort design</a>
     <a class="ghost" href="#perm">Permutation test</a>
+    <a class="ghost" href="#maps">Maps</a>
   </div>
 </header>
 <main>
   <section id="design">
-    <h2>Experimental design</h2>
-    <div class="claim gfp">
-      <strong>E15S = GFP+ / ImageIT+</strong> — cells sorted as hypoxia-marker positive.<br/>
-      <strong>E14S = GFP− / ImageIT−</strong> — cells sorted as hypoxia-marker negative.<br/>
-      Marker positivity ≠ ongoing transcriptional hypoxia: many GFP+ cells have <em>reverted</em> (post-hypoxic), which is why not all GFP+ cells are velocity-persistent.
+    <h2>Sort design</h2>
+    <div class="claim foam">
+      <strong>E15S = GFP+ / ImageIT+</strong> — hypoxia-marker positive at sort.<br/>
+      <strong>E14S = GFP− / ImageIT−</strong> — hypoxia-marker negative.<br/>
+      Marker positivity is not ongoing transcriptional hypoxia. Many GFP+ cells have <em>reverted</em> — which is why not all GFP+ cells are velocity-persistent.
     </div>
     <div class="grid">
-      <div class="stat">
-        <div class="n" style="color:var(--gfp)">E15S GFP+</div>
-        <div>Hypoxia-marked pool. Tumor-rich. Within tumor dynamics: ~12% persistent, ~28% entering, ~24% exiting, ~11% reverted.</div>
-      </div>
-      <div class="stat">
-        <div class="n">E14S GFP−</div>
-        <div>Unmarked pool. Immune-hot. Fewer tumor dynamics cells; still shows enter↔exit front geometry where tumor is present.</div>
-      </div>
-      <div class="stat">
-        <div class="n">~12%</div>
-        <div>of E15S tumor dynamics cells are velocity-persistent — GFP+ is a history/gate, velocity is the current state.</div>
-      </div>
-      <div class="stat">
-        <div class="n">entry ≠ exit</div>
-        <div>Within this design, ISR-entry vs OXPHOS-exit is a molecular split inside the hypoxia continuum — including among marker+ cells.</div>
-      </div>
+      <div class="stat"><div class="n foam">E15S GFP+</div><div>Marked pool. ~12% of tumor dynamics cells are persistent; the rest enter, exit, transition, or revert.</div></div>
+      <div class="stat"><div class="n love">E14S GFP−</div><div>Unmarked pool. Immune-hot. Front geometry still appears where tumor is present.</div></div>
+      <div class="stat"><div class="n gold">~12%</div><div>of E15S tumor dynamics cells are velocity-persistent — GFP+ is history; velocity is state.</div></div>
+      <div class="stat"><div class="n iris">entry ≠ exit</div><div>ISR-entry vs OXPHOS-exit is a molecular split inside the hypoxia continuum.</div></div>
     </div>
     <table>
-      <thead>
-        <tr><th>Gate</th><th>Library</th><th>Enter</th><th>Persistent</th><th>Exiting</th><th>Reverted</th><th>n tumor dynamics</th></tr>
-      </thead>
+      <thead><tr><th>Gate</th><th>Library</th><th>Enter</th><th>Persistent</th><th>Exiting</th><th>Reverted</th><th>n</th></tr></thead>
       <tbody>
-        <tr><td>ImageIT− (GFP−)</td><td>E14S</td><td>28%</td><td>11%</td><td>20%</td><td>27%</td><td>408</td></tr>
-        <tr><td>ImageIT+ (GFP+)</td><td>E15S</td><td>28%</td><td>12%</td><td>24%</td><td>11%</td><td>2282</td></tr>
+        <tr><td>ImageIT−</td><td>E14S</td><td>28%</td><td>11%</td><td>20%</td><td>27%</td><td>408</td></tr>
+        <tr><td>ImageIT+</td><td>E15S</td><td>28%</td><td>12%</td><td>24%</td><td>11%</td><td>2282</td></tr>
       </tbody>
     </table>
-    <p>
-      Composition differences between E14S and E15S are <strong>partly by design</strong> (sort gate), not only different tissue faces.
-      The interesting biology is the continuum <em>within</em> and <em>between</em> gates: fronts, entry≠exit programs, and reverted post-hypoxic cells inside GFP+.
-    </p>
   </section>
 
   <section id="meaning">
-    <h2>What “organized as a front” means</h2>
+    <h2>What a front means</h2>
     <div class="claim">
-      Not scattered hypoxic islands. A <strong>spatial continuum along an oxygen boundary</strong>:
+      Not scattered hypoxic islands — a <strong>spatial continuum along an oxygen boundary</strong>:
       <code>normoxic → exiting → persistent → entering → entering-deep</code>.
-      In the ImageIT+ pool this is especially natural: marked cells occupy different positions along the same reoxygenation/hypoxia boundary.
     </div>
     <figure>
-      <img src="what_front_means.png" alt="Front vs islands schematic"/>
-      <figcaption>Left: observed continuum. Middle: after shuffling coordinates, states mix. Right: definition and null.</figcaption>
+      <img src="what_front_means.png" alt="Front meaning"/>
+      <figcaption>Observed continuum versus coordinate shuffle, and how to read the claim.</figcaption>
     </figure>
   </section>
 
   <section id="perm">
-    <h2>Coordinate-shuffle permutation test</h2>
-    <p>
-      Shuffling coordinates among fixed positions ≡ shuffling dynamics labels on the fixed kNN graph.
-      <strong>n = 2000</strong> permutations. The appropriate null is <em>shuffle tumor coordinates only</em> (keep the tumor scaffold).
-    </p>
-    <h3>deep → exit neighbor enrichment</h3>
+    <h2>Coordinate-shuffle test</h2>
+    <p>Shuffling coordinates among fixed positions ≡ shuffling dynamics labels on the fixed kNN graph. <strong>n = 2000</strong>. The appropriate null keeps the tumor scaffold and reshuffles only tumor coordinates.</p>
     <table>
-      <thead>
-        <tr><th>Sample</th><th>Gate</th><th>Null</th><th>Observed</th><th>Null mean</th><th>z</th><th>p</th></tr>
-      </thead>
+      <thead><tr><th>Sample</th><th>Gate</th><th>Null</th><th>Observed</th><th>Null mean</th><th>z</th><th>p</th></tr></thead>
       <tbody>
         <tr><td>E14S</td><td>GFP−</td><td>tumor coords</td><td>2.85</td><td>1.43</td><td>3.1</td><td class="sig">0.005</td></tr>
         <tr><td>E15S</td><td>GFP+</td><td>tumor coords</td><td>1.17</td><td>1.08</td><td>1.5</td><td class="ns">0.074</td></tr>
@@ -141,68 +233,70 @@
       </tbody>
     </table>
     <div class="grid">
-      <div class="stat"><div class="n sig">p = 0.005</div><div>E14S GFP− · tumor-coordinate shuffle</div></div>
-      <div class="stat"><div class="n">p = 0.074</div><div>E15S GFP+ · tumor-coordinate shuffle (trend)</div></div>
-      <div class="stat"><div class="n">z = 3.1</div><div>E14S effect size under proper null</div></div>
-      <div class="stat"><div class="n">n = 2000</div><div>permutations per test</div></div>
+      <div class="stat"><div class="n foam">p = 0.005</div><div>E14S tumor-coordinate shuffle</div></div>
+      <div class="stat"><div class="n">p = 0.074</div><div>E15S tumor-coordinate shuffle (trend)</div></div>
+      <div class="stat"><div class="n gold">z = 3.1</div><div>E14S effect size</div></div>
+      <div class="stat"><div class="n iris">n = 2000</div><div>permutations</div></div>
     </div>
     <figure>
-      <img src="coord_shuffle_summary.png" alt="Coordinate shuffle summary"/>
-      <figcaption>Observed vs null-mean deep→exit enrichment. Red = p&lt;0.05.</figcaption>
+      <img src="coord_shuffle_summary.png" alt="Shuffle summary"/>
+      <figcaption>Observed vs null-mean deep→exit enrichment.</figcaption>
     </figure>
-    <figure>
-      <img src="coord_shuffle_deep_exit_enrichment.png" alt="Deep-exit enrichment null histograms"/>
-      <figcaption>Null distributions for deep→exit enrichment under all-coordinate vs tumor-coordinate shuffles.</figcaption>
-    </figure>
-    <figure>
-      <img src="coord_shuffle_front_score.png" alt="Front score null histograms"/>
-      <figcaption>Front-ribbon score under the same nulls.</figcaption>
-    </figure>
+    <div class="grid">
+      <figure>
+        <img src="coord_shuffle_deep_exit_enrichment.png" alt="Enrichment nulls"/>
+        <figcaption>deep→exit enrichment nulls.</figcaption>
+      </figure>
+      <figure>
+        <img src="coord_shuffle_front_score.png" alt="Front score nulls"/>
+        <figcaption>Front-ribbon score nulls.</figcaption>
+      </figure>
+    </div>
   </section>
 
   <section id="maps">
     <h2>Maps</h2>
     <figure>
       <img src="point1_hero_board.png" alt="Hero board"/>
-      <figcaption>Adjacency enrichments, kNN contact, and deep↔exit bridge maps for both gates.</figcaption>
+      <figcaption>Summary board across both ImageIT gates.</figcaption>
     </figure>
     <div class="grid">
       <figure>
         <img src="E14S_front_bridges.png" alt="E14S bridges"/>
-        <figcaption>E14S GFP− — enter↔exit bridges.</figcaption>
+        <figcaption>E14S GFP− bridges.</figcaption>
       </figure>
       <figure>
         <img src="E15S_front_bridges.png" alt="E15S bridges"/>
-        <figcaption>E15S GFP+ — enter↔exit bridges inside the marked pool.</figcaption>
+        <figcaption>E15S GFP+ bridges.</figcaption>
       </figure>
     </div>
     <div class="grid">
       <figure>
         <img src="E14S_front_zooms.png" alt="E14S zooms"/>
-        <figcaption>E14S hotspot zooms.</figcaption>
+        <figcaption>E14S hotspots.</figcaption>
       </figure>
       <figure>
         <img src="E15S_front_zooms.png" alt="E15S zooms"/>
-        <figcaption>E15S hotspot zooms.</figcaption>
+        <figcaption>E15S hotspots.</figcaption>
       </figure>
     </div>
     <div class="grid">
       <figure>
         <img src="E14S_front_ribbons.png" alt="E14S ribbons"/>
-        <figcaption>E14S local front ribbons / polarity.</figcaption>
+        <figcaption>E14S local front geometry.</figcaption>
       </figure>
       <figure>
         <img src="E15S_front_ribbons.png" alt="E15S ribbons"/>
-        <figcaption>E15S local front ribbons / polarity.</figcaption>
+        <figcaption>E15S local front geometry.</figcaption>
       </figure>
     </div>
   </section>
 
   <section>
-    <h2>More quantification</h2>
+    <h2>Quantification</h2>
     <figure>
       <img src="front_enrichment_bars.png" alt="Enrichment bars"/>
-      <figcaption>Dynamics adjacency enrichments.</figcaption>
+      <figcaption>Dynamics adjacency enrichments (✦ original perm p&lt;0.05).</figcaption>
     </figure>
     <figure>
       <img src="point1_knn_contact_both.png" alt="kNN contact"/>
@@ -211,7 +305,7 @@
   </section>
 </main>
 <footer>
-  ImageIT GFP+/− sort design incorporated · <code>reseq_finetune/deep_dive/spatial_niches/front_figures/</code>
+  Rosé Pine theme · ImageIT GFP+/− design · <code>front_figures/</code>
 </footer>
 </body>
 </html>

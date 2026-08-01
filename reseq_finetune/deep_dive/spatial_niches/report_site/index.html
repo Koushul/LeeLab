@@ -4,80 +4,41 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>MC38 Spatial Niches — E14S / E15S</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
   :root {
-    --bg: #10161c;
-    --panel: #1b2430;
-    --text: #eaf0f6;
-    --muted: #9aadc0;
-    --gold: #e2b857;
-    --enter: #d95948;
-    --exit: #4b9fd6;
-    --core: #a56bc7;
-    --line: #2c3848;
+    --bg:#191724; --panel:#1f1d2e; --text:#e0def4; --muted:#908caa;
+    --gold:#f6c177; --enter:#eb6f92; --exit:#9ccfd8; --core:#c4a7e7; --line:#403d52;
   }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    font-family: "Iowan Old Style", Palatino, Georgia, serif;
-    color: var(--text);
-    background:
-      radial-gradient(900px 500px at 0% 0%, #243b4a 0%, transparent 55%),
-      radial-gradient(800px 480px at 100% 10%, #3a2430 0%, transparent 50%),
-      var(--bg);
-    line-height: 1.55;
-  }
-  header {
-    min-height: 92vh;
-    display: grid;
-    align-content: end;
-    padding: 3.5rem 6vw;
-    background:
-      linear-gradient(180deg, transparent 25%, rgba(16,22,28,.94) 80%),
-      url('E15S_dynamics_map.png') center/cover no-repeat;
-  }
-  .brand {
-    font-family: "Avenir Next", "Segoe UI", sans-serif;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-    font-size: .75rem;
-    color: var(--gold);
-    margin-bottom: .7rem;
-  }
-  h1 {
-    font-size: clamp(2rem, 4.8vw, 3.4rem);
-    max-width: 18ch;
-    line-height: 1.05;
-    margin: 0 0 1rem;
-  }
-  .lede { max-width: 40rem; color: var(--muted); font-size: 1.1rem; }
-  main { max-width: 1080px; margin: 0 auto; padding: 2.5rem 6vw 4rem; }
-  section { margin: 3rem 0; }
-  h2 { font-size: 1.7rem; margin: 0 0 .5rem; }
-  p, li { color: var(--muted); }
-  .claim {
-    background: var(--panel);
-    border-left: 3px solid var(--gold);
-    padding: 1rem 1.2rem;
-    margin: 1rem 0;
-  }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1rem; }
-  .stat { background: var(--panel); border: 1px solid var(--line); padding: 1rem; }
-  .stat .n { font-family: "Avenir Next", sans-serif; font-size: 1.4rem; color: var(--text); }
-  figure { margin: 1.2rem 0; background: var(--panel); border: 1px solid var(--line); padding: .5rem; }
-  figure img { width: 100%; display: block; }
-  figcaption { font-size: .84rem; color: var(--muted); padding: .45rem .2rem 0; }
-  table { width: 100%; border-collapse: collapse; font-family: "Avenir Next", sans-serif; font-size: .86rem; }
-  th, td { padding: .5rem .35rem; border-bottom: 1px solid var(--line); text-align: left; }
-  .enter { color: var(--enter); }
-  .exit { color: var(--exit); }
-  .core { color: var(--core); }
-  footer { padding: 2rem 6vw; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"IBM Plex Sans",system-ui,sans-serif;color:var(--text);line-height:1.6;
+    background:radial-gradient(900px 500px at 0% 0%,rgba(49,116,143,.25),transparent 55%),radial-gradient(800px 480px at 100% 10%,rgba(235,111,146,.14),transparent 50%),var(--bg)}
+  header{min-height:88vh;display:grid;align-content:end;padding:3.2rem 7vw;
+    background:linear-gradient(180deg,transparent 20%,rgba(25,23,36,.94) 80%),url('E15S_dynamics_map.png') center/cover no-repeat}
+  .brand{letter-spacing:.18em;text-transform:uppercase;font-size:.72rem;color:var(--gold);margin-bottom:.7rem}
+  h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(2.2rem,4.8vw,3.5rem);max-width:16ch;line-height:1.05;margin:0 0 .8rem}
+  .lede{max-width:40rem;color:var(--muted);font-size:1.05rem}
+  main{max-width:1080px;margin:0 auto;padding:2rem 7vw 4rem}
+  section{margin:2.8rem 0}
+  h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.9rem;margin:0 0 .5rem}
+  p,li{color:var(--muted)}
+  .claim{background:var(--panel);border-left:3px solid var(--gold);padding:1rem 1.15rem;margin:1rem 0;border:1px solid var(--line);border-left-width:3px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+  .stat{background:var(--panel);border:1px solid var(--line);padding:1rem;border-radius:6px}
+  .stat .n{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.45rem}
+  figure{margin:1.1rem 0;background:var(--panel);border:1px solid var(--line);padding:.5rem;border-radius:6px}
+  figure img{width:100%;display:block;border-radius:3px}
+  figcaption{font-size:.82rem;color:#6e6a86;padding:.4rem .2rem 0}
+  table{width:100%;border-collapse:collapse;font-size:.86rem}
+  th,td{padding:.5rem .35rem;border-bottom:1px solid var(--line);text-align:left}
+  footer{padding:2rem 7vw;border-top:1px solid var(--line);color:#6e6a86;font-size:.82rem}
+  code{color:var(--exit);font-family:ui-monospace,monospace;font-size:.84em}
 </style>
 </head>
 <body>
 <header>
-  <div class="brand">MC38 · E14S + E15S · Spatial niches</div>
+  <div class="brand">MC38 · ImageIT · Spatial niches · Rosé Pine</div>
   <h1>Hypoxia is a front, not an island</h1>
   <p class="lede">Velocity-defined entering and exiting tumor cells are spatial neighbors. C1qc TAMs avoid the core; neutrophils hug it in the tumor-rich face.</p>
 </header>

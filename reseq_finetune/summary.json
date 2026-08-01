@@ -1,0 +1,81 @@
+{
+  "inputs": {
+    "e14s": "/ix1/ylee/shared/MC38_Hypoxia_001/E14S/filtered_feature_bc_matrix.h5",
+    "e15s_reseq": "/ix1/ylee/Palak/cellranger_apps/e15s/outs/per_sample_outs/e15s/sample_filtered_feature_bc_matrix.h5",
+    "prior": "/ix1/ylee/shared/MC38_Hypoxia_001/finer_annot.h5ad"
+  },
+  "shapes": {
+    "E14S": [
+      5292,
+      33696
+    ],
+    "E15S": [
+      9167,
+      33696
+    ],
+    "merged": [
+      14459,
+      33696
+    ]
+  },
+  "transfer": {
+    "n_prior": 13926,
+    "n_new": 14459,
+    "n_transferred": 13914,
+    "n_unlabeled": 545
+  },
+  "tumor_finetune": {
+    "n_tumor_input": 2704,
+    "n_tumor_label_changed": 933,
+    "hypoxia_hi_z": 0.09606707649704072,
+    "prolif_hi_z": 1.3363436790060905,
+    "hypoxia_lo_z": -0.6684003922507656,
+    "prolif_lo_z": 0.11664483579794782,
+    "tumor_subtype_counts_sticky": {
+      "Tumor": 1305,
+      "Hypoxic Tumor": 843,
+      "Tumor Proliferating": 556
+    },
+    "tumor_subtype_counts_finetuned": {
+      "Hypoxic Tumor": 1027,
+      "Tumor": 873,
+      "Tumor Proliferating": 804
+    }
+  },
+  "knn": {
+    "n_unlabeled": 545,
+    "n_knn_labeled": 545
+  },
+  "n_still_unlabeled": 0,
+  "cell_type_counts": {
+    "Monocyte": 1882,
+    "Neutrophil": 1811,
+    "C1qc+ TAM": 1678,
+    "Resident Macrophage": 1517,
+    "Tumor": 1305,
+    "Il1b+ TAM": 1253,
+    "Stromal": 1185,
+    "Hypoxic Tumor": 843,
+    "Spp1+ TAM": 765,
+    "Tumor Proliferating": 556,
+    "CAF": 398,
+    "NK": 397,
+    "cDC": 245,
+    "mDC": 205,
+    "CD8 Terminally Exhausted": 123,
+    "B": 76,
+    "CD8 Exhausted Proliferating": 61,
+    "NK T": 54,
+    "Regulatory CD8 T": 50,
+    "CD4 T": 41,
+    "Regulatory CD4 T": 14
+  },
+  "annotation_source_counts": {
+    "transferred": 13914,
+    "knn": 545
+  },
+  "outputs": {
+    "h5ad": "/ix1/ylee/shared/MC38_Hypoxia_001/reseq_finetune/mc38_tumor_reseq_finetuned.h5ad",
+    "annotations_csv": "/ix1/ylee/shared/MC38_Hypoxia_001/reseq_finetune/annotations_reseq_finetuned.csv"
+  }
+}

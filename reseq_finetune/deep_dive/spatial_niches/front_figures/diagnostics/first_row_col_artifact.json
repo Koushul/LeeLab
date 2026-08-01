@@ -1,0 +1,45 @@
+{
+  "artifact": "Cells piled on first grid row (x=1 / sbc1) and first grid column (y=1 / sbc97)",
+  "root_cause": {
+    "file": "spatial_barcode_demux.py",
+    "function": "find_best_barcode",
+    "mechanism": "When a barcode half has no peaks above threshold, max_fallback uses np.argmax(signal). For all-zero (or flat-zero) signals, argmax returns index 0 \u2192 first barcode in that half (sbc1 or sbc97) \u2192 grid coordinate 1.",
+    "pipeline_step": "spatial_assigning.ipynb cell that runs demux_all_cells on non-confident cells and merges results back, overwriting None assignments from the top-2 ratio method."
+  },
+  "samples": {
+    "E14S": {
+      "n_cells": 5292,
+      "row_half_umi_zero": 43,
+      "col_half_umi_zero": 87,
+      "both_halves_zero": 14,
+      "top_assign_sbc1_before_demux": 0,
+      "top_assign_sbc97_before_demux": 0,
+      "demux_max_fallback_half1": 399,
+      "demux_max_fallback_half2": 1008,
+      "after_demux_sbc1": 43,
+      "after_demux_sbc97": 87,
+      "zero_row_umi_assigned_sbc1": 43,
+      "zero_col_umi_assigned_sbc97": 87,
+      "fraction_of_sbc1_explained_by_zero_umi": 1.0,
+      "fraction_of_sbc97_explained_by_zero_umi": 1.0,
+      "note": "100% of sbc1/sbc97 assignments from zero-UMI halves come via max_fallback argmax\u21920"
+    },
+    "E15S": {
+      "n_cells": 8669,
+      "row_half_umi_zero": 117,
+      "col_half_umi_zero": 219,
+      "both_halves_zero": 38,
+      "top_assign_sbc1_before_demux": 0,
+      "top_assign_sbc97_before_demux": 2,
+      "demux_max_fallback_half1": 1077,
+      "demux_max_fallback_half2": 1866,
+      "after_demux_sbc1": 117,
+      "after_demux_sbc97": 220,
+      "zero_row_umi_assigned_sbc1": 117,
+      "zero_col_umi_assigned_sbc97": 219,
+      "fraction_of_sbc1_explained_by_zero_umi": 1.0,
+      "fraction_of_sbc97_explained_by_zero_umi": 0.9955,
+      "note": "100% of sbc1/sbc97 assignments from zero-UMI halves come via max_fallback argmax\u21920"
+    }
+  }
+}

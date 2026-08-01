@@ -100,6 +100,7 @@
     <button class="active" data-tab="overview" role="tab" aria-selected="true">Overview</button>
     <button data-tab="animations" role="tab" aria-selected="false">Animations</button>
     <button data-tab="maps" role="tab" aria-selected="false">Maps</button>
+    <button data-tab="entropy" role="tab" aria-selected="false">ADT entropy</button>
     <button data-tab="tests" role="tab" aria-selected="false">Permutation</button>
   </nav>
 </div>
@@ -263,6 +264,47 @@
 </main>
 </div>
 
+<div id="entropy" class="panel">
+<main>
+  <section>
+    <h2>Microwell assignment entropy</h2>
+    <div class="claim foam">
+      Each microwell is a known pair <code>(row_i, col_j)</code> among
+      <code>sbc1–42 × sbc97–138</code> (1764 wells). From raw spatial ADT UMIs,
+      <code>p_row ∝ counts+α</code>, <code>p_col ∝ counts+α</code> (α=0.05), and
+      <code>P(well)=p_row·p_col</code>. Per-cell entropy
+      <code>H = H_row + H_col</code> (bits) measures how peaked that posterior is.
+    </div>
+    <div class="grid">
+      <div class="stat"><div class="n foam">7.19 / 7.31</div><div>Median H (bits) · E14S / E15S. Max = log₂(1764) ≈ 10.78.</div></div>
+      <div class="stat"><div class="n gold">0.07</div><div>Median MAP well probability — many cells remain ambiguous on ADT alone.</div></div>
+      <div class="stat"><div class="n love">empty half</div><div>Zero-UMI halves → near-uniform posterior → high H (not pinned to well 1).</div></div>
+    </div>
+
+    <h3>Entropy distribution</h3>
+    <p>Left: joint microwell entropy. Middle: normalized by max. Right: ADT depth vs entropy.</p>
+    <figure>
+      <img src="microwell_entropy_distribution.png" alt="Microwell entropy distributions"/>
+      <figcaption>Per-cell H(well | ADT) for both ImageIT gates.</figcaption>
+    </figure>
+
+    <h3>Empty halves vs signal</h3>
+    <p>Cells missing an entire barcode half sit near the entropy ceiling; cells with both halves still show a broad mid-entropy mass.</p>
+    <figure>
+      <img src="microwell_entropy_empty_vs_signal.png" alt="Empty half vs signal entropy"/>
+      <figcaption>Density of entropy for empty-half vs both-halves cells.</figcaption>
+    </figure>
+
+    <h3>Entropy on hard-assigned coordinates</h3>
+    <p>Mapped onto the previous hard demux grid (for context). Bright = ambiguous posterior — including the artifactual first row/column from argmax-on-zeros.</p>
+    <figure>
+      <img src="microwell_entropy_spatial.png" alt="Entropy on spatial coordinates"/>
+      <figcaption>Entropy colored on hard spatial coordinates.</figcaption>
+    </figure>
+  </section>
+</main>
+</div>
+
 <div id="tests" class="panel">
 <main>
   <section>
@@ -304,7 +346,7 @@
 </div>
 
 <footer>
-  Rosé Pine · Animations tab · <code>front_figures/animations/</code>
+  Rosé Pine · ADT entropy tab · <code>front_figures/microwell_entropy_*.png</code>
 </footer>
 
 <script>

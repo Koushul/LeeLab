@@ -1,0 +1,36 @@
+{
+  "model": {
+    "description": "Each microwell (i,j) is the known pair (row_i, col_j). With Dirichlet pseudocount \u03b1 on raw ADT UMIs, p_row \u221d row_counts+\u03b1, p_col \u221d col_counts+\u03b1, P(well=i,j)=p_row[i]*p_col[j]. Entropy H=-\u2211 P log2 P = H_row+H_col (bits).",
+    "rows": "sbc1..sbc42",
+    "cols": "sbc97..sbc138",
+    "n_wells": 1764,
+    "alpha": 0.05,
+    "max_entropy_bits": 10.784634845557521
+  },
+  "samples": {
+    "E14S": {
+      "n_cells": 5292,
+      "entropy_bits_mean": 6.415,
+      "entropy_bits_median": 7.191,
+      "entropy_norm_median": 0.667,
+      "map_prob_median": 0.0725,
+      "frac_entropy_norm_lt_0.25": 0.074,
+      "frac_entropy_norm_gt_0.75": 0.09,
+      "empty_half_n": 116,
+      "empty_half_entropy_median": 9.5,
+      "both_halves_entropy_median": 7.15
+    },
+    "E15S": {
+      "n_cells": 8669,
+      "entropy_bits_mean": 6.756,
+      "entropy_bits_median": 7.308,
+      "entropy_norm_median": 0.678,
+      "map_prob_median": 0.0697,
+      "frac_entropy_norm_lt_0.25": 0.039,
+      "frac_entropy_norm_gt_0.75": 0.099,
+      "empty_half_n": 298,
+      "empty_half_entropy_median": 9.5,
+      "both_halves_entropy_median": 7.269
+    }
+  }
+}

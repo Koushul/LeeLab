@@ -1,0 +1,45 @@
+{
+  "theme": "rose-pine",
+  "animations": [
+    {
+      "file": "E14S_front_pulse.gif",
+      "sample": "E14S",
+      "kind": "front_pulse"
+    },
+    {
+      "file": "E14S_bridge_pulse.gif",
+      "sample": "E14S",
+      "kind": "bridge_pulse"
+    },
+    {
+      "file": "E14S_continuum_wave.gif",
+      "sample": "E14S",
+      "kind": "continuum_wave"
+    },
+    {
+      "file": "E14S_ribbon_breathe.gif",
+      "sample": "E14S",
+      "kind": "ribbon_breathe"
+    },
+    {
+      "file": "E15S_front_pulse.gif",
+      "sample": "E15S",
+      "kind": "front_pulse"
+    },
+    {
+      "file": "E15S_bridge_pulse.gif",
+      "sample": "E15S",
+      "kind": "bridge_pulse"
+    },
+    {
+      "file": "E15S_continuum_wave.gif",
+      "sample": "E15S",
+      "kind": "continuum_wave"
+    },
+    {
+      "file": "E15S_ribbon_breathe.gif",
+      "sample": "E15S",
+      "kind": "ribbon_breathe"
+    }
+  ]
+}

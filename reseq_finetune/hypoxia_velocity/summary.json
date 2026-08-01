@@ -1,0 +1,62 @@
+{
+  "n_cells": 14443,
+  "n_tumor": 2690,
+  "hypoxia_genes": [
+    "Slc2a1",
+    "Hk2",
+    "Ldha",
+    "Pgk1",
+    "Bnip3",
+    "Vegfa",
+    "Egln3",
+    "Eno1",
+    "Pdk1",
+    "Gapdh",
+    "Aldoa",
+    "Pfkl",
+    "Ndrg1",
+    "Fam162a",
+    "P4ha1",
+    "Higd1a"
+  ],
+  "prolif_genes": [
+    "Mki67",
+    "Top2a",
+    "Cdk1",
+    "Ccnb1",
+    "Stmn1",
+    "Pcna",
+    "Ube2c"
+  ],
+  "thresholds": {
+    "s_hi": 0.2917649747222226,
+    "s_lo": -0.4294744995765086,
+    "v_pos": 0.4068335096135059,
+    "v_up": 0.4068335096135059,
+    "v_dn": -0.4068335096135059
+  },
+  "dynamics_counts_all": {
+    "non_tumor": 11753,
+    "exiting_hypoxia": 635,
+    "entering_hypoxia": 521,
+    "transitional": 323,
+    "persistent_hypoxia": 321,
+    "normoxic_stable": 284,
+    "entering_deep_hypoxia": 236,
+    "reverted_stable": 222,
+    "reverted_posthypoxic": 148
+  },
+  "dynamics_counts_tumor": {
+    "exiting_hypoxia": 635,
+    "entering_hypoxia": 521,
+    "transitional": 323,
+    "persistent_hypoxia": 321,
+    "normoxic_stable": 284,
+    "entering_deep_hypoxia": 236,
+    "reverted_stable": 222,
+    "reverted_posthypoxic": 148,
+    "non_tumor": 0
+  },
+  "vpt_hypoxia_corr": -0.05636117854558111,
+  "dynamical_model": true
+}

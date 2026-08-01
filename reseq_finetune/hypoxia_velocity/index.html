@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MC38 · hypoxia RNA velocity</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0e1418;
+      --paper: #e8eef1;
+      --mist: #9eb0b8;
+      --teal: #1f8a7a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Sora", sans-serif;
+      color: var(--paper);
+      background:
+        radial-gradient(1000px 600px at 8% -5%, rgba(231,111,81,0.18), transparent 50%),
+        radial-gradient(900px 500px at 95% 10%, rgba(31,138,122,0.16), transparent 45%),
+        linear-gradient(165deg, #0b1014 0%, #121a20 50%, #0e1519 100%);
+      min-height: 100vh;
+    }
+    .wrap {
+      display: grid;
+      grid-template-columns: minmax(260px, 340px) 1fr;
+      min-height: 100vh;
+    }
+    .copy {
+      padding: clamp(1.4rem, 3.5vw, 2.6rem);
+      border-right: 1px solid rgba(232,238,241,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.95rem;
+    }
+    .brand {
+      font-family: "Instrument Serif", serif;
+      font-size: clamp(3rem, 7vw, 4.6rem);
+      line-height: 0.92;
+      letter-spacing: -0.03em;
+      opacity: 0;
+      animation: rise .8s ease forwards .08s;
+    }
+    .brand span {
+      display: block;
+      font-family: "Sora", sans-serif;
+      font-size: .26em;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: .65rem;
+      font-weight: 500;
+    }
+    h1 {
+      font-family: "Instrument Serif", serif;
+      font-weight: 400;
+      font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+      line-height: 1.25;
+      max-width: 16ch;
+      opacity: 0;
+      animation: rise .8s ease forwards .22s;
+    }
+    .lede {
+      color: var(--mist);
+      font-size: .9rem;
+      line-height: 1.55;
+      max-width: 32ch;
+      opacity: 0;
+      animation: rise .8s ease forwards .36s;
+    }
+    .scheme {
+      margin-top: .4rem;
+      display: grid;
+      gap: .35rem;
+      opacity: 0;
+      animation: rise .8s ease forwards .5s;
+    }
+    .scheme button {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      background: transparent;
+      border: 0;
+      color: var(--paper);
+      font: inherit;
+      font-size: .72rem;
+      text-align: left;
+      cursor: pointer;
+      padding: .2rem 0;
+      opacity: .95;
+    }
+    .scheme button.off { opacity: .28; }
+    .sw { width: .55rem; height: .55rem; flex: 0 0 auto; }
+    .cnt { margin-left: auto; color: var(--mist); font-variant-numeric: tabular-nums; }
+    .viz {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      opacity: 0;
+      animation: fade 1s ease forwards .3s;
+    }
+    canvas { width: 100%; height: 100%; display: block; cursor: crosshair; }
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      padding: .7rem 1.2rem 1rem;
+      background: linear-gradient(to top, rgba(8,12,15,.92), transparent);
+      flex-wrap: wrap;
+    }
+    .toggles { display: flex; gap: .35rem; flex-wrap: wrap; }
+    .toggles button, .linkish {
+      font-family: inherit;
+      font-size: .7rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--mist);
+      background: transparent;
+      border: 1px solid rgba(232,238,241,.16);
+      padding: .42rem .7rem;
+      cursor: pointer;
+    }
+    .toggles button.active, .toggles button:hover {
+      color: var(--paper);
+      border-color: var(--teal);
+      background: rgba(31,138,122,.12);
+    }
+    .tip { font-size: .78rem; color: var(--mist); min-height: 1.1em; }
+    .panels {
+      display: none;
+      grid-template-columns: 1fr 1fr;
+      gap: .75rem;
+      padding: 0 1rem 1rem;
+    }
+    .panels.show { display: grid; }
+    .panels img {
+      width: 100%;
+      height: auto;
+      border: 1px solid rgba(232,238,241,.08);
+      background: #0d1317;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: none; }
+    }
+    @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+    @media (max-width: 920px) {
+      .wrap { grid-template-columns: 1fr; }
+      .copy { border-right: 0; border-bottom: 1px solid rgba(232,238,241,.08); }
+      .viz { min-height: 70vh; }
+      .panels { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <aside class="copy">
+      <div class="brand"><span>RNA velocity · USA mode</span>MC38</div>
+      <h1>Hypoxia as a dynamic continuum.</h1>
+      <p class="lede">
+        Spliced/unspliced velocity from alevin-fry USA counts, projected onto a 16-gene hypoxia module.
+        Tumor cells are partitioned by current hypoxia score × hypoxia velocity into entering, persistent, exiting, and reverted states.
+      </p>
+      <div class="scheme" id="legend"></div>
+    </aside>
+    <section class="viz">
+      <canvas id="cv"></canvas>
+      <div class="panels" id="panels">
+        <img src="hypoxia_phase_plane.png" alt="Hypoxia phase plane" />
+        <img src="hypoxia_velocity_umap.png" alt="Velocity UMAP panel" />
+      </div>
+      <div class="toolbar">
+        <div class="toggles">
+          <button type="button" class="active" data-mode="dynamics">Dynamics</button>
+          <button type="button" data-mode="hypoxia">Hypoxia score</button>
+          <button type="button" data-mode="v_hypoxia">v_hypoxia</button>
+          <button type="button" data-mode="latent">Latent time</button>
+          <button type="button" data-mode="figures">Figures</button>
+        </div>
+        <div class="tip" id="tip">Tumor cells emphasized · click legend to isolate states</div>
+      </div>
+    </section>
+  </div>
+  <script>
+    const canvas = document.getElementById('cv');
+    const ctx = canvas.getContext('2d', { alpha: false });
+    const tip = document.getElementById('tip');
+    const legend = document.getElementById('legend');
+    const panels = document.getElementById('panels');
+    let data, mode = 'dynamics', hidden = new Set(), dpr = 1, layout, hover = -1;
+
+    const order = [
+      'entering_hypoxia','entering_deep_hypoxia','persistent_hypoxia','exiting_hypoxia',
+      'reverted_posthypoxic','reverted_stable','normoxic_stable','transitional'
+    ];
+
+    function colorScale(v, vmin, vmax, cmap) {
+      const t = Math.max(0, Math.min(1, (v - vmin) / (vmax - vmin || 1)));
+      if (cmap === 'magma') {
+        const r = Math.round(2 + t * 250), g = Math.round(2 + t*t * 120), b = Math.round(20 + (1-t) * 80 + t * 40);
+        return `rgb(${r},${g},${b})`;
+      }
+      if (cmap === 'rdbu') {
+        const r = Math.round(t < .5 ? 30 + t*2*180 : 210 + (t-.5)*2*45);
+        const g = Math.round(t < .5 ? 60 + t*2*140 : 200 - (t-.5)*2*160);
+        const b = Math.round(t < .5 ? 150 + t*2*80 : 210 - (t-.5)*2*180);
+        return `rgb(${r},${g},${b})`;
+      }
+      // viridis-ish
+      const r = Math.round(30 + t * 200), g = Math.round(40 + Math.sin(t*Math.PI) * 180), b = Math.round(80 + (1-t) * 140);
+      return `rgb(${r},${g},${b})`;
+    }
+
+    async function boot() {
+      data = await fetch('velocity_web.json').then(r => r.json());
+      const counts = {};
+      data.dynamics.forEach(d => { counts[d] = (counts[d] || 0) + 1; });
+      legend.innerHTML = '';
+      order.forEach(st => {
+        if (!counts[st]) return;
+        const b = document.createElement('button');
+        b.innerHTML = `<span class="sw" style="background:${data.palette[st]}"></span>${st.replaceAll('_',' ')}<span class="cnt">${counts[st]}</span>`;
+        b.addEventListener('click', () => {
+          if (hidden.has(st)) hidden.delete(st); else hidden.add(st);
+          b.classList.toggle('off', hidden.has(st));
+          draw();
+        });
+        legend.appendChild(b);
+      });
+      // percentiles for continuous modes
+      const hs = data.hypoxia_score, vh = data.v_hypoxia, lt = data.latent;
+      data._hs = percentile(hs, 5, 95);
+      data._vh = percentile(vh, 5, 95);
+      data._lt = percentile(lt, 2, 98);
+      resize();
+    }
+
+    function percentile(arr, lo, hi) {
+      const s = arr.slice().sort((a,b)=>a-b);
+      const p = q => s[Math.min(s.length-1, Math.max(0, Math.floor(q/100*(s.length-1))))];
+      return [p(lo), p(hi)];
+    }
+
+    function colorFor(i) {
+      const dyn = data.dynamics[i];
+      if (mode === 'dynamics') {
+        if (hidden.has(dyn)) return null;
+        if (dyn === 'non_tumor') return 'rgba(80,90,95,0.18)';
+        return data.palette[dyn] || '#aaa';
+      }
+      if (data.is_tumor[i] === 0 && mode !== 'hypoxia') return 'rgba(80,90,95,0.12)';
+      if (mode === 'hypoxia') return colorScale(data.hypoxia_score[i], data._hs[0], data._hs[1], 'magma');
+      if (mode === 'v_hypoxia') return colorScale(data.v_hypoxia[i], data._vh[0], data._vh[1], 'rdbu');
+      if (mode === 'latent') return colorScale(data.latent[i], data._lt[0], data._lt[1], 'viridis');
+      return '#888';
+    }
+
+    function resize() {
+      const parent = canvas.parentElement.getBoundingClientRect();
+      const toolH = panels.classList.contains('show') ? 0 : 58;
+      const figH = panels.classList.contains('show') ? parent.height * 0.42 : 0;
+      dpr = Math.min(devicePixelRatio || 1, 2);
+      const h = Math.max(320, parent.height - toolH - figH);
+      canvas.width = Math.floor(parent.width * dpr);
+      canvas.height = Math.floor(h * dpr);
+      canvas.style.width = parent.width + 'px';
+      canvas.style.height = h + 'px';
+      computeLayout();
+      draw();
+    }
+
+    function computeLayout() {
+      const pad = 24 * dpr;
+      let minX=Infinity,maxX=-Infinity,minY=Infinity,maxY=-Infinity;
+      for (let i=0;i<data.n;i++){
+        minX=Math.min(minX,data.umap1[i]); maxX=Math.max(maxX,data.umap1[i]);
+        minY=Math.min(minY,data.umap2[i]); maxY=Math.max(maxY,data.umap2[i]);
+      }
+      const w = canvas.width - pad*2, h = canvas.height - pad*2;
+      const s = Math.min(w/(maxX-minX||1), h/(maxY-minY||1));
+      layout = {
+        x0: pad + (w - s*(maxX-minX))/2 - minX*s,
+        y0: pad + (h - s*(maxY-minY))/2 + maxY*s,
+        s
+      };
+    }
+
+    function toXY(i){ return [layout.x0 + data.umap1[i]*layout.s, layout.y0 - data.umap2[i]*layout.s]; }
+
+    function draw() {
+      if (!data || mode === 'figures') return;
+      const w=canvas.width,h=canvas.height;
+      ctx.fillStyle='#0d1317'; ctx.fillRect(0,0,w,h);
+      const r = Math.max(1.15, 1.55*dpr);
+      // draw non-tumor first
+      for (let pass=0; pass<2; pass++) {
+        for (let i=0;i<data.n;i++){
+          const isT = data.is_tumor[i]===1;
+          if (pass===0 && isT) continue;
+          if (pass===1 && !isT) continue;
+          const c = colorFor(i);
+          if (!c) continue;
+          const [x,y]=toXY(i);
+          ctx.fillStyle=c;
+          ctx.globalAlpha = isT ? 0.88 : 0.35;
+          ctx.beginPath(); ctx.arc(x,y, isT? r*1.15 : r*0.8, 0, Math.PI*2); ctx.fill();
+        }
+      }
+      ctx.globalAlpha=1;
+      if (hover>=0 && colorFor(hover)) {
+        const [x,y]=toXY(hover);
+        ctx.strokeStyle='#fff'; ctx.lineWidth=1.4*dpr;
+        ctx.beginPath(); ctx.arc(x,y,r*2.6,0,Math.PI*2); ctx.stroke();
+      }
+    }
+
+    function nearest(mx,my){
+      let best=-1, bestD=14*dpr;
+      for (let i=0;i<data.n;i++){
+        if (!colorFor(i)) continue;
+        const [x,y]=toXY(i);
+        const d=Math.hypot(x-mx,y-my);
+        if (d<bestD){bestD=d;best=i;}
+      }
+      return best;
+    }
+
+    canvas.addEventListener('mousemove', e => {
+      if (mode==='figures') return;
+      const rect=canvas.getBoundingClientRect();
+      const i=nearest((e.clientX-rect.left)*dpr,(e.clientY-rect.top)*dpr);
+      hover=i;
+      if (i<0) tip.textContent='Tumor cells emphasized · click legend to isolate states';
+      else tip.textContent=`${data.dynamics[i].replaceAll('_',' ')} · ${data.cell_type[i]} · ${data.sample[i]} · H=${data.hypoxia_score[i].toFixed(2)} v=${data.v_hypoxia[i].toFixed(2)}`;
+      draw();
+    });
+
+    document.querySelectorAll('.toggles button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.toggles button').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        mode = btn.dataset.mode;
+        const showFig = mode === 'figures';
+        panels.classList.toggle('show', showFig);
+        canvas.style.display = showFig ? 'none' : 'block';
+        resize();
+        if (!showFig) draw();
+      });
+    });
+
+    window.addEventListener('resize', resize);
+    boot();
+  </script>
+</body>
+</html>

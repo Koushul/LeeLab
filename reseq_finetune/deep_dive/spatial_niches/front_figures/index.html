@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Point 1 — Hypoxia is a front</title>
+<style>
+  :root {
+    --bg:#0f1419; --panel:#1a222d; --text:#eaf0f6; --muted:#9aadc0;
+    --gold:#e2b857; --enter:#c0392b; --exit:#2980b9; --line:#2c3848;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; color:var(--text);
+    font-family:"Iowan Old Style",Palatino,Georgia,serif;
+    background:
+      radial-gradient(900px 480px at 10% 0%, #243b4a 0%, transparent 55%),
+      radial-gradient(700px 420px at 100% 0%, #3a2430 0%, transparent 50%),
+      var(--bg);
+    line-height:1.55;
+  }
+  header{
+    min-height:88vh; display:grid; align-content:end; padding:3rem 6vw 2.5rem;
+    background:
+      linear-gradient(180deg, transparent 20%, rgba(15,20,25,.94) 78%),
+      url('point1_hero_board.png') center/cover no-repeat;
+  }
+  .brand{font-family:"Avenir Next","Segoe UI",sans-serif; letter-spacing:.16em; text-transform:uppercase; font-size:.72rem; color:var(--gold); margin-bottom:.6rem}
+  h1{font-size:clamp(2rem,4.6vw,3.3rem); max-width:16ch; line-height:1.05; margin:0 0 .8rem}
+  .lede{max-width:38rem; color:var(--muted); font-size:1.08rem}
+  main{max-width:1100px; margin:0 auto; padding:2rem 6vw 4rem}
+  section{margin:2.8rem 0}
+  h2{font-size:1.6rem; margin:0 0 .5rem}
+  p,li{color:var(--muted)}
+  .claim{background:var(--panel); border-left:3px solid var(--gold); padding:1rem 1.15rem; margin:1rem 0}
+  figure{margin:1.1rem 0; background:var(--panel); border:1px solid var(--line); padding:.5rem}
+  figure img{width:100%; display:block}
+  figcaption{font-size:.84rem; color:var(--muted); padding:.4rem .2rem 0}
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem}
+  footer{padding:2rem 6vw; border-top:1px solid var(--line); color:var(--muted); font-size:.85rem}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">MC38 · Point 1 · Spatial architecture</div>
+  <h1>Hypoxia is a front, not an island</h1>
+  <p class="lede">Velocity-defined entering and exiting tumor cells are spatial neighbors — a contiguous continuum, strongest between entering-deep and exiting states.</p>
+</header>
+<main>
+  <section>
+    <h2>Hero summary</h2>
+    <div class="claim">
+      Neighbor enrichment: <strong>enter-deep → exit</strong> is <strong>2.85×</strong> in E14S and <strong>1.17×</strong> in E15S (both perm p≈0.002).
+      Normoxic → exit is not enriched. The continuum is ordered: exit ↔ persistent ↔ enter ↔ enter-deep.
+    </div>
+    <figure>
+      <img src="point1_hero_board.png" alt="Hero board for hypoxia fronts"/>
+      <figcaption>Board: adjacency enrichments, kNN contact rates, and deep↔exit bridge maps for both faces of the experiment.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Bridge maps</h2>
+    <p>Yellow lines connect entering cells to nearby exiting neighbors. Persistent cells (purple) sit along the same continuum.</p>
+    <div class="grid">
+      <figure>
+        <img src="E14S_front_bridges.png" alt="E14S front bridges"/>
+        <figcaption>E14S — immune-hot face; sparse tumor but dramatic deep↔exit adjacency.</figcaption>
+      </figure>
+      <figure>
+        <img src="E15S_front_bridges.png" alt="E15S front bridges"/>
+        <figcaption>E15S — tumor/stroma core; same front geometry at tissue scale.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Zoomed fronts</h2>
+    <div class="grid">
+      <figure>
+        <img src="E14S_front_zooms.png" alt="E14S zooms"/>
+        <figcaption>E14S hotspots where enter and exit physically abut.</figcaption>
+      </figure>
+      <figure>
+        <img src="E15S_front_zooms.png" alt="E15S zooms"/>
+        <figcaption>E15S hotspots with enter / enter-deep / exit / persistent intermixed along fronts.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Front ribbons</h2>
+    <p>Local neighborhood mixtures: high enter×exit co-presence marks front ribbons; polarity shows exit-dominated vs enter-dominated sides.</p>
+    <div class="grid">
+      <figure>
+        <img src="E14S_front_ribbons.png" alt="E14S ribbons"/>
+        <figcaption>E14S local front score, polarity, and persistent density.</figcaption>
+      </figure>
+      <figure>
+        <img src="E15S_front_ribbons.png" alt="E15S ribbons"/>
+        <figcaption>E15S local front score, polarity, and persistent density.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Quantification</h2>
+    <figure>
+      <img src="front_enrichment_bars.png" alt="Enrichment bars"/>
+      <figcaption>Permutation-tested neighbor enrichment for key dynamics pairs (★ p&lt;0.05).</figcaption>
+    </figure>
+    <figure>
+      <img src="point1_knn_contact_both.png" alt="kNN contact"/>
+      <figcaption>Fraction of enter-deep cells with an exiting cell in their 30-NN, vs label-shuffle nulls, plus bridge maps.</figcaption>
+    </figure>
+    <div class="grid">
+      <figure>
+        <img src="E14S_island_vs_front.png" alt="E14S island vs front"/>
+        <figcaption>E14S conceptual contrast: islands vs front, with contact statistic.</figcaption>
+      </figure>
+      <figure>
+        <img src="E15S_island_vs_front.png" alt="E15S island vs front"/>
+        <figcaption>E15S conceptual contrast: islands vs front, with contact statistic.</figcaption>
+      </figure>
+    </div>
+    <div class="grid">
+      <figure>
+        <img src="E14S_dist_to_exit.png" alt="E14S distance to exit"/>
+        <figcaption>E14S distance-to-exit distributions by dynamics state.</figcaption>
+      </figure>
+      <figure>
+        <img src="E15S_dist_to_exit.png" alt="E15S distance to exit"/>
+        <figcaption>E15S distance-to-exit distributions by dynamics state.</figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+<footer>
+  Figures in <code>reseq_finetune/deep_dive/spatial_niches/front_figures/</code>
+</footer>
+</body>
+</html>

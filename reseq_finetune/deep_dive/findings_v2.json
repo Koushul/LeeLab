@@ -1,0 +1,1047 @@
+[
+  {
+    "id": "within_sample_isr_oxphos",
+    "title": "ISR\u2191 entry / OXPHOS\u2191 exit replicates in BOTH E14S and E15S",
+    "detail": {
+      "E14S": {
+        "ISR": {
+          "exit_mean": -0.9845174698919592,
+          "enter_mean": -1.0320077294349002,
+          "p": 0.393372830342554,
+          "n_exit": 40,
+          "n_enter": 33
+        },
+        "OXPHOS": {
+          "exit_mean": 1.1071314936061547,
+          "enter_mean": -0.9751810876107225,
+          "p": 1.7835194361397515e-10,
+          "n_exit": 40,
+          "n_enter": 33
+        },
+        "RIBO": {
+          "exit_mean": 1.125211812314594,
+          "enter_mean": -1.1915791555235398,
+          "p": 6.900545511345593e-11,
+          "n_exit": 40,
+          "n_enter": 33
+        },
+        "IEG": {
+          "exit_mean": -1.3124496366302751,
+          "enter_mean": -0.8971377817203703,
+          "p": 0.05871859285374287,
+          "n_exit": 40,
+          "n_enter": 33
+        },
+        "LIPID": {
+          "exit_mean": -0.28549592365790233,
+          "enter_mean": 0.9389110765983119,
+          "p": 7.07877251635587e-05,
+          "n_exit": 40,
+          "n_enter": 33
+        },
+        "AA_TRANSPORT": {
+          "exit_mean": -0.6849236551793392,
+          "enter_mean": 0.22060197104488793,
+          "p": 0.0009820971780673796,
+          "n_exit": 40,
+          "n_enter": 33
+        },
+        "GLYCOLYSIS": {
+          "exit_mean": 0.6780721325884993,
+          "enter_mean": -0.983751030164422,
+          "p": 5.727524485516581e-09,
+          "n_exit": 40,
+          "n_enter": 33
+        },
+        "HYPOXIA_CANON": {
+          "exit_mean": 0.2870147791007699,
+          "enter_mean": -0.39711635590965627,
+          "p": 0.0007086810447508406,
+          "n_exit": 40,
+          "n_enter": 33
+        },
+        "PROLIF": {
+          "exit_mean": 0.47574076102808993,
+          "enter_mean": 0.4883307089704187,
+          "p": 0.8853563166009136,
+          "n_exit": 40,
+          "n_enter": 33
+        },
+        "EMT": {
+          "exit_mean": 0.4336003575027344,
+          "enter_mean": -0.3412372741013252,
+          "p": 0.0014391374608696303,
+          "n_exit": 40,
+          "n_enter": 33
+        }
+      },
+      "E15S": {
+        "ISR": {
+          "exit_mean": -0.4310648697482488,
+          "enter_mean": 0.11179483266082876,
+          "p": 1.6287096255895056e-29,
+          "n_exit": 459,
+          "n_enter": 569
+        },
+        "OXPHOS": {
+          "exit_mean": 1.4391143572365188,
+          "enter_mean": 0.1936776504781953,
+          "p": 5.1213974031120917e-76,
+          "n_exit": 459,
+          "n_enter": 569
+        },
+        "RIBO": {
+          "exit_mean": 1.0801246198051984,
+          "enter_mean": 0.04930705345244317,
+          "p": 9.43559388699156e-68,
+          "n_exit": 459,
+          "n_enter": 569
+        },
+        "IEG": {
+          "exit_mean": -0.6874307228113148,
+          "enter_mean": 0.23320083406249661,
+          "p": 7.107921638369461e-50,
+          "n_exit": 459,
+          "n_enter": 569
+        },
+        "LIPID": {
+          "exit_mean": 0.6923634581827193,
+          "enter_mean": 1.106502816843287,
+          "p": 8.417282048480613e-13,
+          "n_exit": 459,
+          "n_enter": 569
+        },
+        "AA_TRANSPORT": {
+          "exit_mean": 0.5118193221412449,
+          "enter_mean": 1.176269934764024,
+          "p": 2.178601720262393e-30,
+          "n_exit": 459,
+          "n_enter": 569
+        },
+        "GLYCOLYSIS": {
+          "exit_mean": 0.6547810350638853,
+          "enter_mean": -0.175737363316252,
+          "p": 1.7898573163522347e-58,
+          "n_exit": 459,
+          "n_enter": 569
+        },
+        "HYPOXIA_CANON": {
+          "exit_mean": 0.48495758420190266,
+          "enter_mean": 0.12943150096565934,
+          "p": 3.636310473834511e-15,
+          "n_exit": 459,
+          "n_enter": 569
+        },
+        "PROLIF": {
+          "exit_mean": 0.9239614981322041,
+          "enter_mean": 0.9305568049571403,
+          "p": 0.7398327276697824,
+          "n_exit": 459,
+          "n_enter": 569
+        },
+        "EMT": {
+          "exit_mean": 0.7337324025608043,
+          "enter_mean": 0.4761192529262945,
+          "p": 1.835408420079384e-06,
+          "n_exit": 459,
+          "n_enter": 569
+        }
+      }
+    },
+    "novelty_score": 6
+  },
+  {
+    "id": "matched_asymmetry",
+    "title": "Asymmetry survives hypoxia-score \u00d7 library-depth matching",
+    "detail": {
+      "ISR": {
+        "exit": -0.5444380142236868,
+        "enter": 0.1282350210257826,
+        "p": 5.214464682246259e-27,
+        "n": 602
+      },
+      "OXPHOS": {
+        "exit": 1.2520024780740477,
+        "enter": 0.566982138966084,
+        "p": 5.891970497674163e-17,
+        "n": 602
+      },
+      "RIBO": {
+        "exit": 0.9780022816720157,
+        "enter": 0.3992618497098996,
+        "p": 3.579117250054991e-16,
+        "n": 602
+      },
+      "IEG": {
+        "exit": -0.7758757767141509,
+        "enter": 0.126711980633955,
+        "p": 2.8053108523761955e-34,
+        "n": 602
+      },
+      "LIPID": {
+        "exit": 0.5067311654986613,
+        "enter": 0.990394728455863,
+        "p": 1.4800225797698983e-10,
+        "n": 602
+      },
+      "AA_TRANSPORT": {
+        "exit": 0.3094185682027938,
+        "enter": 1.1049107958235167,
+        "p": 4.230388710739334e-22,
+        "n": 602
+      }
+    },
+    "novelty_score": 9
+  },
+  {
+    "id": "persistent_adaptation",
+    "title": "Persistent-hypoxia-specific program (\u2260 entry or exit)",
+    "detail": {
+      "up": [
+        "Aldh1l2",
+        "Atf4",
+        "Bnip3",
+        "Cdkn1a",
+        "Egln1",
+        "Ero1a",
+        "Hilpda",
+        "Hmox1"
+      ],
+      "down": [],
+      "n_up": 8,
+      "n_down": 0
+    },
+    "novelty_score": 8
+  },
+  {
+    "id": "spatial_niche_asymmetry",
+    "title": "Entering vs exiting tumor cells sit in different cellular niches",
+    "detail": {
+      "E14S": {
+        "top10": [
+          [
+            "NK",
+            {
+              "enter_mean": 0.05454545454545455,
+              "exit_mean": 0.036,
+              "p": 0.0660936215566339,
+              "delta_enter_minus_exit": 0.018545454545454552
+            }
+          ],
+          [
+            "Il1b+ TAM",
+            {
+              "enter_mean": 0.15515151515151518,
+              "exit_mean": 0.133,
+              "p": 0.1916541346673719,
+              "delta_enter_minus_exit": 0.022151515151515172
+            }
+          ],
+          [
+            "C1qc+ TAM",
+            {
+              "enter_mean": 0.07878787878787881,
+              "exit_mean": 0.097,
+              "p": 0.19224704150095462,
+              "delta_enter_minus_exit": -0.018212121212121193
+            }
+          ],
+          [
+            "B",
+            {
+              "enter_mean": 0.007272727272727273,
+              "exit_mean": 0.001,
+              "p": 0.025199073068037727,
+              "delta_enter_minus_exit": 0.006272727272727273
+            }
+          ],
+          [
+            "entering_deep_hypoxia",
+            {
+              "enter_mean": 0.0048484848484848485,
+              "exit_mean": 0.011000000000000001,
+              "p": 0.06212564468757153,
+              "delta_enter_minus_exit": -0.006151515151515153
+            }
+          ],
+          [
+            "Resident Macrophage",
+            {
+              "enter_mean": 0.12242424242424242,
+              "exit_mean": 0.13599999999999998,
+              "p": 0.3141813345169364,
+              "delta_enter_minus_exit": -0.01357575757575756
+            }
+          ],
+          [
+            "cDC",
+            {
+              "enter_mean": 0.02787878787878788,
+              "exit_mean": 0.038,
+              "p": 0.4569581051826389,
+              "delta_enter_minus_exit": -0.010121212121212118
+            }
+          ],
+          [
+            "mDC",
+            {
+              "enter_mean": 0.04363636363636364,
+              "exit_mean": 0.034,
+              "p": 0.4621437655494265,
+              "delta_enter_minus_exit": 0.009636363636363637
+            }
+          ],
+          [
+            "entering_hypoxia",
+            {
+              "enter_mean": 0.01696969696969697,
+              "exit_mean": 0.024,
+              "p": 0.44452278386823496,
+              "delta_enter_minus_exit": -0.007030303030303029
+            }
+          ],
+          [
+            "Hypoxic Tumor",
+            {
+              "enter_mean": 0.02303030303030303,
+              "exit_mean": 0.018000000000000002,
+              "p": 0.32331324365445757,
+              "delta_enter_minus_exit": 0.005030303030303027
+            }
+          ]
+        ],
+        "n_enter": 33,
+        "n_exit": 40
+      },
+      "E15S": {
+        "top10": [
+          [
+            "Monocyte",
+            {
+              "enter_mean": 0.08355871886120997,
+              "exit_mean": 0.0732142857142857,
+              "p": 0.0014042349115213943,
+              "delta_enter_minus_exit": 0.010344433146924265
+            }
+          ],
+          [
+            "Spp1+ TAM",
+            {
+              "enter_mean": 0.049964412811387894,
+              "exit_mean": 0.05687500000000001,
+              "p": 0.006260574797222616,
+              "delta_enter_minus_exit": -0.006910587188612115
+            }
+          ],
+          [
+            "C1qc+ TAM",
+            {
+              "enter_mean": 0.11501779359430606,
+              "exit_mean": 0.12196428571428572,
+              "p": 0.15247379202578734,
+              "delta_enter_minus_exit": -0.006946492119979664
+            }
+          ],
+          [
+            "Il1b+ TAM",
+            {
+              "enter_mean": 0.04170818505338078,
+              "exit_mean": 0.044642857142857144,
+              "p": 0.2548389003369622,
+              "delta_enter_minus_exit": -0.002934672089476363
+            }
+          ],
+          [
+            "Neutrophil",
+            {
+              "enter_mean": 0.15352313167259787,
+              "exit_mean": 0.14875,
+              "p": 0.45153785880833475,
+              "delta_enter_minus_exit": 0.00477313167259788
+            }
+          ],
+          [
+            "persistent_hypoxia",
+            {
+              "enter_mean": 0.030960854092526687,
+              "exit_mean": 0.033125,
+              "p": 0.3002281955692201,
+              "delta_enter_minus_exit": -0.0021641459074733145
+            }
+          ],
+          [
+            "B",
+            {
+              "enter_mean": 0.005124555160142348,
+              "exit_mean": 0.004107142857142857,
+              "p": 0.19263427067175432,
+              "delta_enter_minus_exit": 0.0010174123029994915
+            }
+          ],
+          [
+            "CAF",
+            {
+              "enter_mean": 0.046049822064056944,
+              "exit_mean": 0.047678571428571424,
+              "p": 0.5881036973795347,
+              "delta_enter_minus_exit": -0.0016287493645144799
+            }
+          ],
+          [
+            "CD8 Terminally Exhausted",
+            {
+              "enter_mean": 0.0004982206405693951,
+              "exit_mean": 0.00017857142857142857,
+              "p": 0.17983683123185001,
+              "delta_enter_minus_exit": 0.0003196492119979666
+            }
+          ],
+          [
+            "Regulatory CD8 T",
+            {
+              "enter_mean": 0.002277580071174377,
+              "exit_mean": 0.0017857142857142859,
+              "p": 0.35563367776606336,
+              "delta_enter_minus_exit": 0.0004918657854600912
+            }
+          ]
+        ],
+        "n_enter": 562,
+        "n_exit": 448
+      }
+    },
+    "novelty_score": 7
+  },
+  {
+    "id": "distance_to_niche",
+    "title": "Spatial distance of enter/exit/persist tumor cells to key niches",
+    "detail": {
+      "E14S": {
+        "Spp1_TAM": {
+          "enter_med": 0.831264278626787,
+          "exit_med": 0.9608591773582085,
+          "persist_med": 0.9524414293806795,
+          "p_enter_vs_exit": 0.27009845323602566,
+          "ratio_enter_exit": 0.8651260228499555
+        },
+        "C1qc_TAM": {
+          "enter_med": 0.5947955139359904,
+          "exit_med": 0.5320802522746759,
+          "persist_med": 0.4494650300596154,
+          "p_enter_vs_exit": 0.8723180533508602,
+          "ratio_enter_exit": 1.1178680497785867
+        },
+        "CAF": {
+          "enter_med": 2.0938130364487177,
+          "exit_med": 1.9909302476077964,
+          "persist_med": 1.9739082996981463,
+          "p_enter_vs_exit": 0.6297034278550478,
+          "ratio_enter_exit": 1.0516757374923307
+        },
+        "CD8": {
+          "enter_med": 0.8900580859489914,
+          "exit_med": 1.0450575970199156,
+          "persist_med": 1.1277342700707707,
+          "p_enter_vs_exit": 0.6297034278550478,
+          "ratio_enter_exit": 0.8516832837607031
+        },
+        "Neutrophil": {
+          "enter_med": 0.4431522510228055,
+          "exit_med": 0.43207243122249084,
+          "persist_med": 0.4853978412295803,
+          "p_enter_vs_exit": 0.9690552495300293,
+          "ratio_enter_exit": 1.0256434315167153
+        }
+      },
+      "E15S": {
+        "Spp1_TAM": {
+          "enter_med": 0.5528758356303705,
+          "exit_med": 0.43481095443182205,
+          "persist_med": 0.41906509226202904,
+          "p_enter_vs_exit": 0.0037469616239249504,
+          "ratio_enter_exit": 1.2715315242064833
+        },
+        "C1qc_TAM": {
+          "enter_med": 0.29728181247222396,
+          "exit_med": 0.2713469746234814,
+          "persist_med": 0.2595952971656978,
+          "p_enter_vs_exit": 0.04233436545987323,
+          "ratio_enter_exit": 1.0955781352813294
+        },
+        "CAF": {
+          "enter_med": 0.2203597042387184,
+          "exit_med": 0.20789543238694908,
+          "persist_med": 0.22186950859073992,
+          "p_enter_vs_exit": 0.09787481018889857,
+          "ratio_enter_exit": 1.059954524775561
+        },
+        "CD8": {
+          "enter_med": 2.038805125985581,
+          "exit_med": 1.926792331631666,
+          "persist_med": 2.0628732988069975,
+          "p_enter_vs_exit": 0.31932821303409564,
+          "ratio_enter_exit": 1.0581343368016518
+        },
+        "Neutrophil": {
+          "enter_med": 0.25116599657481675,
+          "exit_med": 0.2452740847506891,
+          "persist_med": 0.22724427063633537,
+          "p_enter_vs_exit": 0.3063173769257358,
+          "ratio_enter_exit": 1.0240217462440704
+        }
+      }
+    },
+    "novelty_score": 7
+  },
+  {
+    "id": "velocity_residual_v2",
+    "title": "Genes tracking hypoxia velocity independent of hypoxia score",
+    "detail": {
+      "pos": [
+        {
+          "gene": "Pakap-1",
+          "r_vres": 0.3818331525968309,
+          "padj": 1.8275044172533216e-70
+        },
+        {
+          "gene": "Slc38a2",
+          "r_vres": 0.35343984443997545,
+          "padj": 1.0617765855195161e-59
+        },
+        {
+          "gene": "Ppp1r15a",
+          "r_vres": 0.3405568676568545,
+          "padj": 3.2374508023783023e-55
+        },
+        {
+          "gene": "Gm4316",
+          "r_vres": 0.3341213964777754,
+          "padj": 4.284954839703268e-53
+        },
+        {
+          "gene": "Neat1",
+          "r_vres": 0.3244044900615143,
+          "padj": 6.711452044788607e-50
+        },
+        {
+          "gene": "Abl2",
+          "r_vres": 0.3225878212408946,
+          "padj": 2.2377896827085236e-49
+        },
+        {
+          "gene": "Chka",
+          "r_vres": 0.3201510939176746,
+          "padj": 1.2136750769767487e-48
+        },
+        {
+          "gene": "Rbm39",
+          "r_vres": 0.3169471696150567,
+          "padj": 9.363485499406478e-48
+        },
+        {
+          "gene": "Ankrd11",
+          "r_vres": 0.3107697423350589,
+          "padj": 6.779484308035919e-46
+        },
+        {
+          "gene": "Ier3",
+          "r_vres": 0.3045830575837698,
+          "padj": 4.1661883300576187e-44
+        },
+        {
+          "gene": "Clk1",
+          "r_vres": 0.3044645378353369,
+          "padj": 4.293143581405692e-44
+        },
+        {
+          "gene": "Jun",
+          "r_vres": 0.3028178227497925,
+          "padj": 1.3065339589272613e-43
+        },
+        {
+          "gene": "mt-Co1",
+          "r_vres": 0.30152525317601947,
+          "padj": 3.0869137922123756e-43
+        },
+        {
+          "gene": "mt-Nd5",
+          "r_vres": 0.3000443990260238,
+          "padj": 8.297098263606862e-43
+        },
+        {
+          "gene": "Ccnl1",
+          "r_vres": 0.2969532178767924,
+          "padj": 5.976364292986912e-42
+        },
+        {
+          "gene": "Rsbn1",
+          "r_vres": 0.29607490590040586,
+          "padj": 1.0149292603786312e-41
+        },
+        {
+          "gene": "Wsb1",
+          "r_vres": 0.29455061801031307,
+          "padj": 2.6872518565018744e-41
+        },
+        {
+          "gene": "Tra2a",
+          "r_vres": 0.2938289805107839,
+          "padj": 4.2509963756377664e-41
+        },
+        {
+          "gene": "Gm49774",
+          "r_vres": 0.29353269030655305,
+          "padj": 5.036757433785992e-41
+        },
+        {
+          "gene": "Nufip2",
+          "r_vres": 0.2918231831013918,
+          "padj": 1.464731830951474e-40
+        },
+        {
+          "gene": "Ccn1",
+          "r_vres": 0.2882449678672455,
+          "padj": 1.4816395470631613e-39
+        },
+        {
+          "gene": "Lars2",
+          "r_vres": 0.28305966404767513,
+          "padj": 3.3455036795534854e-38
+        },
+        {
+          "gene": "Flnb",
+          "r_vres": 0.2824880450388819,
+          "padj": 4.6682983190182954e-38
+        },
+        {
+          "gene": "Gm47283",
+          "r_vres": 0.2799164665516498,
+          "padj": 2.0678755149165423e-37
+        },
+        {
+          "gene": "Camk1d",
+          "r_vres": 0.2793383417119448,
+          "padj": 2.949983291377845e-37
+        }
+      ],
+      "neg": [
+        {
+          "gene": "Rpl7",
+          "r_vres": -0.2846512753459782,
+          "padj": 1.3117923905410945e-38
+        },
+        {
+          "gene": "Atp5o",
+          "r_vres": -0.2857262532840269,
+          "padj": 6.620021867621769e-39
+        },
+        {
+          "gene": "Ndufv2",
+          "r_vres": -0.2860678659580039,
+          "padj": 5.406541441005109e-39
+        },
+        {
+          "gene": "Rpl15",
+          "r_vres": -0.2862965385279236,
+          "padj": 4.758042173981985e-39
+        },
+        {
+          "gene": "Ndufa8",
+          "r_vres": -0.287580157634255,
+          "padj": 2.0843776064639347e-39
+        },
+        {
+          "gene": "Prdx2",
+          "r_vres": -0.28760382072938695,
+          "padj": 2.0843776064639347e-39
+        },
+        {
+          "gene": "Atp5c1",
+          "r_vres": -0.287765605004854,
+          "padj": 1.9352790336753805e-39
+        },
+        {
+          "gene": "Rps4x",
+          "r_vres": -0.288061146404354,
+          "padj": 1.6312430497072222e-39
+        },
+        {
+          "gene": "Ppib",
+          "r_vres": -0.28850623003301623,
+          "padj": 1.2789310754043918e-39
+        },
+        {
+          "gene": "Ndufb5",
+          "r_vres": -0.28887906912705685,
+          "padj": 1.0254073849573188e-39
+        },
+        {
+          "gene": "Ndufb9",
+          "r_vres": -0.292407219923889,
+          "padj": 1.01637187118408e-40
+        },
+        {
+          "gene": "Tspo",
+          "r_vres": -0.2933541035374586,
+          "padj": 5.513734921773773e-41
+        },
+        {
+          "gene": "Cox6c",
+          "r_vres": -0.2949668519010378,
+          "padj": 2.09242813237952e-41
+        },
+        {
+          "gene": "Slc25a5",
+          "r_vres": -0.2961970117334506,
+          "padj": 9.679108932724909e-42
+        },
+        {
+          "gene": "Eif3f",
+          "r_vres": -0.2973285823050841,
+          "padj": 4.7988903301144017e-42
+        },
+        {
+          "gene": "Ppp1ca",
+          "r_vres": -0.29798222094366505,
+          "padj": 3.1832020034505694e-42
+        },
+        {
+          "gene": "Rps9",
+          "r_vres": -0.2984888844461453,
+          "padj": 2.3391850846855188e-42
+        },
+        {
+          "gene": "Itm2b",
+          "r_vres": -0.3047155515951494,
+          "padj": 4.015310218352924e-44
+        },
+        {
+          "gene": "Atp5pb",
+          "r_vres": -0.3052091673868011,
+          "padj": 3.003974870467276e-44
+        },
+        {
+          "gene": "Ppia",
+          "r_vres": -0.30720989783653724,
+          "padj": 7.676943113008848e-45
+        },
+        {
+          "gene": "Sparc",
+          "r_vres": -0.31063403952316754,
+          "padj": 6.947734748670722e-46
+        },
+        {
+          "gene": "Timp1",
+          "r_vres": -0.31218193175227804,
+          "padj": 2.6236008806866046e-46
+        },
+        {
+          "gene": "Cd63",
+          "r_vres": -0.3123016957927066,
+          "padj": 2.6221638763237094e-46
+        },
+        {
+          "gene": "Rps3a1",
+          "r_vres": -0.3194939500211069,
+          "padj": 1.5479871410677705e-48
+        },
+        {
+          "gene": "Spcs1",
+          "r_vres": -0.31991485448597234,
+          "padj": 1.2688057984373006e-48
+        }
+      ]
+    },
+    "novelty_score": 8
+  },
+  {
+    "id": "same_score_bifurcation",
+    "title": "At matched hypoxia intensity, +velocity vs \u2212velocity cells already diverge (ISR vs OXPHOS)",
+    "detail": {
+      "ISR": {
+        "high_v_enterish": 0.13544742119899167,
+        "low_v_exitish": -0.5366116273513994,
+        "p": 4.278575201109701e-28,
+        "n_hi": 316,
+        "n_lo": 316
+      },
+      "OXPHOS": {
+        "high_v_enterish": 0.4592450849215483,
+        "low_v_exitish": 1.443340434393079,
+        "p": 4.138417649120396e-33,
+        "n_hi": 316,
+        "n_lo": 316
+      },
+      "RIBO": {
+        "high_v_enterish": 0.31117160286051987,
+        "low_v_exitish": 1.108472001560172,
+        "p": 6.360495974802922e-32,
+        "n_hi": 316,
+        "n_lo": 316
+      },
+      "IEG": {
+        "high_v_enterish": 0.1495423337711041,
+        "low_v_exitish": -0.7989030533097944,
+        "p": 1.1383704492693127e-37,
+        "n_hi": 316,
+        "n_lo": 316
+      },
+      "LIPID": {
+        "high_v_enterish": 1.1106672159308764,
+        "low_v_exitish": 0.5660512295752352,
+        "p": 8.824314314167778e-14,
+        "n_hi": 316,
+        "n_lo": 316
+      },
+      "AA_TRANSPORT": {
+        "high_v_enterish": 1.1773773652230919,
+        "low_v_exitish": 0.4065309282749163,
+        "p": 8.012822410802629e-23,
+        "n_hi": 316,
+        "n_lo": 316
+      },
+      "GLYCOLYSIS": {
+        "high_v_enterish": 0.11883002753315552,
+        "low_v_exitish": 0.5951160778627445,
+        "p": 5.720218104661843e-26,
+        "n_hi": 316,
+        "n_lo": 316
+      },
+      "PROLIF": {
+        "high_v_enterish": 1.029604206950469,
+        "low_v_exitish": 0.943579310551591,
+        "p": 0.2370822467539021,
+        "n_hi": 316,
+        "n_lo": 316
+      }
+    },
+    "novelty_score": 9
+  },
+  {
+    "id": "tam_state_coupling",
+    "title": "TAM gene programs stratified by nearest tumor hypoxia-dynamics state",
+    "detail": {
+      "E14S": {
+        "Spp1": {
+          "means": {
+            "entering_deep_hypoxia": 1.2436087131500244,
+            "entering_hypoxia": 1.2768679857254028,
+            "exiting_hypoxia": 1.3011723756790161,
+            "normoxic_stable": 1.5492531061172485,
+            "persistent_hypoxia": 1.3939436674118042
+          },
+          "p_enter_vs_exit": 0.7025048698919469,
+          "n_enter": 610,
+          "n_exit": 658
+        },
+        "Trem2": {
+          "means": {
+            "entering_deep_hypoxia": 0.5254994034767151,
+            "entering_hypoxia": 0.5229005813598633,
+            "exiting_hypoxia": 0.5704946517944336,
+            "normoxic_stable": 0.6070206761360168,
+            "persistent_hypoxia": 0.6373347043991089
+          },
+          "p_enter_vs_exit": 0.3031708539550091,
+          "n_enter": 610,
+          "n_exit": 658
+        },
+        "C1qc": {
+          "means": {
+            "entering_deep_hypoxia": 1.4713335037231445,
+            "entering_hypoxia": 1.257067322731018,
+            "exiting_hypoxia": 1.2664625644683838,
+            "normoxic_stable": 1.4105199575424194,
+            "persistent_hypoxia": 1.3580678701400757
+          },
+          "p_enter_vs_exit": 0.8451502519578642,
+          "n_enter": 610,
+          "n_exit": 658
+        },
+        "Arg1": {
+          "means": {
+            "entering_deep_hypoxia": 1.3473398685455322,
+            "entering_hypoxia": 1.1324819326400757,
+            "exiting_hypoxia": 1.26393461227417,
+            "normoxic_stable": 1.3327997922897339,
+            "persistent_hypoxia": 1.3538548946380615
+          },
+          "p_enter_vs_exit": 0.21986114587608818,
+          "n_enter": 610,
+          "n_exit": 658
+        },
+        "Nos2": {
+          "means": {
+            "entering_deep_hypoxia": 0.15409816801548004,
+            "entering_hypoxia": 0.0965273380279541,
+            "exiting_hypoxia": 0.11890698969364166,
+            "normoxic_stable": 0.08795535564422607,
+            "persistent_hypoxia": 0.11189144849777222
+          },
+          "p_enter_vs_exit": 0.3325462725609425,
+          "n_enter": 610,
+          "n_exit": 658
+        },
+        "Il1b": {
+          "means": {
+            "entering_deep_hypoxia": 1.4059879779815674,
+            "entering_hypoxia": 1.579766869544983,
+            "exiting_hypoxia": 1.5653733015060425,
+            "normoxic_stable": 1.4637311697006226,
+            "persistent_hypoxia": 1.5703567266464233
+          },
+          "p_enter_vs_exit": 0.9331642277843587,
+          "n_enter": 610,
+          "n_exit": 658
+        },
+        "Tnf": {
+          "means": {
+            "entering_deep_hypoxia": 0.43318966031074524,
+            "entering_hypoxia": 0.6437667608261108,
+            "exiting_hypoxia": 0.6612555980682373,
+            "normoxic_stable": 0.6593480110168457,
+            "persistent_hypoxia": 0.6596931219100952
+          },
+          "p_enter_vs_exit": 0.3565809169952586,
+          "n_enter": 610,
+          "n_exit": 658
+        },
+        "Cxcl9": {
+          "means": {
+            "entering_deep_hypoxia": 0.08920842409133911,
+            "entering_hypoxia": 0.062499888241291046,
+            "exiting_hypoxia": 0.043093640357255936,
+            "normoxic_stable": 0.023529764264822006,
+            "persistent_hypoxia": 0.039395373314619064
+          },
+          "p_enter_vs_exit": 0.5573873314795725,
+          "n_enter": 610,
+          "n_exit": 658
+        },
+        "Cxcl10": {
+          "means": {
+            "entering_deep_hypoxia": 1.7621595859527588,
+            "entering_hypoxia": 1.8184665441513062,
+            "exiting_hypoxia": 1.8204418420791626,
+            "normoxic_stable": 1.636407494544983,
+            "persistent_hypoxia": 1.685269832611084
+          },
+          "p_enter_vs_exit": 0.8774784941510179,
+          "n_enter": 610,
+          "n_exit": 658
+        }
+      },
+      "E15S": {
+        "Spp1": {
+          "means": {
+            "entering_deep_hypoxia": 1.728286623954773,
+            "entering_hypoxia": 1.8696223497390747,
+            "exiting_hypoxia": 1.8170433044433594,
+            "normoxic_stable": 2.008314609527588,
+            "persistent_hypoxia": 1.925022840499878
+          },
+          "p_enter_vs_exit": 0.9409145633409889,
+          "n_enter": 604,
+          "n_exit": 519
+        },
+        "Trem2": {
+          "means": {
+            "entering_deep_hypoxia": 0.7066752314567566,
+            "entering_hypoxia": 0.7383935451507568,
+            "exiting_hypoxia": 0.8006048202514648,
+            "normoxic_stable": 0.8356418013572693,
+            "persistent_hypoxia": 0.7360494136810303
+          },
+          "p_enter_vs_exit": 0.13216796088169439,
+          "n_enter": 604,
+          "n_exit": 519
+        },
+        "C1qc": {
+          "means": {
+            "entering_deep_hypoxia": 1.2144882678985596,
+            "entering_hypoxia": 1.3791872262954712,
+            "exiting_hypoxia": 1.4360519647598267,
+            "normoxic_stable": 1.3264511823654175,
+            "persistent_hypoxia": 1.422692060470581
+          },
+          "p_enter_vs_exit": 0.16344075322168583,
+          "n_enter": 604,
+          "n_exit": 519
+        },
+        "Arg1": {
+          "means": {
+            "entering_deep_hypoxia": 1.4430530071258545,
+            "entering_hypoxia": 1.7345255613327026,
+            "exiting_hypoxia": 1.7866989374160767,
+            "normoxic_stable": 1.9267613887786865,
+            "persistent_hypoxia": 1.7545733451843262
+          },
+          "p_enter_vs_exit": 0.11890814624899294,
+          "n_enter": 604,
+          "n_exit": 519
+        },
+        "Nos2": {
+          "means": {
+            "entering_deep_hypoxia": 0.17381854355335236,
+            "entering_hypoxia": 0.13690023124217987,
+            "exiting_hypoxia": 0.17739151418209076,
+            "normoxic_stable": 0.15197604894638062,
+            "persistent_hypoxia": 0.13443787395954132
+          },
+          "p_enter_vs_exit": 0.22026269613779825,
+          "n_enter": 604,
+          "n_exit": 519
+        },
+        "Il1b": {
+          "means": {
+            "entering_deep_hypoxia": 1.4628393650054932,
+            "entering_hypoxia": 1.381982445716858,
+            "exiting_hypoxia": 1.347180724143982,
+            "normoxic_stable": 1.3742519617080688,
+            "persistent_hypoxia": 1.3724379539489746
+          },
+          "p_enter_vs_exit": 0.5298651089127129,
+          "n_enter": 604,
+          "n_exit": 519
+        },
+        "Tnf": {
+          "means": {
+            "entering_deep_hypoxia": 0.5471805334091187,
+            "entering_hypoxia": 0.6365347504615784,
+            "exiting_hypoxia": 0.5474386215209961,
+            "normoxic_stable": 0.5607338547706604,
+            "persistent_hypoxia": 0.5741522908210754
+          },
+          "p_enter_vs_exit": 0.29646942976910384,
+          "n_enter": 604,
+          "n_exit": 519
+        },
+        "Cxcl9": {
+          "means": {
+            "entering_deep_hypoxia": 0.04035832732915878,
+            "entering_hypoxia": 0.03934372216463089,
+            "exiting_hypoxia": 0.03530789911746979,
+            "normoxic_stable": 0.042327024042606354,
+            "persistent_hypoxia": 0.02789706364274025
+          },
+          "p_enter_vs_exit": 0.11862232181695691,
+          "n_enter": 604,
+          "n_exit": 519
+        },
+        "Cxcl10": {
+          "means": {
+            "entering_deep_hypoxia": 1.4890360832214355,
+            "entering_hypoxia": 1.617503046989441,
+            "exiting_hypoxia": 1.536062479019165,
+            "normoxic_stable": 1.6356744766235352,
+            "persistent_hypoxia": 1.550196647644043
+          },
+          "p_enter_vs_exit": 0.8063443795428218,
+          "n_enter": 604,
+          "n_exit": 519
+        }
+      }
+    },
+    "novelty_score": 7
+  }
+]

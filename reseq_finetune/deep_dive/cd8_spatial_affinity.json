@@ -1,0 +1,64 @@
+{
+  "E14S": {
+    "C1qc+ TAM": {
+      "mean_frac": 0.09773894035598372,
+      "n_src": 120,
+      "global_freq": 0.09973404255319149,
+      "affinity": 0.9799957654765726
+    },
+    "CAF": {
+      "mean_frac": 0.00020669698222405955,
+      "n_src": 120,
+      "global_freq": 0.001899696048632219,
+      "affinity": 0.10880523416766968
+    },
+    "Neutrophil": {
+      "mean_frac": 0.08821967588334458,
+      "n_src": 120,
+      "global_freq": 0.09403495440729483,
+      "affinity": 0.9381583210332535
+    },
+    "Spp1+ TAM": {
+      "mean_frac": 0.047769860342237354,
+      "n_src": 120,
+      "global_freq": 0.04939209726443769,
+      "affinity": 0.9671559221170333
+    },
+    "Stromal": {
+      "mean_frac": 0.004475704095378541,
+      "n_src": 120,
+      "global_freq": 0.0056990881458966565,
+      "affinity": 0.7853367408020011
+    },
+    "entering_deep_hypoxia": {
+      "mean_frac": 0.003129410469889034,
+      "n_src": 120,
+      "global_freq": 0.003609422492401216,
+      "affinity": 0.867011165765742
+    },
+    "entering_hypoxia": {
+      "mean_frac": 0.00942992022387357,
+      "n_src": 120,
+      "global_freq": 0.015387537993920973,
+      "affinity": 0.6128283559573088
+    },
+    "exiting_hypoxia": {
+      "mean_frac": 0.013062728670899078,
+      "n_src": 120,
+      "global_freq": 0.015387537993920973,
+      "affinity": 0.8489160401841817
+    },
+    "persistent_hypoxia": {
+      "mean_frac": 0.004670179208878219,
+      "n_src": 120,
+      "global_freq": 0.008548632218844984,
+      "affinity": 0.5463071217727613
+    },
+    "reverted_posthypoxic": {
+      "mean_frac": 0.012892125321673062,
+      "n_src": 120,
+      "global_freq": 0.010638297872340425,
+      "affinity": 1.2118596663224592
+    }
+  }
+}

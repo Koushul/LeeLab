@@ -1,0 +1,6 @@
+{
+  "error": {
+    "message": "Insufficient credit in account, please check your plan and billing details. You can add more funds from the billing page at https://platform.parallel.ai/settings?tab=billing and check for pricing details at https://platform.parallel.ai/pricing.",
+    "type": "APIStatusError"
+  }
+}

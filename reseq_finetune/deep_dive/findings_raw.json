@@ -1,0 +1,245 @@
+[
+  {
+    "id": "composition_asymmetry",
+    "title": "E14S vs E15S sample radically different TME/tumor mix",
+    "detail": "Tumor fraction E14S=0.077, E15S=0.249. E14S CD8-exhausted rich; E15S stroma/CAF/tumor rich.",
+    "metrics": {
+      "tumor_frac": {
+        "E14S": 0.07711207711207711,
+        "E15S": 0.2493444055944056
+      },
+      "cd8_exh": {
+        "E14S": 0.02268002268002268,
+        "E15S": 0.0003277972027972028
+      },
+      "spp1": {
+        "E14S": 0.04914004914004914,
+        "E15S": 0.05517919580419581
+      }
+    },
+    "novelty_score": 6
+  },
+  {
+    "id": "exiting_vs_entering_de",
+    "title": "Transcriptional divergence of exiting vs entering hypoxia tumor cells",
+    "detail": "Top genes elevated in exiting (reverting) vs entering hypoxic tumor cells.",
+    "up_exiting": [
+      "Rps3a1",
+      "Eef1a1",
+      "Tpt1",
+      "Rps7",
+      "Rpl7",
+      "Rpl5",
+      "Gapdh",
+      "Ppia",
+      "Rps4x",
+      "Rps9",
+      "Rps3",
+      "Eef1b2",
+      "Rpl30",
+      "Rps8",
+      "Rpl24",
+      "Rpl15",
+      "Rplp0",
+      "Rps15a",
+      "Rpl10",
+      "Rps27a",
+      "Rps10",
+      "Rps6",
+      "Rpl3",
+      "Rpl36a",
+      "Cox4i1",
+      "Rpl23",
+      "Rps13",
+      "Rps2",
+      "Rbm3",
+      "Rack1",
+      "Ldha",
+      "Npm1",
+      "Rps26",
+      "Prdx1",
+      "Fth1",
+      "Slc25a3",
+      "Rpl19",
+      "Psma7",
+      "Rpl8",
+      "Slc25a4"
+    ],
+    "up_entering": [
+      "mt-Nd5",
+      "mt-Co1",
+      "mt-Co2",
+      "Taco1",
+      "Ankrd11",
+      "mt-Nd4",
+      "Gm47283",
+      "mt-Co3",
+      "mt-Nd2",
+      "mt-Atp8",
+      "mt-Cytb",
+      "mt-Atp6",
+      "mt-Nd4l",
+      "Dst",
+      "Gphn",
+      "Lars2",
+      "mt-Nd1",
+      "Cmss1",
+      "Pakap-1",
+      "Slc38a2",
+      "mt-Nd3",
+      "Jun",
+      "Cdk8",
+      "Camk1d",
+      "Ahnak",
+      "Abl2",
+      "Chka",
+      "Rbm39",
+      "Ep400",
+      "Fnbp4",
+      "Nfkb1",
+      "Nufip2",
+      "Taf1d",
+      "Gm4316",
+      "Rere",
+      "Arhgap10",
+      "Spag9",
+      "Neat1",
+      "Jmjd1c",
+      "Rnf213"
+    ],
+    "n_exit": 635,
+    "n_enter": 757,
+    "novelty_score": 8
+  },
+  {
+    "id": "velocity_residual_genes",
+    "title": "Genes tracking hypoxia velocity beyond hypoxia score",
+    "top_pos": [
+      "Pakap-1",
+      "Neat1",
+      "Slc38a2",
+      "Gm4316",
+      "Slc2a1",
+      "Chka",
+      "Ier3",
+      "Abl2",
+      "Ppp1r15a",
+      "Jun",
+      "Rsbn1",
+      "Traf1",
+      "Taco1",
+      "Clk1",
+      "Ccn1",
+      "Tra2a",
+      "Plk2",
+      "Ankrd11",
+      "Nufip2",
+      "Flnb",
+      "Wsb1",
+      "Ep400",
+      "Dst",
+      "Gm47283",
+      "Taf1d"
+    ],
+    "top_neg": [],
+    "novelty_score": 9
+  },
+  {
+    "id": "spp1_affinity_E14S",
+    "title": "Spp1+ TAM spatial affinity to hypoxia dynamic states (E14S)",
+    "ranked": [
+      {
+        "state": "entering_deep_hypoxia",
+        "mean_frac": 0.006666312989842401,
+        "n_src": 260,
+        "global_freq": 0.003609422492401216,
+        "affinity": 1.8469190450709763
+      },
+      {
+        "state": "transitional",
+        "mean_frac": 0.007134812755093322,
+        "n_src": 260,
+        "global_freq": 0.006458966565349544,
+        "affinity": 1.1046367214118689
+      },
+      {
+        "state": "persistent_hypoxia",
+        "mean_frac": 0.008060832979791276,
+        "n_src": 260,
+        "global_freq": 0.008548632218844984,
+        "affinity": 0.9429382187109889
+      },
+      {
+        "state": "reverted_posthypoxic",
+        "mean_frac": 0.009684834721022464,
+        "n_src": 260,
+        "global_freq": 0.010638297872340425,
+        "affinity": 0.9103743782009202
+      },
+      {
+        "state": "reverted_stable",
+        "mean_frac": 0.007013196985659256,
+        "n_src": 260,
+        "global_freq": 0.008548632218844984,
+        "affinity": 0.8203881025330524
+      },
+      {
+        "state": "normoxic_stable",
+        "mean_frac": 0.002707327048038942,
+        "n_src": 260,
+        "global_freq": 0.003799392097264438,
+        "affinity": 0.7125682914958752
+      }
+    ],
+    "novelty_score": 5
+  },
+  {
+    "id": "spp1_affinity_E15S",
+    "title": "Spp1+ TAM spatial affinity to hypoxia dynamic states (E15S)",
+    "ranked": [
+      {
+        "state": "reverted_posthypoxic",
+        "mean_frac": 0.007111824108774789,
+        "n_src": 496,
+        "global_freq": 0.0068263334490339,
+        "affinity": 1.0418218096216034
+      },
+      {
+        "state": "transitional",
+        "mean_frac": 0.03204286270796471,
+        "n_src": 496,
+        "global_freq": 0.031007751937984496,
+        "affinity": 1.0333822890052833
+      },
+      {
+        "state": "reverted_stable",
+        "mean_frac": 0.01337104574662818,
+        "n_src": 496,
+        "global_freq": 0.013884068031933356,
+        "affinity": 0.9630495005372544
+      },
+      {
+        "state": "persistent_hypoxia",
+        "mean_frac": 0.02791519812856405,
+        "n_src": 496,
+        "global_freq": 0.03031354853638783,
+        "affinity": 0.9208818681908286
+      },
+      {
+        "state": "exiting_hypoxia",
+        "mean_frac": 0.04861275968956899,
+        "n_src": 496,
+        "global_freq": 0.05310656022214509,
+        "affinity": 0.9153814250224469
+      },
+      {
+        "state": "normoxic_stable",
+        "mean_frac": 0.027301794709538103,
+        "n_src": 496,
+        "global_freq": 0.030429249103320608,
+        "affinity": 0.8972220681363022
+      }
+    ],
+    "novelty_score": 8
+  }
+]

@@ -1,0 +1,486 @@
+{
+  "E14S": {
+    "exiting_hypoxia": {
+      "n": 81,
+      "obs_self_neighbor_frac": 0.02400777828409407,
+      "null_mean": 0.014795556079001144,
+      "enrichment": 1.6226342918961487,
+      "p_perm": 0.07666666666666666,
+      "radius": 0.7636887953468118
+    },
+    "persistent_hypoxia": {
+      "n": 45,
+      "obs_self_neighbor_frac": 0.008106616601240256,
+      "null_mean": 0.008545391547204507,
+      "enrichment": 0.9486535061390727,
+      "p_perm": 0.47333333333333333,
+      "radius": 0.7636887953468118
+    },
+    "entering_hypoxia": {
+      "n": 81,
+      "obs_self_neighbor_frac": 0.01344083602903964,
+      "null_mean": 0.015361648721972095,
+      "enrichment": 0.874960454918779,
+      "p_perm": 0.5433333333333333,
+      "radius": 0.7636887953468118
+    },
+    "reverted_posthypoxic": {
+      "n": 56,
+      "obs_self_neighbor_frac": 0.041212620513695786,
+      "null_mean": 0.01070042442780537,
+      "enrichment": 3.8514936431035336,
+      "p_perm": 0.0,
+      "radius": 0.7636887953468118
+    },
+    "Spp1+ TAM": {
+      "n": 260,
+      "obs_self_neighbor_frac": 0.07711705582165458,
+      "null_mean": 0.04924113700675088,
+      "enrichment": 1.5661103488526598,
+      "p_perm": 0.0,
+      "radius": 0.7636887953468118
+    },
+    "affinity_persistent_hypoxia": {
+      "Spp1+ TAM": {
+        "mean_frac": 0.043811066582623126,
+        "n_src": 45,
+        "global_freq": 0.04939209726443769,
+        "affinity": 0.887005576237426
+      },
+      "C1qc+ TAM": {
+        "mean_frac": 0.10109390809666628,
+        "n_src": 45,
+        "global_freq": 0.09973404255319149,
+        "affinity": 1.013634908352528
+      },
+      "CAF": {
+        "mean_frac": 0.0025,
+        "n_src": 45,
+        "global_freq": 0.001899696048632219,
+        "affinity": 1.3159993072579648
+      },
+      "Stromal": {
+        "mean_frac": 0.00364741641337386,
+        "n_src": 45,
+        "global_freq": 0.0056990881458966565,
+        "affinity": 0.639999887701353
+      },
+      "CD8 Terminally Exhausted": {
+        "mean_frac": 0.014536039413195641,
+        "n_src": 45,
+        "global_freq": 0.022796352583586626,
+        "affinity": 0.6376475676207088
+      },
+      "Neutrophil": {
+        "mean_frac": 0.09510092243496095,
+        "n_src": 45,
+        "global_freq": 0.09403495440729483,
+        "affinity": 1.0113358593413384
+      },
+      "Il1b+ TAM": {
+        "mean_frac": 0.14025918702183723,
+        "n_src": 45,
+        "global_freq": 0.1614741641337386,
+        "affinity": 0.8686168893065316
+      },
+      "Resident Macrophage": {
+        "mean_frac": 0.13199174994039556,
+        "n_src": 45,
+        "global_freq": 0.128419452887538,
+        "affinity": 1.0278174057334488
+      }
+    },
+    "affinity_exiting_hypoxia": {
+      "Spp1+ TAM": {
+        "mean_frac": 0.030582292130363873,
+        "n_src": 81,
+        "global_freq": 0.04939209726443769,
+        "affinity": 0.6191737789034795
+      },
+      "C1qc+ TAM": {
+        "mean_frac": 0.0695033731733767,
+        "n_src": 81,
+        "global_freq": 0.09973404255319149,
+        "affinity": 0.6968871480309352
+      },
+      "CAF": {
+        "mean_frac": 0.001644736842105263,
+        "n_src": 81,
+        "global_freq": 0.001899696048632219,
+        "affinity": 0.8657890179328714
+      },
+      "Stromal": {
+        "mean_frac": 0.004710179373249461,
+        "n_src": 81,
+        "global_freq": 0.0056990881458966565,
+        "affinity": 0.8264793290065992
+      },
+      "CD8 Terminally Exhausted": {
+        "mean_frac": 0.020404065717636904,
+        "n_src": 81,
+        "global_freq": 0.022796352583586626,
+        "affinity": 0.8950583102171144
+      },
+      "Neutrophil": {
+        "mean_frac": 0.09297849672946508,
+        "n_src": 81,
+        "global_freq": 0.09403495440729483,
+        "affinity": 0.9887652557152402
+      },
+      "Il1b+ TAM": {
+        "mean_frac": 0.13713398094701637,
+        "n_src": 81,
+        "global_freq": 0.1614741641337386,
+        "affinity": 0.849262672040677
+      },
+      "Resident Macrophage": {
+        "mean_frac": 0.13604631776805046,
+        "n_src": 81,
+        "global_freq": 0.128419452887538,
+        "affinity": 1.0593902531869634
+      }
+    },
+    "affinity_entering_hypoxia": {
+      "Spp1+ TAM": {
+        "mean_frac": 0.03137185836242118,
+        "n_src": 81,
+        "global_freq": 0.04939209726443769,
+        "affinity": 0.6351594579857912
+      },
+      "C1qc+ TAM": {
+        "mean_frac": 0.08696789481148302,
+        "n_src": 81,
+        "global_freq": 0.09973404255319149,
+        "affinity": 0.8719980832332357
+      },
+      "CAF": {
+        "mean_frac": 0.001102800153433065,
+        "n_src": 81,
+        "global_freq": 0.001899696048632219,
+        "affinity": 0.5805136951847563
+      },
+      "Stromal": {
+        "mean_frac": 0.003515760734673616,
+        "n_src": 81,
+        "global_freq": 0.0056990881458966565,
+        "affinity": 0.6168987086655704
+      },
+      "CD8 Terminally Exhausted": {
+        "mean_frac": 0.015204572786043298,
+        "n_src": 81,
+        "global_freq": 0.022796352583586626,
+        "affinity": 0.6669738969565111
+      },
+      "Neutrophil": {
+        "mean_frac": 0.1230887679780137,
+        "n_src": 81,
+        "global_freq": 0.09403495440729483,
+        "affinity": 1.3089682176683948
+      },
+      "Il1b+ TAM": {
+        "mean_frac": 0.12856074727480646,
+        "n_src": 81,
+        "global_freq": 0.1614741641337386,
+        "affinity": 0.7961691405453492
+      },
+      "Resident Macrophage": {
+        "mean_frac": 0.12387949514318335,
+        "n_src": 81,
+        "global_freq": 0.128419452887538,
+        "affinity": 0.9646474221239838
+      }
+    },
+    "affinity_reverted_posthypoxic": {
+      "Spp1+ TAM": {
+        "mean_frac": 0.04497334107549161,
+        "n_src": 56,
+        "global_freq": 0.04939209726443769,
+        "affinity": 0.9105371639550778
+      },
+      "C1qc+ TAM": {
+        "mean_frac": 0.09588287039593399,
+        "n_src": 56,
+        "global_freq": 0.09973404255319149,
+        "affinity": 0.9613855708637389
+      },
+      "CAF": {
+        "mean_frac": 0.0,
+        "n_src": 56,
+        "global_freq": 0.001899696048632219,
+        "affinity": 0.0
+      },
+      "Stromal": {
+        "mean_frac": 0.006307248108323377,
+        "n_src": 56,
+        "global_freq": 0.0056990881458966565,
+        "affinity": 1.1067116072161451
+      },
+      "CD8 Terminally Exhausted": {
+        "mean_frac": 0.02865359948693282,
+        "n_src": 56,
+        "global_freq": 0.022796352583586626,
+        "affinity": 1.2569378423557798
+      },
+      "Neutrophil": {
+        "mean_frac": 0.08456823774924133,
+        "n_src": 56,
+        "global_freq": 0.09403495440729483,
+        "affinity": 0.8993276742988798
+      },
+      "Il1b+ TAM": {
+        "mean_frac": 0.14979937391274872,
+        "n_src": 56,
+        "global_freq": 0.1614741641337386,
+        "affinity": 0.9276987051685921
+      },
+      "Resident Macrophage": {
+        "mean_frac": 0.10118308521322102,
+        "n_src": 56,
+        "global_freq": 0.128419452887538,
+        "affinity": 0.7879108822704622
+      }
+    }
+  },
+  "E15S": {
+    "exiting_hypoxia": {
+      "n": 459,
+      "obs_self_neighbor_frac": 0.056973652044390914,
+      "null_mean": 0.052813408701182105,
+      "enrichment": 1.078772462651956,
+      "p_perm": 0.21333333333333335,
+      "radius": 0.6049816169915412
+    },
+    "persistent_hypoxia": {
+      "n": 262,
+      "obs_self_neighbor_frac": 0.024507866871760008,
+      "null_mean": 0.030203453044317465,
+      "enrichment": 0.8114259659110401,
+      "p_perm": 0.8666666666666667,
+      "radius": 0.6049816169915412
+    },
+    "entering_hypoxia": {
+      "n": 387,
+      "obs_self_neighbor_frac": 0.05553626243633352,
+      "null_mean": 0.04477716124028221,
+      "enrichment": 1.2402809748933188,
+      "p_perm": 0.04666666666666667,
+      "radius": 0.6049816169915412
+    },
+    "reverted_posthypoxic": {
+      "n": 59,
+      "obs_self_neighbor_frac": 0.016570631302631075,
+      "null_mean": 0.0068789307678447,
+      "enrichment": 2.4088960120363234,
+      "p_perm": 0.05,
+      "radius": 0.6049816169915412
+    },
+    "Spp1+ TAM": {
+      "n": 496,
+      "obs_self_neighbor_frac": 0.06570267939652968,
+      "null_mean": 0.057111224353198174,
+      "enrichment": 1.1504337192942122,
+      "p_perm": 0.07,
+      "radius": 0.6049816169915412
+    },
+    "affinity_persistent_hypoxia": {
+      "Spp1+ TAM": {
+        "mean_frac": 0.05330725298426219,
+        "n_src": 262,
+        "global_freq": 0.05738748119865787,
+        "affinity": 0.9289003619243796
+      },
+      "C1qc+ TAM": {
+        "mean_frac": 0.12361839372482837,
+        "n_src": 262,
+        "global_freq": 0.13201434687029967,
+        "affinity": 0.9364011997111096
+      },
+      "CAF": {
+        "mean_frac": 0.048894415011230236,
+        "n_src": 262,
+        "global_freq": 0.04477611940298507,
+        "affinity": 1.0919752441966948
+      },
+      "Stromal": {
+        "mean_frac": 0.12760562217659518,
+        "n_src": 262,
+        "global_freq": 0.13108874233483744,
+        "affinity": 0.9734292886663396
+      },
+      "CD8 Terminally Exhausted": {
+        "mean_frac": 0.00039457070707070706,
+        "n_src": 262,
+        "global_freq": 0.00023140113386555593,
+        "affinity": 1.705129941887017
+      },
+      "Neutrophil": {
+        "mean_frac": 0.1503179390175965,
+        "n_src": 262,
+        "global_freq": 0.1423116973273169,
+        "affinity": 1.0562584860161337
+      },
+      "Il1b+ TAM": {
+        "mean_frac": 0.04817724359192399,
+        "n_src": 262,
+        "global_freq": 0.04628022677311119,
+        "affinity": 1.0409897684193112
+      },
+      "Resident Macrophage": {
+        "mean_frac": 0.08879035955470715,
+        "n_src": 262,
+        "global_freq": 0.08608122179798681,
+        "affinity": 1.031471866554197
+      }
+    },
+    "affinity_exiting_hypoxia": {
+      "Spp1+ TAM": {
+        "mean_frac": 0.05138254528286232,
+        "n_src": 459,
+        "global_freq": 0.05738748119865787,
+        "affinity": 0.895361554720099
+      },
+      "C1qc+ TAM": {
+        "mean_frac": 0.11407833662883113,
+        "n_src": 459,
+        "global_freq": 0.13201434687029967,
+        "affinity": 0.8641358948415958
+      },
+      "CAF": {
+        "mean_frac": 0.04749227514182496,
+        "n_src": 459,
+        "global_freq": 0.04477611940298507,
+        "affinity": 1.0606607878126666
+      },
+      "Stromal": {
+        "mean_frac": 0.14295792644965358,
+        "n_src": 459,
+        "global_freq": 0.13108874233483744,
+        "affinity": 1.0905431146326494
+      },
+      "CD8 Terminally Exhausted": {
+        "mean_frac": 0.00026664511958629603,
+        "n_src": 459,
+        "global_freq": 0.00023140113386555593,
+        "affinity": 1.1523019046194976
+      },
+      "Neutrophil": {
+        "mean_frac": 0.1462538994169198,
+        "n_src": 459,
+        "global_freq": 0.1423116973273169,
+        "affinity": 1.0277011738032655
+      },
+      "Il1b+ TAM": {
+        "mean_frac": 0.040611817761854956,
+        "n_src": 459,
+        "global_freq": 0.04628022677311119,
+        "affinity": 0.8775198333282712
+      },
+      "Resident Macrophage": {
+        "mean_frac": 0.08769545939189917,
+        "n_src": 459,
+        "global_freq": 0.08608122179798681,
+        "affinity": 1.018752482149337
+      }
+    },
+    "affinity_entering_hypoxia": {
+      "Spp1+ TAM": {
+        "mean_frac": 0.046494366788196476,
+        "n_src": 387,
+        "global_freq": 0.05738748119865787,
+        "affinity": 0.8101830748951004
+      },
+      "C1qc+ TAM": {
+        "mean_frac": 0.1154612682767802,
+        "n_src": 387,
+        "global_freq": 0.13201434687029967,
+        "affinity": 0.8746115110928518
+      },
+      "CAF": {
+        "mean_frac": 0.046042651854540546,
+        "n_src": 387,
+        "global_freq": 0.04477611940298507,
+        "affinity": 1.0282858684530212
+      },
+      "Stromal": {
+        "mean_frac": 0.13606495536788624,
+        "n_src": 387,
+        "global_freq": 0.13108874233483744,
+        "affinity": 1.0379606357224598
+      },
+      "CD8 Terminally Exhausted": {
+        "mean_frac": 0.0005757052389176741,
+        "n_src": 387,
+        "global_freq": 0.00023140113386555593,
+        "affinity": 2.487899438525305
+      },
+      "Neutrophil": {
+        "mean_frac": 0.139837364484821,
+        "n_src": 387,
+        "global_freq": 0.1423116973273169,
+        "affinity": 0.9826132786581963
+      },
+      "Il1b+ TAM": {
+        "mean_frac": 0.03741307281565811,
+        "n_src": 387,
+        "global_freq": 0.04628022677311119,
+        "affinity": 0.8084029533967658
+      },
+      "Resident Macrophage": {
+        "mean_frac": 0.08364200969877818,
+        "n_src": 387,
+        "global_freq": 0.08608122179798681,
+        "affinity": 0.9716638191242599
+      }
+    },
+    "affinity_reverted_posthypoxic": {
+      "Spp1+ TAM": {
+        "mean_frac": 0.06510125599689168,
+        "n_src": 59,
+        "global_freq": 0.05738748119865787,
+        "affinity": 1.1344156164846384
+      },
+      "C1qc+ TAM": {
+        "mean_frac": 0.11184418695126602,
+        "n_src": 59,
+        "global_freq": 0.13201434687029967,
+        "affinity": 0.8472123580169464
+      },
+      "CAF": {
+        "mean_frac": 0.07040016668419169,
+        "n_src": 59,
+        "global_freq": 0.04477611940298507,
+        "affinity": 1.5722703541662433
+      },
+      "Stromal": {
+        "mean_frac": 0.14259598010996777,
+        "n_src": 59,
+        "global_freq": 0.13108874233483744,
+        "affinity": 1.0877820359124017
+      },
+      "CD8 Terminally Exhausted": {
+        "mean_frac": 0.0,
+        "n_src": 59,
+        "global_freq": 0.00023140113386555593,
+        "affinity": 0.0
+      },
+      "Neutrophil": {
+        "mean_frac": 0.1363822490251539,
+        "n_src": 59,
+        "global_freq": 0.1423116973273169,
+        "affinity": 0.9583347723914777
+      },
+      "Il1b+ TAM": {
+        "mean_frac": 0.034368949477491986,
+        "n_src": 59,
+        "global_freq": 0.04628022677311119,
+        "affinity": 0.7426270597885939
+      },
+      "Resident Macrophage": {
+        "mean_frac": 0.0658954212165088,
+        "n_src": 59,
+        "global_freq": 0.08608122179798681,
+        "affinity": 0.7655028480618877
+      }
+    }
+  }
+}

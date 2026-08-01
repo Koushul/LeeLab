@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MC38 Hypoxia Deep Dive — Entry ≠ Exit</title>
+<style>
+  :root {
+    --bg: #0f1419;
+    --panel: #1a222d;
+    --text: #e8eef4;
+    --muted: #9aabbc;
+    --enter: #e85d4c;
+    --exit: #4aa3df;
+    --persist: #b07cc6;
+    --accent: #f0c75e;
+    --line: #2a3544;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    background:
+      radial-gradient(1200px 600px at 10% -10%, #1e3a4c 0%, transparent 55%),
+      radial-gradient(900px 500px at 100% 0%, #3a1f28 0%, transparent 50%),
+      var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+  }
+  header.hero {
+    min-height: 100vh;
+    display: grid;
+    align-content: end;
+    padding: 4rem 6vw 3.5rem;
+    background:
+      linear-gradient(180deg, transparent 30%, rgba(15,20,25,.92) 85%),
+      url('v3_stress_vs_metabolism.png') center/cover no-repeat;
+  }
+  .brand {
+    font-family: "Avenir Next", "Segoe UI", sans-serif;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    font-size: .78rem;
+    color: var(--accent);
+    margin-bottom: .8rem;
+  }
+  h1 {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 600;
+    max-width: 16ch;
+    line-height: 1.05;
+    margin: 0 0 1rem;
+  }
+  .lede {
+    max-width: 42rem;
+    font-size: 1.15rem;
+    color: var(--muted);
+    margin: 0 0 1.5rem;
+  }
+  .cta {
+    display: inline-flex;
+    gap: .8rem;
+    flex-wrap: wrap;
+  }
+  .cta a {
+    font-family: "Avenir Next", "Segoe UI", sans-serif;
+    text-decoration: none;
+    color: var(--bg);
+    background: var(--accent);
+    padding: .7rem 1.1rem;
+    border-radius: 2px;
+    font-size: .9rem;
+    font-weight: 600;
+  }
+  .cta a.ghost {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--line);
+  }
+  main { padding: 3rem 6vw 5rem; max-width: 1100px; margin: 0 auto; }
+  section { margin: 3.5rem 0; }
+  h2 {
+    font-size: 1.85rem;
+    margin: 0 0 .6rem;
+    line-height: 1.15;
+  }
+  h3 { font-size: 1.15rem; margin: 1.4rem 0 .4rem; color: var(--accent); }
+  p, li { color: var(--muted); }
+  .claim {
+    background: var(--panel);
+    border-left: 3px solid var(--accent);
+    padding: 1.2rem 1.4rem;
+    margin: 1.2rem 0;
+  }
+  .claim strong { color: var(--text); font-weight: 600; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-top: 1.2rem;
+  }
+  .stat {
+    background: var(--panel);
+    padding: 1rem 1.1rem;
+    border: 1px solid var(--line);
+  }
+  .stat .n {
+    font-family: "Avenir Next", "Segoe UI", sans-serif;
+    font-size: 1.5rem;
+    color: var(--text);
+  }
+  .stat .l { font-size: .85rem; }
+  figure {
+    margin: 1.5rem 0;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    padding: .6rem;
+  }
+  figure img { width: 100%; display: block; }
+  figcaption { font-size: .85rem; color: var(--muted); padding: .5rem .3rem 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Avenir Next", "Segoe UI", sans-serif;
+    font-size: .88rem;
+  }
+  th, td { text-align: left; padding: .55rem .4rem; border-bottom: 1px solid var(--line); }
+  th { color: var(--text); }
+  .enter { color: var(--enter); }
+  .exit { color: var(--exit); }
+  .persist { color: var(--persist); }
+  footer {
+    padding: 2rem 6vw 3rem;
+    color: var(--muted);
+    font-size: .85rem;
+    border-top: 1px solid var(--line);
+  }
+  code { font-family: ui-monospace, Menlo, monospace; font-size: .86em; color: #cde; }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="brand">MC38 · E14S + E15S · Hypoxia dynamics</div>
+  <h1>Hypoxia entry is not the reverse of exit</h1>
+  <p class="lede">Velocity-resolved tumor cells reveal an ISR / amino-acid / Chka stress pause on entry, dual OXPHOS+glycolysis reboot on exit, and a Hilpda–Bnip3 persistent niche — without genetic fate reporters.</p>
+  <div class="cta">
+    <a href="#claim">The claim</a>
+    <a class="ghost" href="#controls">Controls</a>
+    <a class="ghost" href="#persist">Persistent niche</a>
+  </div>
+</header>
+<main>
+  <section id="claim">
+    <h2>Core finding</h2>
+    <div class="claim">
+      <strong>At matched hypoxia intensity, tumor cells already bifurcate.</strong>
+      Positive hypoxia velocity (+v) cells load an ISR / IEG / Slc38a2 / Chka stress axis while suppressing both metabolic engines.
+      Negative velocity (−v) cells reboot <em>both</em> OXPHOS and glycolysis plus ribosome biogenesis — not a simple glycolysis→OXPHOS flip.
+    </div>
+    <div class="grid">
+      <div class="stat"><div class="n">p ≈ 10<sup>−44</sup></div><div class="l">Stress enter &gt; exit (score×depth matched, n=602)</div></div>
+      <div class="stat"><div class="n">p ≈ 10<sup>−16</sup></div><div class="l">Dual metabolic engines exit &gt; enter (matched)</div></div>
+      <div class="stat"><div class="n">p ≈ 10<sup>−33</sup></div><div class="l">Same-score bifurcation OXPHOS (+v vs −v)</div></div>
+      <div class="stat"><div class="n">both samples</div><div class="l">Metabolic pause/reboot replicates in E14S and E15S</div></div>
+    </div>
+    <figure>
+      <img src="v3_stress_vs_metabolism.png" alt="Stress vs metabolism scatter by dynamics state"/>
+      <figcaption>HQ tumor cells: stress axis (ISR+AA+Chka+IEG) vs dual metabolic engines (OXPHOS+glycolysis). Entry occupies upper-left; exit lower-right.</figcaption>
+    </figure>
+  </section>
+
+  <section id="programs">
+    <h2>Molecular programs</h2>
+    <h3 class="enter">Entering hypoxia</h3>
+    <p><code>Ppp1r15a</code>, <code>Jun</code>/<code>Jund</code>, <code>Slc38a2</code>, <code>Chka</code>, <code>Neat1</code>, <code>Abl2</code>, <code>Ier3</code> — ISR, immediate-early response, amino-acid transport, and choline-kinase phospholipid stress. These genes also top residual correlation with hypoxia velocity after regressing out hypoxia score.</p>
+    <h3 class="exit">Exiting hypoxia</h3>
+    <p><code>Cox5a</code>, <code>Ndufa4</code>, <code>Slc25a3/4</code>, <code>Rps/Rpl</code>, <code>Cd63</code>, <code>Prdx1</code> — OXPHOS subunits, ADP/ATP carriers, ribosomal recovery. Glycolysis genes rebound with OXPHOS (dual reboot), consistent with TME single-cell coupling of both pathways rather than a Warburg switch.</p>
+    <figure>
+      <img src="v2_program_state_heatmap.png" alt="Program heatmap by hypoxia dynamics"/>
+      <figcaption>Program means across hypoxia dynamics (HQ tumor only).</figcaption>
+    </figure>
+    <figure>
+      <img src="v2_phase_plane_ISR_minus_OXPHOS.png" alt="ISR minus OXPHOS on phase plane"/>
+      <figcaption>ISR−OXPHOS coloring on the hypoxia score × velocity phase plane.</figcaption>
+    </figure>
+  </section>
+
+  <section id="controls">
+    <h2>Why this is not an artifact</h2>
+    <ul>
+      <li><strong>QC:</strong> Analyses restricted to tumor cells with ≥1000 genes and &lt;15% mitochondrial UMIs. The old <code>reverted_posthypoxic</code> label is mostly low-quality (median ~600 genes, ~50% MT) and is excluded from claims.</li>
+      <li><strong>Depth × hypoxia matching:</strong> Asymmetry survives bin-matched subsampling on hypoxia score and gene detection.</li>
+      <li><strong>Same-score bifurcation:</strong> Among mid–high hypoxia cells, top vs bottom velocity terciles already diverge on ISR/OXPHOS/RIBO/LIPID/AA (proliferation does not).</li>
+      <li><strong>Cross-face replication:</strong> E14S (immune-hot) and E15S (tumor/stroma core) are complementary faces of one experiment; dual metabolic reboot replicates in both despite tiny E14S tumor n.</li>
+    </ul>
+    <figure>
+      <img src="v2_within_sample_programs.png" alt="Within-sample program boxplots"/>
+      <figcaption>Within-sample HQ tumor entry vs exit program scores.</figcaption>
+    </figure>
+    <table>
+      <thead><tr><th>Contrast</th><th>E14S p</th><th>E15S p</th><th>Matched p</th></tr></thead>
+      <tbody>
+        <tr><td>Stress (enter &gt; exit)</td><td>3.0×10<sup>−2</sup></td><td>8.2×10<sup>−57</sup></td><td>2.4×10<sup>−44</sup></td></tr>
+        <tr><td>OXPHOS+Glyc (exit &gt; enter)</td><td>4.2×10<sup>−10</sup></td><td>4.3×10<sup>−77</sup></td><td>6.3×10<sup>−16</sup></td></tr>
+        <tr><td>Ribosome (exit &gt; enter)</td><td>6.9×10<sup>−11</sup></td><td>1.6×10<sup>−67</sup></td><td>5.6×10<sup>−17</sup></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="persist">
+    <h2>Persistent hypoxia is its own state</h2>
+    <p>Cells locked in persistent hypoxia are not merely “between” entry and exit. Relative to both arms they upregulate a compact adaptation set:</p>
+    <p class="persist"><code>Hilpda</code> · <code>Bnip3</code> · <code>Egln1</code> · <code>Atf4</code> · <code>Cdkn1a</code> · <code>Hmox1</code> · <code>Ero1a</code> · <code>Aldh1l2</code></p>
+    <p>This maps onto lipid-droplet buffering (Hilpda), mitophagy (Bnip3), PHD2 oxygen sensing (Egln1), sustained ISR (Atf4), and checkpointing (Cdkn1a) — a dwell program rather than a transit program.</p>
+    <figure>
+      <img src="v3_persistent_markers.png" alt="Persistent hypoxia markers"/>
+      <figcaption>Persistent-specific marker expression across dynamics states.</figcaption>
+    </figure>
+  </section>
+
+  <section id="novelty">
+    <h2>Novelty framing</h2>
+    <ul>
+      <li>Post-hypoxic fate/memory is known from reporter systems (e.g. Godet/Semenza). Here the asymmetry is read out from spliced/unspliced RNA velocity in native MC38 spatial tissue — no genetic reporter.</li>
+      <li>Classical models cast hypoxia as glycolysis↑ / OXPHOS↓. In this velocity frame, <em>entry</em> suppresses both engines under ISR stress; <em>exit</em> reboots both together with ribosomes. That matches TME single-cell reports that OXPHOS and glycolysis often co-vary in vivo, and adds temporal directionality.</li>
+      <li><code>Chka</code> is elevated specifically on entry (velocity residual), whereas chronic HIF often represses CHKA in vitro — suggesting an acute stress/phospholipid phase distinct from chronic hypoxic choline shutdown.</li>
+      <li>Hilpda-high persistence is a known hypoxic lipid-droplet adaptation; placing it specifically in the velocity-defined persistent dwell (vs enter/exit transit) is the new mapping.</li>
+    </ul>
+  </section>
+
+  <section id="caveats">
+    <h2>Caveats &amp; next experiments</h2>
+    <ul>
+      <li>E14S contributes few HQ tumor cells; ISR gene-set power is limited there, but metabolic reboot and stress direction still agree.</li>
+      <li>Spatial niche distances (Spp1 TAM, CD8) are weak/mixed after QC — not a primary claim.</li>
+      <li>Validate with timed hypoxia→reoxygenation (smFISH: <code>Ppp1r15a</code>/<code>Slc38a2</code>/<code>Chka</code> vs <code>Cox5a</code>/<code>Rps4x</code>), ISR perturbation, and Hilpda lipid-droplet imaging in persistent cores.</li>
+    </ul>
+  </section>
+</main>
+<footer>
+  E14S + E15S (MC38 Hypoxia) · HQ tumor ≥1000 genes, MT&lt;15% · outputs in <code>reseq_finetune/deep_dive/</code>
+</footer>
+</body>
+</html>

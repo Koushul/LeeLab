@@ -1,0 +1,77 @@
+{
+  "headline": "Hypoxia entry is not the reverse of exit: ISR-driven entry vs OXPHOS/ribosome recovery on exit",
+  "artifact_note": "Most reverted_posthypoxic cells are low-quality (median ~600 genes, ~50% mitochondrial). Excluded from claims after QC.",
+  "n_HQ_tumor": 1883,
+  "n_exit_HQ": 488,
+  "n_enter_HQ": 495,
+  "stats": {
+    "ISR_exit_mean": -0.04456795006990433,
+    "ISR_enter_mean": 0.34603431820869446,
+    "ISR_MW_p": 9.807611530548335e-64,
+    "OXPHOS_exit_mean": 0.6852479577064514,
+    "OXPHOS_enter_mean": 0.20560811460018158,
+    "OXPHOS_MW_p": 5.5310653699014115e-55,
+    "RIBO_MW_p": 1.14974163733464e-40
+  },
+  "entry_marker_genes": [
+    "Ppp1r15a",
+    "Jun",
+    "Jund",
+    "Slc38a2",
+    "Chka",
+    "Ccn1",
+    "Neat1",
+    "Abl2"
+  ],
+  "exit_marker_genes": [
+    "Cox5a",
+    "Ndufa4",
+    "Atp5pb",
+    "Slc25a3",
+    "Slc25a4",
+    "Rps4x",
+    "Rpl7",
+    "Cd63",
+    "Prdx1",
+    "Cdk4"
+  ],
+  "E14_CD8_affinity": {
+    "entering_hypoxia": {
+      "mean_frac": 0.0023173624868540123,
+      "global_freq": 0.0020896656534954406,
+      "affinity": 1.1089627539290532
+    },
+    "entering_deep_hypoxia": {
+      "mean_frac": 0.00030266343825665856,
+      "global_freq": 0.0007598784194528875,
+      "affinity": 0.39830456057696095
+    },
+    "exiting_hypoxia": {
+      "mean_frac": 0.00429027458285429,
+      "global_freq": 0.00702887537993921,
+      "affinity": 0.6103784375976455
+    },
+    "persistent_hypoxia": {
+      "mean_frac": 0.004104661063122064,
+      "global_freq": 0.005319148936170213,
+      "affinity": 0.7716761347918346
+    },
+    "Spp1+ TAM": {
+      "mean_frac": 0.047769860342237354,
+      "global_freq": 0.04939209726443769,
+      "affinity": 0.9671559221170333
+    },
+    "Neutrophil": {
+      "mean_frac": 0.08821967588334458,
+      "global_freq": 0.09403495440729483,
+      "affinity": 0.9381583210332535
+    },
+    "C1qc+ TAM": {
+      "mean_frac": 0.09773894035598372,
+      "global_freq": 0.09973404255319149,
+      "affinity": 0.9799957654765726
+    }
+  },
+  "composition": "E14S = immune-infiltrated face (CD8 exhausted, monocytes); E15S = tumor/stromal core",
+  "literature_context": "Post-hypoxic memory is known from fate-mapping (Godet/Semenza and others). Novelty here is velocity-resolved asymmetric molecular programs without genetic reporters in MC38 spatial data."
+}

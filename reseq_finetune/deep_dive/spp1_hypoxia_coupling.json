@@ -1,0 +1,102 @@
+{
+  "E14S": {
+    "persistent_hypoxia": {
+      "mean_frac": 0.008060832979791276,
+      "n_src": 260,
+      "global_freq": 0.008548632218844984,
+      "affinity": 0.9429382187109889
+    },
+    "exiting_hypoxia": {
+      "mean_frac": 0.008736513580387465,
+      "n_src": 260,
+      "global_freq": 0.015387537993920973,
+      "affinity": 0.5677654876350875
+    },
+    "entering_hypoxia": {
+      "mean_frac": 0.009879016162971663,
+      "n_src": 260,
+      "global_freq": 0.015387537993920973,
+      "affinity": 0.6420140457076654
+    },
+    "entering_deep_hypoxia": {
+      "mean_frac": 0.006666312989842401,
+      "n_src": 260,
+      "global_freq": 0.003609422492401216,
+      "affinity": 1.8469190450709763
+    },
+    "reverted_posthypoxic": {
+      "mean_frac": 0.009684834721022464,
+      "n_src": 260,
+      "global_freq": 0.010638297872340425,
+      "affinity": 0.9103743782009202
+    },
+    "reverted_stable": {
+      "mean_frac": 0.007013196985659256,
+      "n_src": 260,
+      "global_freq": 0.008548632218844984,
+      "affinity": 0.8203881025330524
+    },
+    "normoxic_stable": {
+      "mean_frac": 0.002707327048038942,
+      "n_src": 260,
+      "global_freq": 0.003799392097264438,
+      "affinity": 0.7125682914958752
+    },
+    "transitional": {
+      "mean_frac": 0.007134812755093322,
+      "n_src": 260,
+      "global_freq": 0.006458966565349544,
+      "affinity": 1.1046367214118689
+    }
+  },
+  "E15S": {
+    "persistent_hypoxia": {
+      "mean_frac": 0.02791519812856405,
+      "n_src": 496,
+      "global_freq": 0.03031354853638783,
+      "affinity": 0.9208818681908286
+    },
+    "exiting_hypoxia": {
+      "mean_frac": 0.04861275968956899,
+      "n_src": 496,
+      "global_freq": 0.05310656022214509,
+      "affinity": 0.9153814250224469
+    },
+    "entering_hypoxia": {
+      "mean_frac": 0.037098919783250334,
+      "n_src": 496,
+      "global_freq": 0.04477611940298507,
+      "affinity": 0.8285425233218078
+    },
+    "entering_deep_hypoxia": {
+      "mean_frac": 0.020639144065606338,
+      "n_src": 496,
+      "global_freq": 0.023255813953488372,
+      "affinity": 0.8874831566592968
+    },
+    "reverted_posthypoxic": {
+      "mean_frac": 0.007111824108774789,
+      "n_src": 496,
+      "global_freq": 0.0068263334490339,
+      "affinity": 1.0418218096216034
+    },
+    "reverted_stable": {
+      "mean_frac": 0.01337104574662818,
+      "n_src": 496,
+      "global_freq": 0.013884068031933356,
+      "affinity": 0.9630495005372544
+    },
+    "normoxic_stable": {
+      "mean_frac": 0.027301794709538103,
+      "n_src": 496,
+      "global_freq": 0.030429249103320608,
+      "affinity": 0.8972220681363022
+    },
+    "transitional": {
+      "mean_frac": 0.03204286270796471,
+      "n_src": 496,
+      "global_freq": 0.031007751937984496,
+      "affinity": 1.0333822890052833
+    }
+  }
+}

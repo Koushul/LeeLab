@@ -1,0 +1,7 @@
+.herenow/
+*.h5ad
+run.log
+run_v2.log
+run2.log
+cells_with_programs.csv
+cells_qc_flags.csv

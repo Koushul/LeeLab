@@ -1,0 +1,200 @@
+{
+  "Spp1+ TAM": {
+    "n_e14": 260,
+    "n_e15": 505,
+    "top_E14": [
+      "Uba52",
+      "Ccl5",
+      "Gm10076",
+      "Msrb1",
+      "Arhgdib",
+      "Cd52",
+      "Rps27",
+      "Plac8",
+      "Ly6c2",
+      "Coro1a",
+      "Ifi27l2a"
+    ],
+    "top_E15": [
+      "Camk1d",
+      "Lmna",
+      "Abca1",
+      "Npm1",
+      "Mrc1",
+      "Cmss1",
+      "Pf4",
+      "Rpl12",
+      "Ahnak",
+      "Cxcl3",
+      "Ier3"
+    ]
+  },
+  "C1qc+ TAM": {
+    "n_e14": 525,
+    "n_e15": 1153,
+    "top_E14": [
+      "Uba52",
+      "Gm10076",
+      "Lst1",
+      "Ly6c2",
+      "Ccl5",
+      "Ms4a6c",
+      "H2-Aa",
+      "H2-Eb1",
+      "Ly6e",
+      "Clec4a1",
+      "Clec4a3",
+      "H2-Ab1",
+      "Cd300c2",
+      "Cd74",
+      "Cd52"
+    ],
+    "top_E15": [
+      "Mt2",
+      "Mt1",
+      "Cmss1",
+      "Ahnak",
+      "Camk1d",
+      "Rpl12",
+      "Ier3",
+      "Mrc1",
+      "mt-Co3",
+      "Pdpn",
+      "Pf4",
+      "Lmna",
+      "Ifrd1",
+      "Ccl8",
+      "Thbs1"
+    ]
+  },
+  "Tumor": {
+    "n_e14": 71,
+    "n_e15": 1234,
+    "top_E14": [
+      "Ly6c2",
+      "Plac8",
+      "Tmsb4x",
+      "Tyrobp"
+    ],
+    "top_E15": [
+      "Hspe1",
+      "Coq10b",
+      "Rplp0",
+      "Psmb7",
+      "Ssr4",
+      "Eif3i",
+      "Cxcl1",
+      "Tuba1b",
+      "Rpl12",
+      "Rpl23a",
+      "Rpl10",
+      "Lamtor2",
+      "Serf2",
+      "Rpl9",
+      "Rpl27a"
+    ]
+  },
+  "Hypoxic Tumor": {
+    "n_e14": 326,
+    "n_e15": 503,
+    "top_E14": [
+      "Ly6c2",
+      "Ifi27l2a",
+      "Plac8",
+      "Cd52",
+      "mt-Nd4l",
+      "mt-Atp8",
+      "Tmsb4x"
+    ],
+    "top_E15": [
+      "Malat1",
+      "Jun",
+      "Tenm3",
+      "Camk1d",
+      "Large1",
+      "Rbms1",
+      "Slc7a1",
+      "Zbtb20",
+      "Fndc3b",
+      "Hspa5",
+      "Mbnl2",
+      "Edil3",
+      "Cd44",
+      "Brinp3",
+      "Etv6"
+    ]
+  },
+  "Neutrophil": {
+    "n_e14": 495,
+    "n_e15": 1316,
+    "top_E14": [
+      "Ly6e",
+      "Ly6c2",
+      "B2m",
+      "Npc2",
+      "Ctss",
+      "Plac8",
+      "Txnip",
+      "Capg",
+      "Ifi27l2a",
+      "Ly6a",
+      "Irf7",
+      "Ifi209",
+      "Fcgr1",
+      "Ifi207",
+      "Bst2"
+    ],
+    "top_E15": [
+      "Acod1",
+      "Pde4b",
+      "Npm1",
+      "Nlrp3",
+      "Lmnb1",
+      "Plaur",
+      "Cxcl2",
+      "Retnlg",
+      "Slc7a11",
+      "Cd274",
+      "Ets2",
+      "G0s2",
+      "Txnrd1",
+      "Ell2",
+      "Suco"
+    ]
+  },
+  "Resident Macrophage": {
+    "n_e14": 676,
+    "n_e15": 840,
+    "top_E14": [
+      "Ly6c2",
+      "Tgfbi",
+      "Ptprc",
+      "Cd74",
+      "Klra2",
+      "Samd9l",
+      "Lyn",
+      "Gpr141",
+      "Plac8",
+      "Ifi213",
+      "Slfn8",
+      "Arhgap15"
+    ],
+    "top_E15": [
+      "Mt1",
+      "Pf4",
+      "Rpl12",
+      "Rpl23a",
+      "Lgals1",
+      "Ccl8",
+      "Rpl32",
+      "Rps18",
+      "Camk1d",
+      "Rps2",
+      "Zdhhc14",
+      "Fabp5",
+      "Spp1",
+      "Mtss1",
+      "Ctsl"
+    ]
+  }
+}

@@ -102,6 +102,7 @@
     <button data-tab="maps" role="tab" aria-selected="false">Maps</button>
     <button data-tab="entropy" role="tab" aria-selected="false">ADT entropy</button>
     <button data-tab="h8front" role="tab" aria-selected="false">H≤8 front</button>
+    <button data-tab="novel" role="tab" aria-selected="false">Novel biology</button>
     <button data-tab="tests" role="tab" aria-selected="false">Permutation</button>
   </nav>
 </div>
@@ -369,6 +370,71 @@
     <figure>
       <img src="h8_persistent_vs_front.png" alt="H8 persist vs front"/>
       <figcaption>Persistent cells vs front after H≤8.</figcaption>
+    </figure>
+  </section>
+</main>
+</div>
+
+<div id="novel" class="panel">
+<main>
+  <section>
+    <h2>Novel spatial biology</h2>
+    <div class="claim">
+      Literature-framed claims from the <strong>H≤8 same-chip overlay</strong>.
+      Each point states what is established, what we add, and why it matters.
+    </div>
+
+    <h3>1. A velocity front, not HIF islands</h3>
+    <p>
+      Classical hypoxia is cast as diffusion-limited O₂ gradients and patchy niches.
+      Here, <strong>entering and exiting cells are opposite faces of one ribbon</strong>
+      (overlay deep→exit 1.25×; Moran's I front/polarity ≈ 0.66/0.64) — a moving oxygen interface resolved by RNA velocity, not a static hypoxia score.
+    </p>
+    <figure>
+      <img src="h8_OVERLAY_front_ribbons.png" alt="Overlay front ribbons"/>
+      <figcaption>Contiguous front ribbon and polarity field on the shared chip.</figcaption>
+    </figure>
+
+    <h3>2. Fate mark ≠ ongoing hypoxia</h3>
+    <p>
+      ImageIT/GFP fate-mapping literature shows post-hypoxic cells can remain marked after reoxygenation and carry metastasis-prone memory.
+      In this experiment <strong>E15S = GFP+</strong> by sort, yet only a minority are velocity-persistent — most marked cells have already exited or reverted transcriptionally.
+    </p>
+
+    <h3>3. Entry ≠ exit (programs + polarity)</h3>
+    <p>
+      Textbook: hypoxia → glycolysis; reoxygenation → OXPHOS.
+      Velocity DE instead shows <strong>entry = ISR/IEG/amino-acid stress</strong> and
+      <strong>exit = dual OXPHOS + glycolysis reboot</strong> (not a one-way flip), laid out as opposite polarity sides of the same front.
+    </p>
+
+    <h3>4. Persist is the dwell core off-ribbon</h3>
+    <p>
+      Persistent cells are under-represented on the top-20% enter×exit ribbon (≈18% vs ≈33–35% for enter/exit) — a transcriptional dwell/core along the continuum, consistent with necrotic/hypoxic core concepts but defined by dynamics rather than histology alone.
+    </p>
+
+    <h3>5. Immune skirt of the oxygen interface</h3>
+    <div class="grid">
+      <div class="stat"><div class="n gold">1.50×</div><div>CAF on front ribbon (p≈0).</div></div>
+      <div class="stat"><div class="n love">1.29×</div><div>Neutrophil on front ribbon (p≈0).</div></div>
+      <div class="stat"><div class="n foam">0.64×</div><div>CD8 depleted from front (p=0.022).</div></div>
+    </div>
+    <p>
+      C1qc-TAM depleted from front/core fields; Spp1-TAM mildly front/exit-biased.
+      On shared wells, <strong>E15 hypoxic tumor co-occurs with E14 neutrophils</strong> (OR 1.86, Fisher p=4.6×10⁻⁵) — a cross-gate niche only visible because both sorts sit on one chip.
+      This aligns with CD8 distancing from hypoxia and neutrophil/SPP1 association with hypoxic niches, while adding a <em>front-vs-core</em> split and same-chip gate complementarity.
+    </p>
+    <figure>
+      <img src="h8_immune_zone_enrichment.png" alt="Immune zone enrichment"/>
+      <figcaption>Immune enrichment across hypoxia field zones (H≤8 overlay).</figcaption>
+    </figure>
+    <figure>
+      <img src="h8_immune_on_front_field.png" alt="Immune on front field"/>
+      <figcaption>Spp1-TAM, neutrophils, and CD8 over the front-score field.</figcaption>
+    </figure>
+    <figure>
+      <img src="h8_immune_front_affinity.png" alt="Immune affinity"/>
+      <figcaption>Neutrophil vs CD8 local dynamics affinity by gate.</figcaption>
     </figure>
   </section>
 </main>

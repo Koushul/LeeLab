@@ -1,0 +1,506 @@
+{
+  "moran": {
+    "front": 0.6635330955698392,
+    "polarity": 0.6438830168760127,
+    "hypoxia_score": 0.027979617342474988
+  },
+  "front_thr": 0.06666666666666667,
+  "significant_zone_hits": [
+    {
+      "zone": "front_ribbon",
+      "celltype": "CAF",
+      "n_zone": 1770,
+      "n_immune_in_zone": 75,
+      "density": 0.0423728813559322,
+      "background": 0.02832837793194582,
+      "enrichment": 1.4957750654741315,
+      "p": 0.0
+    },
+    {
+      "zone": "front_ribbon",
+      "celltype": "Neutrophil",
+      "n_zone": 1770,
+      "n_immune_in_zone": 285,
+      "density": 0.16101694915254236,
+      "background": 0.12487611496531219,
+      "enrichment": 1.2894135055152003,
+      "p": 0.0
+    },
+    {
+      "zone": "exit_field",
+      "celltype": "CAF",
+      "n_zone": 3593,
+      "n_immune_in_zone": 131,
+      "density": 0.03645978291121625,
+      "background": 0.02832837793194582,
+      "enrichment": 1.2870409664402518,
+      "p": 0.0
+    },
+    {
+      "zone": "exit_field",
+      "celltype": "CD8",
+      "n_zone": 3593,
+      "n_immune_in_zone": 44,
+      "density": 0.01224603395491233,
+      "background": 0.015774694416914436,
+      "enrichment": 0.776308791236013,
+      "p": 0.016
+    },
+    {
+      "zone": "front_ribbon",
+      "celltype": "C1qc_TAM",
+      "n_zone": 1770,
+      "n_immune_in_zone": 177,
+      "density": 0.1,
+      "background": 0.12991410637594977,
+      "enrichment": 0.7697393515575335,
+      "p": 0.0
+    },
+    {
+      "zone": "hypoxic_core_field",
+      "celltype": "C1qc_TAM",
+      "n_zone": 3468,
+      "n_immune_in_zone": 346,
+      "density": 0.09976931949250288,
+      "background": 0.12991410637594977,
+      "enrichment": 0.7679637129149555,
+      "p": 0.0
+    },
+    {
+      "zone": "front_ribbon",
+      "celltype": "Il1b_TAM",
+      "n_zone": 1770,
+      "n_immune_in_zone": 124,
+      "density": 0.07005649717514124,
+      "background": 0.09786917740336967,
+      "enrichment": 0.7158177787313166,
+      "p": 0.0
+    },
+    {
+      "zone": "front_ribbon",
+      "celltype": "CD8",
+      "n_zone": 1770,
+      "n_immune_in_zone": 18,
+      "density": 0.010169491525423728,
+      "background": 0.015774694416914436,
+      "enrichment": 0.6446712219362853,
+      "p": 0.022
+    }
+  ],
+  "zone_table": [
+    {
+      "zone": "front_ribbon",
+      "celltype": "CD8",
+      "n_zone": 1770,
+      "n_immune_in_zone": 18,
+      "density": 0.010169491525423728,
+      "background": 0.015774694416914436,
+      "enrichment": 0.6446712219362853,
+      "p": 0.022
+    },
+    {
+      "zone": "front_ribbon",
+      "celltype": "Neutrophil",
+      "n_zone": 1770,
+      "n_immune_in_zone": 285,
+      "density": 0.16101694915254236,
+      "background": 0.12487611496531219,
+      "enrichment": 1.2894135055152003,
+      "p": 0.0
+    },
+    {
+      "zone": "front_ribbon",
+      "celltype": "Spp1_TAM",
+      "n_zone": 1770,
+      "n_immune_in_zone": 119,
+      "density": 0.0672316384180791,
+      "background": 0.058969276511397425,
+      "enrichment": 1.1401129943502823,
+      "p": 0.04
+    },
+    {
+      "zone": "front_ribbon",
+      "celltype": "C1qc_TAM",
+      "n_zone": 1770,
+      "n_immune_in_zone": 177,
+      "density": 0.1,
+      "background": 0.12991410637594977,
+      "enrichment": 0.7697393515575335,
+      "p": 0.0
+    },
+    {
+      "zone": "front_ribbon",
+      "celltype": "Il1b_TAM",
+      "n_zone": 1770,
+      "n_immune_in_zone": 124,
+      "density": 0.07005649717514124,
+      "background": 0.09786917740336967,
+      "enrichment": 0.7158177787313166,
+      "p": 0.0
+    },
+    {
+      "zone": "front_ribbon",
+      "celltype": "NK",
+      "n_zone": 1770,
+      "n_immune_in_zone": 49,
+      "density": 0.02768361581920904,
+      "background": 0.02832837793194582,
+      "enrichment": 0.9772397094430992,
+      "p": 0.494
+    },
+    {
+      "zone": "front_ribbon",
+      "celltype": "CAF",
+      "n_zone": 1770,
+      "n_immune_in_zone": 75,
+      "density": 0.0423728813559322,
+      "background": 0.02832837793194582,
+      "enrichment": 1.4957750654741315,
+      "p": 0.0
+    },
+    {
+      "zone": "front_ribbon",
+      "celltype": "Monocyte",
+      "n_zone": 1770,
+      "n_immune_in_zone": 209,
+      "density": 0.11807909604519774,
+      "background": 0.13751238850346878,
+      "enrichment": 0.8586796966457984,
+      "p": 0.002
+    },
+    {
+      "zone": "hypoxic_core_field",
+      "celltype": "CD8",
+      "n_zone": 3468,
+      "n_immune_in_zone": 49,
+      "density": 0.014129181084198385,
+      "background": 0.015774694416914436,
+      "enrichment": 0.8956865160600737,
+      "p": 0.19
+    },
+    {
+      "zone": "hypoxic_core_field",
+      "celltype": "Neutrophil",
+      "n_zone": 3468,
+      "n_immune_in_zone": 505,
+      "density": 0.14561707035755478,
+      "background": 0.12487611496531219,
+      "enrichment": 1.166092253895022,
+      "p": 0.0
+    },
+    {
+      "zone": "hypoxic_core_field",
+      "celltype": "Spp1_TAM",
+      "n_zone": 3468,
+      "n_immune_in_zone": 194,
+      "density": 0.05594002306805075,
+      "background": 0.058969276511397425,
+      "enrichment": 0.9486299710195497,
+      "p": 0.206
+    },
+    {
+      "zone": "hypoxic_core_field",
+      "celltype": "C1qc_TAM",
+      "n_zone": 3468,
+      "n_immune_in_zone": 346,
+      "density": 0.09976931949250288,
+      "background": 0.12991410637594977,
+      "enrichment": 0.7679637129149555,
+      "p": 0.0
+    },
+    {
+      "zone": "hypoxic_core_field",
+      "celltype": "Il1b_TAM",
+      "n_zone": 3468,
+      "n_immune_in_zone": 291,
+      "density": 0.08391003460207612,
+      "background": 0.09786917740336967,
+      "enrichment": 0.8573693662126056,
+      "p": 0.0
+    },
+    {
+      "zone": "hypoxic_core_field",
+      "celltype": "NK",
+      "n_zone": 3468,
+      "n_immune_in_zone": 120,
+      "density": 0.03460207612456748,
+      "background": 0.02832837793194582,
+      "enrichment": 1.2214633752660728,
+      "p": 0.008
+    },
+    {
+      "zone": "hypoxic_core_field",
+      "celltype": "CAF",
+      "n_zone": 3468,
+      "n_immune_in_zone": 122,
+      "density": 0.03517877739331027,
+      "background": 0.02832837793194582,
+      "enrichment": 1.241821098187174,
+      "p": 0.0
+    },
+    {
+      "zone": "hypoxic_core_field",
+      "celltype": "Monocyte",
+      "n_zone": 3468,
+      "n_immune_in_zone": 459,
+      "density": 0.1323529411764706,
+      "background": 0.13751238850346878,
+      "enrichment": 0.9624801271860095,
+      "p": 0.184
+    },
+    {
+      "zone": "enter_field",
+      "celltype": "CD8",
+      "n_zone": 4446,
+      "n_immune_in_zone": 62,
+      "density": 0.013945119208277103,
+      "background": 0.015774694416914436,
+      "enrichment": 0.8840183422713046,
+      "p": 0.124
+    },
+    {
+      "zone": "enter_field",
+      "celltype": "Neutrophil",
+      "n_zone": 4446,
+      "n_immune_in_zone": 629,
+      "density": 0.14147548358074674,
+      "background": 0.12487611496531219,
+      "enrichment": 1.1329266899442338,
+      "p": 0.0
+    },
+    {
+      "zone": "enter_field",
+      "celltype": "Spp1_TAM",
+      "n_zone": 4446,
+      "n_immune_in_zone": 245,
+      "density": 0.05510571300044984,
+      "background": 0.058969276511397425,
+      "enrichment": 0.9344817549151914,
+      "p": 0.104
+    },
+    {
+      "zone": "enter_field",
+      "celltype": "C1qc_TAM",
+      "n_zone": 4446,
+      "n_immune_in_zone": 506,
+      "density": 0.1138101664417454,
+      "background": 0.12991410637594977,
+      "enrichment": 0.8760416371752405,
+      "p": 0.0
+    },
+    {
+      "zone": "enter_field",
+      "celltype": "Il1b_TAM",
+      "n_zone": 4446,
+      "n_immune_in_zone": 387,
+      "density": 0.08704453441295547,
+      "background": 0.09786917740336967,
+      "enrichment": 0.8893968123814893,
+      "p": 0.0
+    },
+    {
+      "zone": "enter_field",
+      "celltype": "NK",
+      "n_zone": 4446,
+      "n_immune_in_zone": 120,
+      "density": 0.02699055330634278,
+      "background": 0.02832837793194582,
+      "enrichment": 0.9527744006798787,
+      "p": 0.302
+    },
+    {
+      "zone": "enter_field",
+      "celltype": "CAF",
+      "n_zone": 4446,
+      "n_immune_in_zone": 150,
+      "density": 0.033738191632928474,
+      "background": 0.02832837793194582,
+      "enrichment": 1.1909680008498482,
+      "p": 0.004
+    },
+    {
+      "zone": "enter_field",
+      "celltype": "Monocyte",
+      "n_zone": 4446,
+      "n_immune_in_zone": 580,
+      "density": 0.13045434098065678,
+      "background": 0.13751238850346878,
+      "enrichment": 0.9486733697260014,
+      "p": 0.032
+    },
+    {
+      "zone": "exit_field",
+      "celltype": "CD8",
+      "n_zone": 3593,
+      "n_immune_in_zone": 44,
+      "density": 0.01224603395491233,
+      "background": 0.015774694416914436,
+      "enrichment": 0.776308791236013,
+      "p": 0.016
+    },
+    {
+      "zone": "exit_field",
+      "celltype": "Neutrophil",
+      "n_zone": 3593,
+      "n_immune_in_zone": 476,
+      "density": 0.13247982187586974,
+      "background": 0.12487611496531219,
+      "enrichment": 1.060890002164703,
+      "p": 0.068
+    },
+    {
+      "zone": "exit_field",
+      "celltype": "Spp1_TAM",
+      "n_zone": 3593,
+      "n_immune_in_zone": 236,
+      "density": 0.0656832730308934,
+      "background": 0.058969276511397425,
+      "enrichment": 1.113855840137335,
+      "p": 0.026
+    },
+    {
+      "zone": "exit_field",
+      "celltype": "C1qc_TAM",
+      "n_zone": 3593,
+      "n_immune_in_zone": 400,
+      "density": 0.11132758140829391,
+      "background": 0.12991410637594977,
+      "enrichment": 0.8569322032368867,
+      "p": 0.002
+    },
+    {
+      "zone": "exit_field",
+      "celltype": "Il1b_TAM",
+      "n_zone": 3593,
+      "n_immune_in_zone": 300,
+      "density": 0.08349568605622043,
+      "background": 0.09786917740336967,
+      "enrichment": 0.8531356681592548,
+      "p": 0.0
+    },
+    {
+      "zone": "exit_field",
+      "celltype": "NK",
+      "n_zone": 3593,
+      "n_immune_in_zone": 96,
+      "density": 0.026718619537990537,
+      "background": 0.02832837793194582,
+      "enrichment": 0.9431750593760624,
+      "p": 0.29
+    },
+    {
+      "zone": "exit_field",
+      "celltype": "CAF",
+      "n_zone": 3593,
+      "n_immune_in_zone": 131,
+      "density": 0.03645978291121625,
+      "background": 0.02832837793194582,
+      "enrichment": 1.2870409664402518,
+      "p": 0.0
+    },
+    {
+      "zone": "exit_field",
+      "celltype": "Monocyte",
+      "n_zone": 3593,
+      "n_immune_in_zone": 466,
+      "density": 0.1296966323406624,
+      "background": 0.13751238850346878,
+      "enrichment": 0.9431632578863305,
+      "p": 0.042
+    },
+    {
+      "zone": "normoxic_field",
+      "celltype": "CD8",
+      "n_zone": 4757,
+      "n_immune_in_zone": 78,
+      "density": 0.016396888795459322,
+      "background": 0.015774694416914436,
+      "enrichment": 1.039442563012678,
+      "p": 0.384
+    },
+    {
+      "zone": "normoxic_field",
+      "celltype": "Neutrophil",
+      "n_zone": 4757,
+      "n_immune_in_zone": 607,
+      "density": 0.12760142947235653,
+      "background": 0.12487611496531219,
+      "enrichment": 1.0218241455365693,
+      "p": 0.274
+    },
+    {
+      "zone": "normoxic_field",
+      "celltype": "Spp1_TAM",
+      "n_zone": 4757,
+      "n_immune_in_zone": 273,
+      "density": 0.05738911078410763,
+      "background": 0.058969276511397425,
+      "enrichment": 0.9732035761540269,
+      "p": 0.302
+    },
+    {
+      "zone": "normoxic_field",
+      "celltype": "C1qc_TAM",
+      "n_zone": 4757,
+      "n_immune_in_zone": 576,
+      "density": 0.12108471725877654,
+      "background": 0.12991410637594977,
+      "enrichment": 0.9320367174629793,
+      "p": 0.004
+    },
+    {
+      "zone": "normoxic_field",
+      "celltype": "Il1b_TAM",
+      "n_zone": 4757,
+      "n_immune_in_zone": 466,
+      "density": 0.09796089972671852,
+      "background": 0.09786917740336967,
+      "enrichment": 1.000937193157053,
+      "p": 0.52
+    },
+    {
+      "zone": "normoxic_field",
+      "celltype": "NK",
+      "n_zone": 4757,
+      "n_immune_in_zone": 127,
+      "density": 0.026697498423376077,
+      "background": 0.02832837793194582,
+      "enrichment": 0.9424294778724127,
+      "p": 0.206
+    },
+    {
+      "zone": "normoxic_field",
+      "celltype": "CAF",
+      "n_zone": 4757,
+      "n_immune_in_zone": 137,
+      "density": 0.02879966365356317,
+      "background": 0.02832837793194582,
+      "enrichment": 1.0166365233741774,
+      "p": 0.416
+    },
+    {
+      "zone": "normoxic_field",
+      "celltype": "Monocyte",
+      "n_zone": 4757,
+      "n_immune_in_zone": 692,
+      "density": 0.14546983392894683,
+      "background": 0.13751238850346878,
+      "enrichment": 1.0578671166436566,
+      "p": 0.014
+    }
+  ],
+  "novelty_hooks": [
+    "Velocity-defined enter\u2260exit maps onto a contiguous front ribbon with high spatial autocorrelation \u2014 not HIF-island patches.",
+    "Persistent cells are off-ribbon (core field); literature SPP1-TAM/necrosis niches align with core more than ribbon.",
+    "CD8 depleted from front ribbon; CAF enriched \u2014 stromal skirt of the oxygen interface.",
+    "Neutrophil\u2013dynamics coupling is gate-asymmetric (strong E14S), consistent with sort-design + local inflammation.",
+    "Exit program = dual OXPHOS+glycolysis reboot (prior DE) contradicts textbook hypoxia=glycolysis-only / reoxygenation=OXPHOS-only swap."
+  ],
+  "cross_gate_wells": {
+    "wells_shared": 781,
+    "frac_E15enter_with_E14exit_same_well": 0.034571062740076826,
+    "frac_E15persist_with_E14exit_same_well": 0.010243277848911651,
+    "frac_E15enter_with_E14enter_same_well": 0.04737516005121639,
+    "frac_any_dyn_both_gates": 0.12548015364916773
+  }
+}

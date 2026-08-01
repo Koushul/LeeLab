@@ -1,0 +1,26 @@
+{
+  "experiment": "MC38_Hypoxia_001",
+  "libraries": {
+    "E14S": {
+      "ImageIT_gate": "negative",
+      "GFP": "GFP-",
+      "meaning": "Cells sorted as ImageIT hypoxia-marker negative at harvest."
+    },
+    "E15S": {
+      "ImageIT_gate": "positive",
+      "GFP": "GFP+",
+      "meaning": "Cells sorted as ImageIT hypoxia-marker positive at harvest. Includes currently hypoxic and post-hypoxic (reverted) cells because marker positivity is not identical to ongoing transcriptional hypoxia."
+    }
+  },
+  "implications": [
+    "E14S vs E15S composition differences are partly by design (sort gate), not only different tissue faces.",
+    "GFP+/ImageIT+ does not equal persistent hypoxia: velocity resolves entering, persistent, exiting, and reverted states within the marked pool.",
+    "Reverted states in E15S are expected — cells that experienced hypoxia (marker+) but transcriptionally left the hypoxic program.",
+    "Entry≠exit asymmetry and front geometry are most biologically interpretable within E15S (hypoxia-marked) and as contrasts against E14S (unmarked)."
+  ],
+  "tumor_dynamics_fractions": {
+    "E14S": {"n_tumor_dyn": 408, "enter": 0.279, "persistent": 0.110, "exiting": 0.203, "reverted": 0.275},
+    "E15S": {"n_tumor_dyn": 2282, "enter": 0.282, "persistent": 0.121, "exiting": 0.242, "reverted": 0.113}
+  },
+  "note": "Only ~12% of E15S (GFP+/ImageIT+) tumor dynamics cells are velocity-persistent; the rest of the marked pool is entering, exiting, transitional, or reverted."
+}

@@ -7,7 +7,7 @@
 <style>
   :root {
     --bg:#0f1419; --panel:#1a222d; --text:#eaf0f6; --muted:#9aadc0;
-    --gold:#e2b857; --enter:#c0392b; --exit:#2980b9; --line:#2c3848; --ok:#3dba7a;
+    --gold:#e2b857; --enter:#c0392b; --exit:#2980b9; --line:#2c3848; --ok:#3dba7a; --gfp:#7dcea0;
   }
   *{box-sizing:border-box}
   body{
@@ -27,7 +27,7 @@
   }
   .brand{font-family:"Avenir Next","Segoe UI",sans-serif; letter-spacing:.16em; text-transform:uppercase; font-size:.72rem; color:var(--gold); margin-bottom:.6rem}
   h1{font-size:clamp(2rem,4.6vw,3.3rem); max-width:16ch; line-height:1.05; margin:0 0 .8rem}
-  .lede{max-width:40rem; color:var(--muted); font-size:1.08rem}
+  .lede{max-width:42rem; color:var(--muted); font-size:1.08rem}
   .cta{display:flex; gap:.7rem; flex-wrap:wrap; margin-top:1.2rem}
   .cta a{
     font-family:"Avenir Next","Segoe UI",sans-serif; text-decoration:none;
@@ -40,13 +40,14 @@
   h3{font-size:1.05rem; color:var(--gold); margin:1.2rem 0 .4rem}
   p,li{color:var(--muted)}
   .claim{background:var(--panel); border-left:3px solid var(--gold); padding:1rem 1.15rem; margin:1rem 0}
+  .claim.gfp{border-left-color:var(--gfp)}
   .claim strong{color:var(--text)}
   figure{margin:1.1rem 0; background:var(--panel); border:1px solid var(--line); padding:.5rem}
   figure img{width:100%; display:block}
   figcaption{font-size:.84rem; color:var(--muted); padding:.4rem .2rem 0}
-  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem}
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem}
   .stat{background:var(--panel); border:1px solid var(--line); padding:1rem}
-  .stat .n{font-family:"Avenir Next",sans-serif; font-size:1.45rem; color:var(--text)}
+  .stat .n{font-family:"Avenir Next",sans-serif; font-size:1.35rem; color:var(--text)}
   table{width:100%; border-collapse:collapse; font-family:"Avenir Next",sans-serif; font-size:.86rem; margin:1rem 0}
   th,td{padding:.55rem .4rem; border-bottom:1px solid var(--line); text-align:left}
   th{color:var(--text)}
@@ -58,90 +59,121 @@
 </head>
 <body>
 <header>
-  <div class="brand">MC38 · E14S + E15S · Point 1</div>
+  <div class="brand">MC38 · ImageIT sort · E14S GFP− / E15S GFP+</div>
   <h1>Hypoxia is a front, not an island</h1>
-  <p class="lede">Velocity-defined entering and exiting tumor cells form a spatial continuum. Coordinate-shuffle permutation tests show this is non-random on the immune-hot face (E14S), with a weaker trend on the tumor-core face (E15S).</p>
+  <p class="lede">Same experiment, split by ImageIT hypoxia marker: E15S = GFP+ (marker+), E14S = GFP−. RNA velocity then resolves which marked cells are still hypoxic, exiting, or already reverted.</p>
   <div class="cta">
-    <a href="#meaning">What “front” means</a>
+    <a href="#design">Sort design</a>
+    <a class="ghost" href="#meaning">What “front” means</a>
     <a class="ghost" href="#perm">Permutation test</a>
-    <a class="ghost" href="#maps">Maps</a>
   </div>
 </header>
 <main>
+  <section id="design">
+    <h2>Experimental design</h2>
+    <div class="claim gfp">
+      <strong>E15S = GFP+ / ImageIT+</strong> — cells sorted as hypoxia-marker positive.<br/>
+      <strong>E14S = GFP− / ImageIT−</strong> — cells sorted as hypoxia-marker negative.<br/>
+      Marker positivity ≠ ongoing transcriptional hypoxia: many GFP+ cells have <em>reverted</em> (post-hypoxic), which is why not all GFP+ cells are velocity-persistent.
+    </div>
+    <div class="grid">
+      <div class="stat">
+        <div class="n" style="color:var(--gfp)">E15S GFP+</div>
+        <div>Hypoxia-marked pool. Tumor-rich. Within tumor dynamics: ~12% persistent, ~28% entering, ~24% exiting, ~11% reverted.</div>
+      </div>
+      <div class="stat">
+        <div class="n">E14S GFP−</div>
+        <div>Unmarked pool. Immune-hot. Fewer tumor dynamics cells; still shows enter↔exit front geometry where tumor is present.</div>
+      </div>
+      <div class="stat">
+        <div class="n">~12%</div>
+        <div>of E15S tumor dynamics cells are velocity-persistent — GFP+ is a history/gate, velocity is the current state.</div>
+      </div>
+      <div class="stat">
+        <div class="n">entry ≠ exit</div>
+        <div>Within this design, ISR-entry vs OXPHOS-exit is a molecular split inside the hypoxia continuum — including among marker+ cells.</div>
+      </div>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Gate</th><th>Library</th><th>Enter</th><th>Persistent</th><th>Exiting</th><th>Reverted</th><th>n tumor dynamics</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>ImageIT− (GFP−)</td><td>E14S</td><td>28%</td><td>11%</td><td>20%</td><td>27%</td><td>408</td></tr>
+        <tr><td>ImageIT+ (GFP+)</td><td>E15S</td><td>28%</td><td>12%</td><td>24%</td><td>11%</td><td>2282</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Composition differences between E14S and E15S are <strong>partly by design</strong> (sort gate), not only different tissue faces.
+      The interesting biology is the continuum <em>within</em> and <em>between</em> gates: fronts, entry≠exit programs, and reverted post-hypoxic cells inside GFP+.
+    </p>
+  </section>
+
   <section id="meaning">
     <h2>What “organized as a front” means</h2>
     <div class="claim">
       Not scattered hypoxic islands. A <strong>spatial continuum along an oxygen boundary</strong>:
       <code>normoxic → exiting → persistent → entering → entering-deep</code>.
-      Cells entering hypoxia sit next to cells exiting hypoxia — like a moving front.
+      In the ImageIT+ pool this is especially natural: marked cells occupy different positions along the same reoxygenation/hypoxia boundary.
     </div>
     <figure>
       <img src="what_front_means.png" alt="Front vs islands schematic"/>
-      <figcaption>Left: observed continuum. Middle: after shuffling coordinates, states mix and adjacency vanishes. Right: definition and null.</figcaption>
+      <figcaption>Left: observed continuum. Middle: after shuffling coordinates, states mix. Right: definition and null.</figcaption>
     </figure>
   </section>
 
   <section id="perm">
     <h2>Coordinate-shuffle permutation test</h2>
     <p>
-      Shuffling cell coordinates among a fixed set of tissue positions is equivalent to shuffling dynamics labels on the fixed point cloud / kNN graph.
-      We use <strong>n = 2000</strong> permutations and two nulls:
+      Shuffling coordinates among fixed positions ≡ shuffling dynamics labels on the fixed kNN graph.
+      <strong>n = 2000</strong> permutations. The appropriate null is <em>shuffle tumor coordinates only</em> (keep the tumor scaffold).
     </p>
-    <ul>
-      <li><strong>Shuffle all coordinates</strong> — destroys all structure (too harsh; mixes tumor into immune regions).</li>
-      <li><strong>Shuffle tumor coordinates only</strong> — keeps the tumor scaffold; randomly re-paints dynamics onto tumor cells. <em>This is the appropriate null.</em></li>
-    </ul>
-
     <h3>deep → exit neighbor enrichment</h3>
     <table>
       <thead>
-        <tr><th>Sample</th><th>Null</th><th>Observed</th><th>Null mean</th><th>z</th><th>p</th></tr>
+        <tr><th>Sample</th><th>Gate</th><th>Null</th><th>Observed</th><th>Null mean</th><th>z</th><th>p</th></tr>
       </thead>
       <tbody>
-        <tr><td>E14S</td><td>tumor coords</td><td>2.85</td><td>1.43</td><td>3.1</td><td class="sig">0.005</td></tr>
-        <tr><td>E15S</td><td>tumor coords</td><td>1.17</td><td>1.08</td><td>1.5</td><td class="ns">0.074</td></tr>
-        <tr><td>E14S</td><td>all coords</td><td>2.85</td><td>2.04</td><td>0.2</td><td class="ns">0.25</td></tr>
-        <tr><td>E15S</td><td>all coords</td><td>1.17</td><td>1.08</td><td>0.3</td><td class="ns">0.36</td></tr>
+        <tr><td>E14S</td><td>GFP−</td><td>tumor coords</td><td>2.85</td><td>1.43</td><td>3.1</td><td class="sig">0.005</td></tr>
+        <tr><td>E15S</td><td>GFP+</td><td>tumor coords</td><td>1.17</td><td>1.08</td><td>1.5</td><td class="ns">0.074</td></tr>
+        <tr><td>E14S</td><td>GFP−</td><td>all coords</td><td>2.85</td><td>2.04</td><td>0.2</td><td class="ns">0.25</td></tr>
+        <tr><td>E15S</td><td>GFP+</td><td>all coords</td><td>1.17</td><td>1.08</td><td>0.3</td><td class="ns">0.36</td></tr>
       </tbody>
     </table>
     <div class="grid">
-      <div class="stat"><div class="n sig">p = 0.005</div><div>E14S tumor-coordinate shuffle (front is real)</div></div>
-      <div class="stat"><div class="n">p = 0.074</div><div>E15S tumor-coordinate shuffle (trend)</div></div>
+      <div class="stat"><div class="n sig">p = 0.005</div><div>E14S GFP− · tumor-coordinate shuffle</div></div>
+      <div class="stat"><div class="n">p = 0.074</div><div>E15S GFP+ · tumor-coordinate shuffle (trend)</div></div>
       <div class="stat"><div class="n">z = 3.1</div><div>E14S effect size under proper null</div></div>
       <div class="stat"><div class="n">n = 2000</div><div>permutations per test</div></div>
     </div>
     <figure>
       <img src="coord_shuffle_summary.png" alt="Coordinate shuffle summary"/>
-      <figcaption>Observed vs null-mean deep→exit enrichment. Red = p&lt;0.05 under that null.</figcaption>
+      <figcaption>Observed vs null-mean deep→exit enrichment. Red = p&lt;0.05.</figcaption>
     </figure>
     <figure>
       <img src="coord_shuffle_deep_exit_enrichment.png" alt="Deep-exit enrichment null histograms"/>
-      <figcaption>Null distributions for deep→exit enrichment. Tumor-coordinate shuffle is the decisive panel.</figcaption>
+      <figcaption>Null distributions for deep→exit enrichment under all-coordinate vs tumor-coordinate shuffles.</figcaption>
     </figure>
     <figure>
       <img src="coord_shuffle_front_score.png" alt="Front score null histograms"/>
-      <figcaption>Front-ribbon score (mean √(local enter × local exit)) under the same nulls.</figcaption>
+      <figcaption>Front-ribbon score under the same nulls.</figcaption>
     </figure>
-    <div class="claim">
-      <strong>Read:</strong> under the proper tumor-coordinate shuffle, enter-deep↔exit adjacency is significant in E14S and trend-level in E15S.
-      All-coordinate shuffle is a poor null for enrichment ratios (high variance when tumor cells land outside the tumor niche).
-    </div>
   </section>
 
   <section id="maps">
-    <h2>Hero + bridge maps</h2>
+    <h2>Maps</h2>
     <figure>
       <img src="point1_hero_board.png" alt="Hero board"/>
-      <figcaption>Summary board: adjacency enrichments, kNN contact, and deep↔exit bridge maps.</figcaption>
+      <figcaption>Adjacency enrichments, kNN contact, and deep↔exit bridge maps for both gates.</figcaption>
     </figure>
     <div class="grid">
       <figure>
         <img src="E14S_front_bridges.png" alt="E14S bridges"/>
-        <figcaption>E14S — enter↔exit bridges (immune-hot face).</figcaption>
+        <figcaption>E14S GFP− — enter↔exit bridges.</figcaption>
       </figure>
       <figure>
         <img src="E15S_front_bridges.png" alt="E15S bridges"/>
-        <figcaption>E15S — enter↔exit bridges (tumor/stroma core).</figcaption>
+        <figcaption>E15S GFP+ — enter↔exit bridges inside the marked pool.</figcaption>
       </figure>
     </div>
     <div class="grid">
@@ -170,16 +202,16 @@
     <h2>More quantification</h2>
     <figure>
       <img src="front_enrichment_bars.png" alt="Enrichment bars"/>
-      <figcaption>Dynamics adjacency enrichments (★ original perm p&lt;0.05).</figcaption>
+      <figcaption>Dynamics adjacency enrichments.</figcaption>
     </figure>
     <figure>
       <img src="point1_knn_contact_both.png" alt="kNN contact"/>
-      <figcaption>Enter-deep contact with exiting neighbors vs shuffle context.</figcaption>
+      <figcaption>Enter-deep contact with exiting neighbors.</figcaption>
     </figure>
   </section>
 </main>
 <footer>
-  Updated with coordinate-shuffle tests · <code>reseq_finetune/deep_dive/spatial_niches/front_figures/</code>
+  ImageIT GFP+/− sort design incorporated · <code>reseq_finetune/deep_dive/spatial_niches/front_figures/</code>
 </footer>
 </body>
 </html>

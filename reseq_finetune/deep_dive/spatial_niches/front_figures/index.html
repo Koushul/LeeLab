@@ -101,6 +101,7 @@
     <button data-tab="animations" role="tab" aria-selected="false">Animations</button>
     <button data-tab="maps" role="tab" aria-selected="false">Maps</button>
     <button data-tab="entropy" role="tab" aria-selected="false">ADT entropy</button>
+    <button data-tab="h8front" role="tab" aria-selected="false">H≤8 front</button>
     <button data-tab="tests" role="tab" aria-selected="false">Permutation</button>
   </nav>
 </div>
@@ -300,6 +301,74 @@
     <figure>
       <img src="microwell_entropy_spatial.png" alt="Entropy on spatial coordinates"/>
       <figcaption>Entropy colored on hard spatial coordinates.</figcaption>
+    </figure>
+  </section>
+</main>
+</div>
+
+<div id="h8front" class="panel">
+<main>
+  <section>
+    <h2>Front analysis · entropy H≤8</h2>
+    <div class="claim foam">
+      Cells kept if microwell posterior entropy <code>H ≤ 8</code> bits
+      (<strong>12,108 / 13,961 = 86.7%</strong> · E14S 4,643 · E15S 7,465).
+      Coordinates = MAP microwells from raw ADTs (same chip grid).
+      <strong>E14S GFP− and E15S GFP+ are overlaid</strong> — same experiment / chip.
+      The row-1 / col-1 demux artifact line is removed.
+    </div>
+    <div class="grid">
+      <div class="stat"><div class="n foam">1.25×</div><div>OVERLAY deep→exit enrichment (tumor shuffle p≈0.06, z≈1.6).</div></div>
+      <div class="stat"><div class="n gold">72%</div><div>OVERLAY deep cells contacting an exit neighbor (k=30).</div></div>
+      <div class="stat"><div class="n love">18%</div><div>OVERLAY persist on top-20% front ribbon (enter/exit ~43–45%).</div></div>
+    </div>
+
+    <h3>Same-chip overlay</h3>
+    <figure>
+      <img src="h8_chip_overlay.png" alt="E14 E15 chip overlay"/>
+      <figcaption>MAP microwells after H≤8 · GFP− and GFP+ intermixed on one chip.</figcaption>
+    </figure>
+
+    <h3>Front bridges</h3>
+    <div class="grid">
+      <figure>
+        <img src="h8_E14S_front_bridges.png" alt="E14S bridges H8"/>
+        <figcaption>E14S GFP−.</figcaption>
+      </figure>
+      <figure>
+        <img src="h8_E15S_front_bridges.png" alt="E15S bridges H8"/>
+        <figcaption>E15S GFP+.</figcaption>
+      </figure>
+    </div>
+    <figure>
+      <img src="h8_OVERLAY_front_bridges.png" alt="Overlay bridges H8"/>
+      <figcaption>Chip overlay · enter↔exit bridges across both gates.</figcaption>
+    </figure>
+
+    <h3>Local front geometry</h3>
+    <div class="grid">
+      <figure>
+        <img src="h8_E15S_front_ribbons.png" alt="E15S ribbons H8"/>
+        <figcaption>E15S GFP+ ribbons.</figcaption>
+      </figure>
+      <figure>
+        <img src="h8_OVERLAY_front_ribbons.png" alt="Overlay ribbons H8"/>
+        <figcaption>Overlay ribbons — front concentrated in a contiguous zone, not islands.</figcaption>
+      </figure>
+    </div>
+
+    <h3>Enrichment &amp; shuffle</h3>
+    <figure>
+      <img src="h8_front_enrichment_bars.png" alt="H8 enrichment"/>
+      <figcaption>Neighbor enrichment by gate and overlay.</figcaption>
+    </figure>
+    <figure>
+      <img src="h8_coord_shuffle_summary.png" alt="H8 shuffle"/>
+      <figcaption>Tumor label-shuffle nulls (≡ coordinate shuffle), n=2000.</figcaption>
+    </figure>
+    <figure>
+      <img src="h8_persistent_vs_front.png" alt="H8 persist vs front"/>
+      <figcaption>Persistent cells vs front after H≤8.</figcaption>
     </figure>
   </section>
 </main>

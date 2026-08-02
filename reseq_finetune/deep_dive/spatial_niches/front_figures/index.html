@@ -51,9 +51,19 @@
   header.hero::before{
     content:""; position:absolute; inset:0; z-index:0;
     background:
-      linear-gradient(180deg, transparent 15%, rgba(25,23,36,.55) 55%, rgba(25,23,36,.96) 88%),
-      url('point1_hero_board.png') center/cover no-repeat;
+      linear-gradient(180deg, transparent 10%, rgba(25,23,36,.5) 48%, rgba(25,23,36,.97) 88%),
+      url('h8_OVERLAY_front_ribbons.png') center/cover no-repeat;
   }
+  .hypo{
+    background:linear-gradient(135deg,rgba(49,116,143,.22),rgba(38,35,58,.9));
+    border:1px solid var(--hl); border-left:3px solid var(--foam);
+    padding:1.15rem 1.25rem; margin:1rem 0 1.4rem; border-radius:0 6px 6px 0;
+  }
+  .hypo .label{letter-spacing:.14em; text-transform:uppercase; font-size:.68rem; color:var(--foam); margin-bottom:.45rem}
+  .hypo p{color:var(--text); margin:0; font-size:1.02rem; line-height:1.55}
+  .beat{margin:2.2rem 0}
+  .beat h2{margin-bottom:.35rem}
+  .verdict{color:var(--foam); font-size:.92rem; margin:.35rem 0 0.8rem}
   header.hero>*{position:relative;z-index:1}
   .brand{letter-spacing:.2em; text-transform:uppercase; font-size:.7rem; font-weight:500; color:var(--gold); margin-bottom:.75rem}
   h1{
@@ -97,41 +107,147 @@
 <div class="topnav">
   <div class="mark">MC38 hypoxia front</div>
   <nav class="tabs" role="tablist" aria-label="Sections">
-    <button class="active" data-tab="overview" role="tab" aria-selected="true">Overview</button>
+    <button class="active" data-tab="overview" role="tab" aria-selected="true">Story</button>
+    <button data-tab="h8front" role="tab" aria-selected="false">Evidence maps</button>
+    <button data-tab="novel" role="tab" aria-selected="false">Immune skirt</button>
+    <button data-tab="entropy" role="tab" aria-selected="false">ADT QC</button>
     <button data-tab="animations" role="tab" aria-selected="false">Animations</button>
-    <button data-tab="maps" role="tab" aria-selected="false">Maps</button>
-    <button data-tab="entropy" role="tab" aria-selected="false">ADT entropy</button>
-    <button data-tab="h8front" role="tab" aria-selected="false">H≤8 front</button>
-    <button data-tab="novel" role="tab" aria-selected="false">Novel biology</button>
-    <button data-tab="tests" role="tab" aria-selected="false">Permutation</button>
+    <button data-tab="tests" role="tab" aria-selected="false">Statistics</button>
   </nav>
 </div>
 
 <div id="overview" class="panel active">
 <header class="hero">
-  <div class="brand">ImageIT · E14S GFP− / E15S GFP+ · Rosé Pine</div>
-  <h1>Hypoxia is a front, not an island</h1>
-  <p class="lede">Velocity-defined entering and exiting cells organize along a spatial continuum. Open the Animations tab to watch the front pulse.</p>
+  <div class="brand">MC38 · ImageIT · same-chip overlay · H≤8</div>
+  <h1>Hypoxia is a moving front</h1>
+  <p class="lede">Not islands. Not a GFP switch. A polarized oxygen interface with asymmetric molecular faces and an immune skirt.</p>
 </header>
 <main>
   <section>
-    <h2>Sort design</h2>
+    <div class="hypo">
+      <div class="label">Hypothesis</div>
+      <p>
+        Transcriptional hypoxia in MC38 is organized as a <strong>contiguous oxygen front</strong>:
+        velocity-<em>entering</em> and <em>exiting</em> cells form opposite faces of one interface,
+        <em>persistent</em> cells occupy an off-ribbon dwell/core, and the front carries a stereotyped
+        immune skirt (CAF/neutrophil↑, CD8/C1qc↓). ImageIT/GFP marks <em>history</em>, not ongoing state.
+        Entry and exit are molecularly asymmetric — ISR/stress on the way in, dual OXPHOS+glycolysis reboot on the way out.
+      </p>
+    </div>
+    <figure>
+      <img src="story_hypothesis_board.png" alt="Hypothesis board"/>
+      <figcaption>Hypothesis + headline numbers from the H≤8 same-chip analysis.</figcaption>
+    </figure>
+  </section>
+
+  <section class="beat">
+    <h2>1 · Design</h2>
+    <p class="verdict">One chip, two ImageIT gates — so GFP+ and GFP− can be overlaid in shared microwells.</p>
     <div class="claim foam">
-      <strong>E15S = GFP+ / ImageIT+</strong> · <strong>E14S = GFP− / ImageIT−</strong>.<br/>
-      Marker positivity ≠ ongoing transcriptional hypoxia — many GFP+ cells have reverted, which is why not all GFP+ are velocity-persistent.
+      <strong>E15S = GFP+ / ImageIT+</strong> (ever-hypoxic marked) ·
+      <strong>E14S = GFP− / ImageIT−</strong> (unmarked).<br/>
+      Composition differences are partly by sort design, not only different tissue faces.
     </div>
     <div class="grid">
-      <div class="stat"><div class="n foam">E15S GFP+</div><div>Marked pool. ~12% of tumor dynamics cells are persistent.</div></div>
-      <div class="stat"><div class="n love">E14S GFP−</div><div>Unmarked pool. Immune-hot; front still appears where tumor sits.</div></div>
-      <div class="stat"><div class="n gold">front</div><div><code>exit → persist → enter → deep</code> along an oxygen boundary.</div></div>
+      <div class="stat"><div class="n foam">E15S</div><div>7,465 cells after H≤8 · marked pool.</div></div>
+      <div class="stat"><div class="n love">E14S</div><div>4,643 cells after H≤8 · unmarked pool.</div></div>
+      <div class="stat"><div class="n gold">86.7%</div><div>Cells retained at entropy H≤8 (12,108 / 13,961).</div></div>
+    </div>
+    <figure>
+      <img src="h8_chip_overlay.png" alt="Chip overlay"/>
+      <figcaption>MAP microwells after H≤8 — GFP− and GFP+ intermixed on one chip; row-1/col-1 demux artifact removed.</figcaption>
+    </figure>
+  </section>
+
+  <section class="beat">
+    <h2>2 · Marker ≠ ongoing hypoxia</h2>
+    <p class="verdict">GFP+ means a cell <em>was</em> hypoxic enough to trip ImageIT — not that it is transcriptionally hypoxic now.</p>
+    <div class="claim">
+      Only a minority of GFP+ tumor dynamics cells are velocity-<strong>persistent</strong>.
+      Most marked cells have already <strong>exited</strong> or <strong>reverted</strong>. Fate mark ≠ current state.
     </div>
   </section>
-  <section>
-    <h2>What a front means</h2>
+
+  <section class="beat">
+    <h2>3 · Entry ≠ exit</h2>
+    <p class="verdict">The front has two molecular faces — not a reversible glycolysis↔OXPHOS flip.</p>
+    <div class="grid">
+      <div class="stat"><div class="n love">entry</div><div>ISR / IEG / amino-acid stress ↑ · metabolic pause (stress score enter ≫ exit, p≈6×10⁻⁵⁵).</div></div>
+      <div class="stat"><div class="n foam">exit</div><div>Dual OXPHOS <em>and</em> glycolysis reboot + ribosomes (met_sum exit≫enter, p≈5×10⁻⁸⁴).</div></div>
+      <div class="stat"><div class="n iris" style="color:var(--iris)">polarity</div><div>Local exit−enter field is spatially coherent (Moran's I ≈ 0.64).</div></div>
+    </div>
+  </section>
+
+  <section class="beat">
+    <h2>4 · Front, not islands</h2>
+    <p class="verdict">Entering and exiting cells abut along a ribbon — a moving oxygen boundary.</p>
+    <div class="grid">
+      <div class="stat"><div class="n foam">1.25×</div><div>Overlay deep→exit neighbor enrichment (tumor shuffle p≈0.061, z≈1.58, n=2000).</div></div>
+      <div class="stat"><div class="n gold">72%</div><div>Deep cells contacting an exit neighbor (k=30).</div></div>
+      <div class="stat"><div class="n love">0.66</div><div>Moran's I of front ribbon √(enter×exit) — vs ≈0.03 for raw hypoxia score.</div></div>
+    </div>
     <figure>
-      <img src="what_front_means.png" alt="Front meaning"/>
-      <figcaption>Observed continuum vs coordinate shuffle.</figcaption>
+      <img src="h8_OVERLAY_front_ribbons.png" alt="Overlay front ribbons"/>
+      <figcaption>H≤8 overlay · front ribbon, polarity, and persistent density on shared microwells.</figcaption>
     </figure>
+    <figure>
+      <img src="h8_OVERLAY_front_bridges.png" alt="Overlay bridges"/>
+      <figcaption>Enter↔exit bridges on the overlaid chip.</figcaption>
+    </figure>
+  </section>
+
+  <section class="beat">
+    <h2>5 · Persist is the dwell core</h2>
+    <p class="verdict">Persistent cells sit off the moving edge — lower front score than enter/exit.</p>
+    <div class="grid">
+      <div class="stat"><div class="n iris" style="color:var(--iris)">18%</div><div>Persist on top-20% front ribbon.</div></div>
+      <div class="stat"><div class="n love">33%</div><div>Enter on that same ribbon.</div></div>
+      <div class="stat"><div class="n foam">35%</div><div>Exit on that same ribbon.</div></div>
+    </div>
+    <div class="claim">
+      Continuum on tissue: <code>normoxic → exiting → persistent → entering → entering-deep</code>.
+      Persistence is the hypoxic dwell between sides, not the transition ribbon itself.
+    </div>
+    <figure>
+      <img src="h8_persistent_vs_front.png" alt="Persist vs front"/>
+      <figcaption>Persistent positioning relative to the front after H≤8.</figcaption>
+    </figure>
+  </section>
+
+  <section class="beat">
+    <h2>6 · Immune skirt of the interface</h2>
+    <p class="verdict">The oxygen front is not empty stroma — it has a reproducible immune architecture.</p>
+    <div class="grid">
+      <div class="stat"><div class="n gold">1.50× CAF</div><div>Enriched on front ribbon (p≈0).</div></div>
+      <div class="stat"><div class="n love">1.29× Neu</div><div>Neutrophils on front (p≈0).</div></div>
+      <div class="stat"><div class="n foam">0.64× CD8</div><div>Depleted from front (p=0.022).</div></div>
+    </div>
+    <div class="claim foam">
+      C1qc-TAM also depleted (0.77×). Spp1-TAM mildly front/exit-biased (1.14×).
+      Shared-well Fisher: E15 hypoxic tumor ↔ E14 neutrophils OR=1.86, p=4.6×10⁻⁵ —
+      a cross-gate niche visible only because both sorts sit on one chip.
+    </div>
+    <figure>
+      <img src="h8_immune_zone_enrichment.png" alt="Immune zones"/>
+      <figcaption>Immune enrichment across hypoxia field zones.</figcaption>
+    </figure>
+    <figure>
+      <img src="h8_immune_on_front_field.png" alt="Immune on front"/>
+      <figcaption>Spp1-TAM, neutrophils, and CD8 over the front-score field.</figcaption>
+    </figure>
+  </section>
+
+  <section class="beat">
+    <h2>Conclusion</h2>
+    <div class="hypo">
+      <div class="label">What the data support</div>
+      <p>
+        MC38 hypoxia is best read as a <strong>polarized, velocity-resolved front</strong> on a shared spatial chip:
+        asymmetric entry/exit programs, a persistent dwell core off-ribbon, and a CAF/neutrophil-rich, CD8-poor immune skirt.
+        ImageIT reports hypoxic <em>experience</em>; RNA velocity reports hypoxic <em>now</em> — and those are not the same map.
+      </p>
+    </div>
+    <p>Deeper maps, QC, animations, and full statistics live in the tabs above.</p>
   </section>
 </main>
 </div>
@@ -443,45 +559,44 @@
 <div id="tests" class="panel">
 <main>
   <section>
-    <h2>Coordinate-shuffle permutation</h2>
-    <p>Shuffling coordinates among fixed positions ≡ shuffling dynamics labels on the fixed kNN graph. <strong>n = 2000</strong>. Proper null = tumor coordinates only.</p>
+    <h2>Statistics that close the story</h2>
+    <p>Primary analysis: <strong>H≤8 MAP microwells</strong>, E14∪E15 overlay, tumor label-shuffle null (≡ coordinate shuffle), <strong>n=2000</strong>.</p>
     <table>
-      <thead><tr><th>Sample</th><th>Gate</th><th>Null</th><th>Observed</th><th>Null mean</th><th>z</th><th>p</th></tr></thead>
+      <thead><tr><th>Test</th><th>Observed</th><th>Null mean</th><th>z</th><th>p</th></tr></thead>
       <tbody>
-        <tr><td>E14S</td><td>GFP−</td><td>tumor coords</td><td>2.85</td><td>1.43</td><td>3.1</td><td class="sig">0.005</td></tr>
-        <tr><td>E15S</td><td>GFP+</td><td>tumor coords</td><td>1.17</td><td>1.08</td><td>1.5</td><td class="ns">0.074</td></tr>
-        <tr><td>E14S</td><td>GFP−</td><td>all coords</td><td>2.85</td><td>2.04</td><td>0.2</td><td class="ns">0.25</td></tr>
-        <tr><td>E15S</td><td>GFP+</td><td>all coords</td><td>1.17</td><td>1.08</td><td>0.3</td><td class="ns">0.36</td></tr>
+        <tr><td>OVERLAY deep→exit enrichment</td><td>1.25</td><td>1.12</td><td>1.58</td><td class="sig">0.061</td></tr>
+        <tr><td>OVERLAY enter→exit enrichment</td><td>1.17</td><td>1.12</td><td>1.28</td><td class="ns">0.105</td></tr>
+        <tr><td>OVERLAY deep↔exit contact</td><td>0.72</td><td>0.68</td><td>1.04</td><td class="ns">0.170</td></tr>
+        <tr><td>Persist on top-20% ribbon vs enter</td><td>18% vs 33%</td><td>—</td><td>—</td><td class="sig">MW p≈1.6×10⁻⁵</td></tr>
+        <tr><td>Front CAF enrichment</td><td>1.50×</td><td>—</td><td>—</td><td class="sig">≈0</td></tr>
+        <tr><td>Front neutrophil enrichment</td><td>1.29×</td><td>—</td><td>—</td><td class="sig">≈0</td></tr>
+        <tr><td>Front CD8 enrichment</td><td>0.64×</td><td>—</td><td>—</td><td class="sig">0.022</td></tr>
+        <tr><td>Exit vs enter metabolic sum</td><td>2.05 vs −0.10</td><td>—</td><td>—</td><td class="sig">≈5×10⁻⁸⁴</td></tr>
       </tbody>
     </table>
     <figure>
-      <img src="coord_shuffle_summary.png" alt="Shuffle summary"/>
-      <figcaption>Observed vs null-mean deep→exit enrichment.</figcaption>
-    </figure>
-    <div class="grid">
-      <figure>
-        <img src="coord_shuffle_deep_exit_enrichment.png" alt="Enrichment nulls"/>
-        <figcaption>deep→exit enrichment nulls.</figcaption>
-      </figure>
-      <figure>
-        <img src="coord_shuffle_front_score.png" alt="Front score nulls"/>
-        <figcaption>Front-ribbon score nulls.</figcaption>
-      </figure>
-    </div>
-    <figure>
-      <img src="front_enrichment_bars.png" alt="Enrichment bars"/>
-      <figcaption>Dynamics adjacency enrichments.</figcaption>
+      <img src="h8_coord_shuffle_summary.png" alt="H8 shuffle"/>
+      <figcaption>H≤8 tumor-shuffle nulls for enrichment and front score.</figcaption>
     </figure>
     <figure>
-      <img src="point1_knn_contact_both.png" alt="kNN contact"/>
-      <figcaption>Enter-deep contact with exiting neighbors.</figcaption>
+      <img src="h8_front_enrichment_bars.png" alt="Enrichment bars"/>
+      <figcaption>Neighbor enrichment by gate and overlay.</figcaption>
     </figure>
+    <h3>Pre-filter reference (unfiltered hard coords)</h3>
+    <p>Earlier unfiltered maps (artifact present) for comparison only.</p>
+    <table>
+      <thead><tr><th>Sample</th><th>Null</th><th>deep→exit</th><th>z</th><th>p</th></tr></thead>
+      <tbody>
+        <tr><td>E14S</td><td>tumor coords</td><td>2.85</td><td>3.1</td><td class="sig">0.005</td></tr>
+        <tr><td>E15S</td><td>tumor coords</td><td>1.17</td><td>1.5</td><td class="ns">0.074</td></tr>
+      </tbody>
+    </table>
   </section>
 </main>
 </div>
 
 <footer>
-  Rosé Pine · ADT entropy tab · <code>front_figures/microwell_entropy_*.png</code>
+  Story · H≤8 same-chip overlay · <code>story_hypothesis.json</code>
 </footer>
 
 <script>

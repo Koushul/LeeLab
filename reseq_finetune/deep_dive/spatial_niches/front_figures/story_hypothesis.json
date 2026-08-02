@@ -1,0 +1,18 @@
+{
+  "title": "Hypoxia is a moving front with asymmetric faces",
+  "hypothesis": "In MC38 tumors, transcriptional hypoxia is organized as a contiguous oxygen front on tissue: velocity-defined entering and exiting cells form opposite faces of an interface, persistent cells occupy an off-ribbon dwell/core, and the front carries a stereotyped immune skirt (CAF/neutrophil enriched, CD8/C1qc depleted). ImageIT/GFP marks hypoxic history, not ongoing transcriptional state. Entry and exit are molecularly asymmetric (ISR/stress entry vs dual OXPHOS+glycolysis exit), contradicting a simple glycolysis\u2194OXPHOS flip.",
+  "predictions": [
+    "Enter and exit abut spatially more than label shuffle allows",
+    "Persist under-occupies the enter\u00d7exit ribbon relative to enter/exit",
+    "GFP+ gate is not synonymous with persistent hypoxia",
+    "Front neighborhoods are CAF/neutrophil-rich and CD8-poor"
+  ],
+  "conclusions_supported": [
+    "H\u22648 MAP overlay removes demux edge artifact and retains 86.7% of cells",
+    "Overlay deep\u2192exit enrichment 1.25\u00d7 (tumor shuffle p\u22480.061, z\u22481.58)",
+    "Front/polarity spatial autocorrelation Morans I \u22480.66/0.64 vs hypoxia_score \u22480.03",
+    "Persist on top-20% ribbon 17.6% vs enter 33.3% / exit 35.0%",
+    "Entry stress\u2191 exit metabolic reboot\u2191 (met_sum p\u22484.6e-84)",
+    "Front CAF 1.50\u00d7, Neutrophil 1.29\u00d7, CD8 0.64\u00d7, C1qc 0.77\u00d7"
+  ]
+}

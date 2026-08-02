@@ -1,0 +1,178 @@
+{
+  "algorithm": {
+    "primary": "H_adt = H(row)+H(col) on 4-BC ADT aggregates; MAP=argmax",
+    "H_cut": 8.0,
+    "secondary": "soft multinomial 4-BC posterior (export_cells.py / data.js layout)",
+    "exclude": "E31S OB3/OB4 non-spatial perturb-seq",
+    "chip_rule": "v11_spatial_chip and v70_spatial_chip must never be overlaid"
+  },
+  "datasets": {
+    "E30S": {
+      "experiment": "E30S",
+      "H_cut": 8.0,
+      "overall": {
+        "n": 5433,
+        "n_pass_H8": 4720,
+        "frac_pass_H8": 0.8687649549052089,
+        "H_adt_median": 5.724052781490132,
+        "H_adt_mean": 5.609336012820382,
+        "umi_sbc_median": 113.0,
+        "agree_map_adt_vs_4bc": 0.6217559359469906,
+        "agree_map_adt_vs_4bc_H8": 0.659957627118644
+      },
+      "by_chip": {
+        "v11_spatial_chip": {
+          "n": 3073,
+          "n_pass_H8": 2686,
+          "frac_pass_H8": 0.8740644321509925,
+          "H_adt_median": 5.735583737642362,
+          "H_adt_mean": 5.663136077731725,
+          "umi_sbc_median": 101.0,
+          "agree_map_adt_vs_4bc": 0.6449723397331598,
+          "agree_map_adt_vs_4bc_H8": 0.6779597915115413
+        },
+        "v70_spatial_chip": {
+          "n": 2360,
+          "n_pass_H8": 2034,
+          "frac_pass_H8": 0.861864406779661,
+          "H_adt_median": 5.69533798005337,
+          "H_adt_mean": 5.539281945247265,
+          "umi_sbc_median": 135.0,
+          "agree_map_adt_vs_4bc": 0.5915254237288136,
+          "agree_map_adt_vs_4bc_H8": 0.6361848574237955
+        }
+      },
+      "by_ocm_barcode_id": {
+        "OB1": {
+          "n": 1457,
+          "n_pass_H8": 1275,
+          "frac_pass_H8": 0.8750857927247769,
+          "H_adt_median": 5.730756745722589,
+          "H_adt_mean": 5.650493755846676,
+          "umi_sbc_median": 104.0,
+          "agree_map_adt_vs_4bc": 0.6458476321207962,
+          "agree_map_adt_vs_4bc_H8": 0.6752941176470588
+        },
+        "OB2": {
+          "n": 1616,
+          "n_pass_H8": 1411,
+          "frac_pass_H8": 0.8731435643564357,
+          "H_adt_median": 5.758086841751675,
+          "H_adt_mean": 5.674534507797639,
+          "umi_sbc_median": 98.0,
+          "agree_map_adt_vs_4bc": 0.6441831683168316,
+          "agree_map_adt_vs_4bc_H8": 0.6803685329553508
+        },
+        "OB3": {
+          "n": 1265,
+          "n_pass_H8": 1106,
+          "frac_pass_H8": 0.8743083003952569,
+          "H_adt_median": 5.654762915487341,
+          "H_adt_mean": 5.5039515946641435,
+          "umi_sbc_median": 141.0,
+          "agree_map_adt_vs_4bc": 0.5897233201581028,
+          "agree_map_adt_vs_4bc_H8": 0.6292947558770343
+        },
+        "OB4": {
+          "n": 1095,
+          "n_pass_H8": 928,
+          "frac_pass_H8": 0.8474885844748858,
+          "H_adt_median": 5.773684376262024,
+          "H_adt_mean": 5.580097373089868,
+          "umi_sbc_median": 128.0,
+          "agree_map_adt_vs_4bc": 0.593607305936073,
+          "agree_map_adt_vs_4bc_H8": 0.6443965517241379
+        }
+      }
+    },
+    "E31S": {
+      "experiment": "E31S",
+      "H_cut": 8.0,
+      "overall": {
+        "n": 9047,
+        "n_pass_H8": 7873,
+        "frac_pass_H8": 0.8702332264839173,
+        "H_adt_median": 5.83853780276789,
+        "H_adt_mean": 5.686829421842761,
+        "umi_sbc_median": 135.0,
+        "agree_map_adt_vs_4bc": 0.6111418149662872,
+        "agree_map_adt_vs_4bc_H8": 0.6435920233710148
+      },
+      "by_chip": {
+        "v11_spatial_chip": {
+          "n": 3390,
+          "n_pass_H8": 2885,
+          "frac_pass_H8": 0.8510324483775811,
+          "H_adt_median": 6.0357079171713615,
+          "H_adt_mean": 5.889158424290215,
+          "umi_sbc_median": 96.0,
+          "agree_map_adt_vs_4bc": 0.6247787610619469,
+          "agree_map_adt_vs_4bc_H8": 0.668630849220104
+        },
+        "v70_spatial_chip": {
+          "n": 5657,
+          "n_pass_H8": 4988,
+          "frac_pass_H8": 0.8817394378645925,
+          "H_adt_median": 5.716477548750806,
+          "H_adt_mean": 5.565582238124029,
+          "umi_sbc_median": 175.0,
+          "agree_map_adt_vs_4bc": 0.6029697719639385,
+          "agree_map_adt_vs_4bc_H8": 0.6291098636728147
+        }
+      },
+      "by_ocm_barcode_id": {
+        "OB1": {
+          "n": 3390,
+          "n_pass_H8": 2885,
+          "frac_pass_H8": 0.8510324483775811,
+          "H_adt_median": 6.0357079171713615,
+          "H_adt_mean": 5.889158424290215,
+          "umi_sbc_median": 96.0,
+          "agree_map_adt_vs_4bc": 0.6247787610619469,
+          "agree_map_adt_vs_4bc_H8": 0.668630849220104
+        },
+        "OB2": {
+          "n": 5657,
+          "n_pass_H8": 4988,
+          "frac_pass_H8": 0.8817394378645925,
+          "H_adt_median": 5.716477548750806,
+          "H_adt_mean": 5.565582238124029,
+          "umi_sbc_median": 175.0,
+          "agree_map_adt_vs_4bc": 0.6029697719639385,
+          "agree_map_adt_vs_4bc_H8": 0.6291098636728147
+        }
+      }
+    }
+  },
+  "chip_replicates": [
+    {
+      "chip": "v11_spatial_chip",
+      "n": 6463,
+      "n_pass_H8": 5571,
+      "frac_pass_H8": 0.861983598947857,
+      "experiments": [
+        "E30S",
+        "E31S"
+      ],
+      "ocm_lanes": [
+        "OB1",
+        "OB2"
+      ]
+    },
+    {
+      "chip": "v70_spatial_chip",
+      "n": 8017,
+      "n_pass_H8": 7022,
+      "frac_pass_H8": 0.8758887364350755,
+      "experiments": [
+        "E30S",
+        "E31S"
+      ],
+      "ocm_lanes": [
+        "OB2",
+        "OB3",
+        "OB4"
+      ]
+    }
+  ]
+}

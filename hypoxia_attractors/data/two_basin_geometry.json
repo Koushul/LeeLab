@@ -1,0 +1,13 @@
+{
+  "geometry": "two_attractor_Waddington",
+  "enter": "oxygenated -> hypoxic",
+  "leave": "hypoxic -> oxygenated",
+  "persistent": "trapped at hypoxic minimum",
+  "U": "U(h,y)=U1(h)+0.5*kappa*y^2",
+  "kappa": 0.85,
+  "h_ox": -0.9737642009798414,
+  "h_hyp": 1.0339271507595107,
+  "h_sad": -0.06534612291941493,
+  "n_enter_paths": 9,
+  "n_leave_paths": 9
+}

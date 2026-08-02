@@ -4,7 +4,7 @@
 <title>E14 + E15 · Hypoxia basins</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet"/>
 <style>
-:root{--bg:#0b1320;--panel:#101a2c;--ink:#f2f5fa;--mute:#93a0b8;--ox:#2ec4b6;--hyp:#ff5a36;--sad:#ffc14d;--line:#243049}
+:root{--bg:#0b1320;--panel:#101a2c;--ink:#f2f5fa;--mute:#93a0b8;--ox:#2ec4b6;--hyp:#ff5a36;--sad:#ffc14d;--line:#243049;--enter:#4ea8ff;--leave:#5fe0c0}
 body{margin:0;background:radial-gradient(900px 500px at 15% -10%,#1b3d3c66,transparent),radial-gradient(800px 480px at 90% 0%,#4a221866,transparent),var(--bg);color:var(--ink);font-family:"Source Sans 3",system-ui,sans-serif}
 .hero{padding:4rem 6vw 2.5rem;max-width:52rem}
 .brand{font-family:Fraunces,serif;font-size:clamp(2.3rem,5.5vw,3.8rem);line-height:.96;margin:0 0 .8rem;letter-spacing:-.02em}
@@ -26,7 +26,7 @@ a{color:#7ec8ff}
 </style></head><body>
 <header class="hero">
   <h1 class="brand">E14 + E15<br/>hypoxia <span>basins</span></h1>
-  <p class="lede">Two ImageIT gates, one shared dynamical landscape. Tumor cells fall into an <b style="color:var(--ox)">oxygenated</b> attractor or a <b style="color:var(--hyp)">hypoxic</b> attractor, with a plastic ridge between them where entry and reversion happen.</p>
+  <p class="lede">Two ImageIT gates, one shared dynamical landscape. Tumor cells sit in an <b style="color:var(--ox)">oxygenated</b> attractor or a <b style="color:var(--hyp)">hypoxic</b> attractor. Entering hypoxia is the trip O₂→H; leaving is H→O₂ over the saddle pass.</p>
   <div class="pills">
     <div class="pill"><b>2,636</b> tumor cells</div>
     <div class="pill"><b>400</b> E14S · GFP−</div>
@@ -35,10 +35,15 @@ a{color:#7ec8ff}
   </div>
 </header>
 <main>
-    <h2>The hypoxic attractor</h2>
-  <p class="note">Persistent cells are the trapped core of the hypoxia basin. Other cells orbit in (entering) or escape (exiting / reverted).</p>
-  <figure style="margin:1rem 0 1.2rem"><img src="figures/e14e15_hypoxia_well_orbits.png"/><figcaption>Data-driven hypoxia well: 321 persistent cells at the core; entering cells fall inward on spirals; exiting/reverted leave the basin.</figcaption></figure>
-  <figure style="margin:0 0 1.6rem"><img src="figures/e14e15_hypoxia_well_section.png"/><figcaption>Energy cross-section — persistent cells sit at the bottom of the well.</figcaption></figure>
+  <h2>Two basins · traffic both ways</h2>
+  <p class="note"><b style="color:var(--enter)">Entering hypoxia</b> means leaving the oxygenated attractor and falling into the hypoxic well.
+  <b style="color:var(--leave)">Leaving / exiting</b> is the reverse trip back to O₂. Persistent cells are trapped at the hypoxic minimum — not “orbiting” hypoxia alone.</p>
+  <div class="grid">
+    <figure><img src="figures/e14e15_two_basin_schematic.png"/><figcaption>Schematic: enter = O₂→H · leave = H→O₂.</figcaption></figure>
+    <figure><img src="figures/e14e15_two_basin_phase.png"/><figcaption>Phase plane with N↔H model paths and data.</figcaption></figure>
+  </div>
+  <figure style="margin:1rem 0"><img src="figures/e14e15_waddington_3d.png"/><figcaption>3D Waddington surface U(h,y): valleys = attractors, ridge = saddle pass, blue paths enter hypoxia, teal paths return to O₂.</figcaption></figure>
+  <figure style="margin:0 0 1.4rem"><img src="figures/e14e15_waddington_3d_side.png"/><figcaption>Side angle on the same landscape.</figcaption></figure>
 
   <h2>Start here</h2>
   <div class="grid">
@@ -47,17 +52,12 @@ a{color:#7ec8ff}
   </div>
 
   <h2>The basins</h2>
-  <p class="note">We fit a multistable energy <code>U(h)</code> on the hypoxia score axis, then lift it to the phase plane with velocity. Deep wells = stable fates. The ridge = undecided / entering / exiting cells.</p>
+  <p class="note">We fit a multistable energy <code>U(h)</code> on the hypoxia score axis, then lift it to the phase plane with velocity and to a 3D surface with a transverse coordinate y (centered proliferation). Deep wells = stable fates. The ridge = undecided / entering / exiting cells.</p>
   <figure style="margin:1rem 0 1.2rem"><img src="figures/e14e15_hero_landscape.png"/><figcaption>Hero view: potential wells, fate-colored cells, and basins with falling trajectories.</figcaption></figure>
+  <figure style="margin:0 0 1.4rem"><img src="figures/e14e15_hypoxia_well_section.png"/><figcaption>1D cut of U(h): persistent cells sit at the hypoxia minimum; traffic goes over the ridge to/from O₂.</figcaption></figure>
 
   <h2>E14 and E15 on the same map</h2>
   <figure style="margin:1rem 0 1.2rem"><img src="figures/e14e15_libraries.png"/><figcaption>GFP− and GFP+ both occupy the shared basins — ImageIT marks history, the landscape marks current dynamics.</figcaption></figure>
-
-  
-  <h2>Hypoxic well · trapped core</h2>
-  <p class="note">The basin’s center is data-defined by <b style="color:var(--hyp)">persistent hypoxia</b> cells — the ones that fell in and stayed. Entering cells spiral toward that core; exiting and reverted cells leave the well.</p>
-  <figure style="margin:1rem 0 1.2rem"><img src="figures/e14e15_hypoxia_well_orbits.png"/><figcaption>Left: phase plane with spiral capture into the persistent core and escape/reversion paths. Right: polar orbit view centered on the persistent centroid (n=321 core · 730 entering · 978 leaving).</figcaption></figure>
-  <figure style="margin:0 0 1.4rem"><img src="figures/e14e15_hypoxia_well_section.png"/><figcaption>Cross-section of the energy well: persistent cells pile at the bottom; enter/exit/reverted sit on the slopes.</figcaption></figure>
 
   <h2>Who is claimed by which basin?</h2>
   <div class="grid">
@@ -67,9 +67,16 @@ a{color:#7ec8ff}
   </div>
 
   <h2>Model</h2>
-  <div class="math">dh/dt = v
-dv/dt = −U'(h) − γ v
-U(h) = (a/4)h⁴ − (b/2)h² + c h + d exp(−λ(h−hₘ)²)</div>
+  <div class="math">U(h) = (a/4)h⁴ − (b/2)h² + c h + d exp(−λ(h−hₘ)²)
+U(h,y) = U(h) + ½ κ y²
+
+dh/dt = v
+dv/dt = −∂U/∂h − γ v
+dy/dt = −κ y
+
+enter: O₂ well → hypoxia well over the saddle
+leave: hypoxia well → O₂ well
+persistent: trapped at hypoxia minimum</div>
   <p class="note" style="margin-top:.8rem">Inspired by multistable attractors / transition membership in Zhou et al. <i>Nat Methods</i> 2024 (STT), and attractor–basin / metastable substate thinking in Mason et al. <i>Stem Cell Reports</i> 2025.</p>
 </main>
 <footer>

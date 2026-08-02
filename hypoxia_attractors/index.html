@@ -35,6 +35,27 @@ a{color:#7ec8ff}
   </div>
 </header>
 <main>
+  
+  <h2>Robustness · nonequilibrium layer</h2>
+  <p class="note">The density <code>ρ(h)</code> piles on the <b style="color:var(--sad)">plastic ridge</b>, while the drift-fitted
+  <code>U(h)</code> is bistable. Attractors are therefore <b>velocity-defined</b>, not density wells — a nonequilibrium
+  signature. We stress-test with stratified bootstrap, library holdout, transition-path committor, Kramers rates,
+  and a velocity-shuffle null. Leave traffic is the signal that beats null (p≈0.056).</p>
+  <figure style="margin:1rem 0"><img src="figures/e14e15_robust_board.png"/><figcaption>Summary · Kramers leave/enter ≈ 0.40× · density mode on ridge.</figcaption></figure>
+  <figure style="margin:1rem 0"><img src="figures/e14e15_neq_diagnostic.png"/><figcaption>Left: −log ρ vs drift U disagree by design. Right: fate-conditioned densities recover O₂ / H modes.</figcaption></figure>
+  <div class="grid">
+    <figure><img src="figures/e14e15_committor.png"/><figcaption>Committor to hypoxia + dynamics-label proxy.</figcaption></figure>
+    <figure><img src="figures/e14e15_null_flux.png"/><figcaption>Velocity-shuffle null for enter / leave / net crossings.</figcaption></figure>
+  </div>
+  <div class="grid">
+    <figure><img src="figures/e14e15_bootstrap_wells.png"/><figcaption>Bootstrap CIs on well &amp; saddle positions.</figcaption></figure>
+    <figure><img src="figures/e14e15_bootstrap_wells_barriers.png"/><figcaption>Bootstrap CIs on enter vs leave barriers.</figcaption></figure>
+  </div>
+  <div class="grid">
+    <figure><img src="figures/e14e15_library_holdout.png"/><figcaption>E14 vs E15 leave-one-library geometry.</figcaption></figure>
+    <figure><img src="figures/e14e15_U_empirical.png"/><figcaption>Same NEQ comparison, single-panel form.</figcaption></figure>
+  </div>
+
   <h2>Two basins · traffic both ways</h2>
   <p class="note"><b style="color:var(--enter)">Entering hypoxia</b> means leaving the oxygenated attractor and falling into the hypoxic well.
   <b style="color:var(--leave)">Leaving / exiting</b> is the reverse trip back to O₂. Persistent cells are trapped at the hypoxic minimum — not “orbiting” hypoxia alone.</p>
@@ -76,7 +97,10 @@ dy/dt = −κ y
 
 enter: O₂ well → hypoxia well over the saddle
 leave: hypoxia well → O₂ well
-persistent: trapped at hypoxia minimum</div>
+persistent: trapped at hypoxia minimum
+
+committor q(h) = P(hit H before O₂)  ∝ ∫ exp(U/D) ds
+Kramers k_A→B ≈ √(|U''_sad| U''_A)/(2π) · exp(−ΔU_A/D)</div>
   <p class="note" style="margin-top:.8rem">Inspired by multistable attractors / transition membership in Zhou et al. <i>Nat Methods</i> 2024 (STT), and attractor–basin / metastable substate thinking in Mason et al. <i>Stem Cell Reports</i> 2025.</p>
 </main>
 <footer>

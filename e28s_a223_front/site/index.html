@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/>
+<title>E28S A223 · Hypoxia front · H≤8</title>
+<style>
+:root{--base:#191724;--surf:#1f1d2e;--text:#e0def4;--muted:#908caa;--gold:#f6c177;--foam:#9ccfd8;--love:#eb6f92;--iris:#c4a7e7}
+body{margin:0;font-family:ui-sans-serif,system-ui;background:var(--base);color:var(--text)}
+header{padding:1.4rem 1.6rem;border-bottom:1px solid #403d52}
+h1{margin:0;font-size:1.35rem;color:var(--gold)}
+.sub{color:var(--muted);margin-top:.35rem;font-size:.92rem}
+main{padding:1.2rem 1.6rem 3rem;max-width:1100px;margin:0 auto}
+.claim{background:var(--surf);padding:1rem 1.1rem;border-radius:10px;margin:1rem 0;line-height:1.45}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+figure{margin:0;background:var(--surf);padding:.6rem;border-radius:10px}
+img{width:100%;height:auto;border-radius:6px;display:block}
+figcaption{color:var(--muted);font-size:.82rem;margin-top:.4rem}
+.stat{background:var(--surf);padding:.8rem;border-radius:10px}
+.stat .n{font-size:1.4rem;color:var(--foam);font-weight:600}
+table{width:100%;border-collapse:collapse;font-size:.85rem}
+td,th{border-bottom:1px solid #403d52;padding:.4rem .3rem;text-align:left}
+.sig{color:var(--gold)} .ns{color:var(--muted)}
+</style></head><body>
+<header>
+  <h1>E28S A223 · Hypoxia front</h1>
+  <div class="sub">Same geometry tests as MC38 E14/E15 · per-slide GFP± overlay · H≤8 MAP · edge ≠ core chips</div>
+</header>
+<main>
+  <div class="claim"><strong>Design.</strong> Edge and core are separate physical chips — never overlaid.
+  Within each slide, GFP− and GFP+ share the array (analogue of E14S/E15S ImageIT gates).
+  ADT microwell entropy filter <code>H_adt ≤ 8</code> (86.3% retained).
+  Dynamics from scVelo hypoxia phase plane (enter / persist / exit).</div>
+  <div class="grid">
+    <div class="stat"><div class="n">3036</div><div>Cells after H≤8</div></div>
+    <div class="stat"><div class="n">430</div><div>Tumor cells after H≤8</div></div>
+    <div class="stat"><div class="n">1.25× (p=0.205)</div><div>Edge OVERLAY deep→exit enr</div></div>
+    <div class="stat"><div class="n">1.00× (p=0.699)</div><div>Core OVERLAY deep→exit enr</div></div>
+  </div>
+  <h2>Chip placement</h2>
+  <div class="grid">
+    <figure><img src="../front_figures/edge_chip_overlay.png"/><figcaption>Edge chip · GFP±</figcaption></figure>
+    <figure><img src="../front_figures/core_chip_overlay.png"/><figcaption>Core chip · GFP±</figcaption></figure>
+  </div>
+  <h2>Front bridges & ribbons</h2>
+  <div class="grid">
+<figure><img src="../front_figures/core_GFP+_front_bridges.png"/><figcaption>core_GFP+_front_bridges.png</figcaption></figure>
+<figure><img src="../front_figures/core_GFP+_front_ribbons.png"/><figcaption>core_GFP+_front_ribbons.png</figcaption></figure>
+<figure><img src="../front_figures/core_GFP-_front_bridges.png"/><figcaption>core_GFP-_front_bridges.png</figcaption></figure>
+<figure><img src="../front_figures/core_GFP-_front_ribbons.png"/><figcaption>core_GFP-_front_ribbons.png</figcaption></figure>
+<figure><img src="../front_figures/core_OVERLAY_front_bridges.png"/><figcaption>core_OVERLAY_front_bridges.png</figcaption></figure>
+<figure><img src="../front_figures/core_OVERLAY_front_ribbons.png"/><figcaption>core_OVERLAY_front_ribbons.png</figcaption></figure>
+<figure><img src="../front_figures/core_persistent_vs_front.png"/><figcaption>core_persistent_vs_front.png</figcaption></figure>
+<figure><img src="../front_figures/edge_GFP+_front_bridges.png"/><figcaption>edge_GFP+_front_bridges.png</figcaption></figure>
+<figure><img src="../front_figures/edge_GFP+_front_ribbons.png"/><figcaption>edge_GFP+_front_ribbons.png</figcaption></figure>
+<figure><img src="../front_figures/edge_GFP-_front_bridges.png"/><figcaption>edge_GFP-_front_bridges.png</figcaption></figure>
+<figure><img src="../front_figures/edge_GFP-_front_ribbons.png"/><figcaption>edge_GFP-_front_ribbons.png</figcaption></figure>
+<figure><img src="../front_figures/edge_OVERLAY_front_bridges.png"/><figcaption>edge_OVERLAY_front_bridges.png</figcaption></figure>
+<figure><img src="../front_figures/edge_OVERLAY_front_ribbons.png"/><figcaption>edge_OVERLAY_front_ribbons.png</figcaption></figure>
+<figure><img src="../front_figures/edge_persistent_vs_front.png"/><figcaption>edge_persistent_vs_front.png</figcaption></figure>
+</div>
+  <h2>Shuffle tests</h2>
+  <div class="grid">
+    <figure><img src="../front_figures/front_enrichment_bars.png"/><figcaption>Enrichment vs null</figcaption></figure>
+    <figure><img src="../front_figures/coord_shuffle_summary.png"/><figcaption>Shuffle summary</figcaption></figure>
+  </div>
+  <h2>Animations</h2>
+  <div class="grid">
+<figure><img src="../front_figures/animations/core_GFP+_front_pulse.gif"/><figcaption>core_GFP+_front_pulse.gif</figcaption></figure>
+<figure><img src="../front_figures/animations/core_GFP-_front_pulse.gif"/><figcaption>core_GFP-_front_pulse.gif</figcaption></figure>
+<figure><img src="../front_figures/animations/core_OVERLAY_front_pulse.gif"/><figcaption>core_OVERLAY_front_pulse.gif</figcaption></figure>
+<figure><img src="../front_figures/animations/edge_GFP+_front_pulse.gif"/><figcaption>edge_GFP+_front_pulse.gif</figcaption></figure>
+<figure><img src="../front_figures/animations/edge_GFP-_front_pulse.gif"/><figcaption>edge_GFP-_front_pulse.gif</figcaption></figure>
+<figure><img src="../front_figures/animations/edge_OVERLAY_front_pulse.gif"/><figcaption>edge_OVERLAY_front_pulse.gif</figcaption></figure>
+</div>
+  <h2>Statistics</h2>
+  <table><tr><th>label</th><th>metric</th><th>obs</th><th>null</th><th>z</th><th>p</th></tr>
+<tr><td>edge_GFP-</td><td>enr_deep_exit</td><td>nan</td><td>nan</td><td>nan</td><td class='ns'>nan</td></tr>
+<tr><td>edge_GFP-</td><td>enr_enter_exit</td><td>1.02</td><td>0.948</td><td>0.53</td><td class='ns'>0.27</td></tr>
+<tr><td>edge_GFP-</td><td>contact_deep_exit</td><td>nan</td><td>nan</td><td>nan</td><td class='ns'>nan</td></tr>
+<tr><td>edge_GFP-</td><td>front_score</td><td>0.0373</td><td>0.0329</td><td>1.26</td><td class='ns'>0.096</td></tr>
+<tr><td>edge_GFP+</td><td>enr_deep_exit</td><td>1.38</td><td>1.11</td><td>0.38</td><td class='ns'>0.439</td></tr>
+<tr><td>edge_GFP+</td><td>enr_enter_exit</td><td>1.61</td><td>1.11</td><td>1.15</td><td class='ns'>0.126</td></tr>
+<tr><td>edge_GFP+</td><td>contact_deep_exit</td><td>0.3</td><td>0.211</td><td>0.69</td><td class='ns'>0.359</td></tr>
+<tr><td>edge_GFP+</td><td>front_score</td><td>0.0129</td><td>0.00848</td><td>1.50</td><td class='ns'>0.0675</td></tr>
+<tr><td>edge_OVERLAY</td><td>enr_deep_exit</td><td>1.25</td><td>0.981</td><td>0.95</td><td class='ns'>0.205</td></tr>
+<tr><td>edge_OVERLAY</td><td>enr_enter_exit</td><td>1.12</td><td>0.971</td><td>1.06</td><td class='ns'>0.147</td></tr>
+<tr><td>edge_OVERLAY</td><td>contact_deep_exit</td><td>0.643</td><td>0.546</td><td>0.73</td><td class='ns'>0.322</td></tr>
+<tr><td>edge_OVERLAY</td><td>front_score</td><td>0.0246</td><td>0.0203</td><td>1.91</td><td class='sig'>0.0335</td></tr>
+<tr><td>core_GFP-</td><td>enr_deep_exit</td><td>nan</td><td>nan</td><td>nan</td><td class='ns'>nan</td></tr>
+<tr><td>core_GFP-</td><td>enr_enter_exit</td><td>1.39</td><td>1.11</td><td>1.61</td><td class='sig'>0.0495</td></tr>
+<tr><td>core_GFP-</td><td>contact_deep_exit</td><td>nan</td><td>nan</td><td>nan</td><td class='ns'>nan</td></tr>
+<tr><td>core_GFP-</td><td>front_score</td><td>0.0839</td><td>0.0741</td><td>1.20</td><td class='ns'>0.093</td></tr>
+<tr><td>core_GFP+</td><td>enr_deep_exit</td><td>0.986</td><td>1.05</td><td>-0.19</td><td class='ns'>0.623</td></tr>
+<tr><td>core_GFP+</td><td>enr_enter_exit</td><td>1.13</td><td>1.04</td><td>0.42</td><td class='ns'>0.346</td></tr>
+<tr><td>core_GFP+</td><td>contact_deep_exit</td><td>0.818</td><td>0.573</td><td>1.57</td><td class='ns'>0.104</td></tr>
+<tr><td>core_GFP+</td><td>front_score</td><td>0.0359</td><td>0.032</td><td>0.95</td><td class='ns'>0.175</td></tr>
+<tr><td>core_OVERLAY</td><td>enr_deep_exit</td><td>1</td><td>1.12</td><td>-0.47</td><td class='ns'>0.699</td></tr>
+<tr><td>core_OVERLAY</td><td>enr_enter_exit</td><td>1.19</td><td>1.12</td><td>0.57</td><td class='ns'>0.29</td></tr>
+<tr><td>core_OVERLAY</td><td>contact_deep_exit</td><td>0.75</td><td>0.84</td><td>-0.82</td><td class='ns'>0.875</td></tr>
+<tr><td>core_OVERLAY</td><td>front_score</td><td>0.0658</td><td>0.0571</td><td>2.41</td><td class='sig'>0.0025</td></tr>
+</table>
+</main></body></html>

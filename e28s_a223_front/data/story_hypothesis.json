@@ -1,0 +1,11 @@
+{
+  "title": "E28S A223 hypoxia front",
+  "hypothesis": "Transcriptional hypoxia on A223 tumors organizes as an enter\u2194exit front on tissue, with persist off-ribbon \u2014 tested separately on edge and core chips.",
+  "conclusions": [
+    "Edge OVERLAY deep\u2192exit 1.25\u00d7 (p=0.205) \u2014 magnitude similar to E14/E15 H\u22648 overlay, underpowered",
+    "Edge persist on top-20% ribbon 13% vs enter/exit ~48/47%",
+    "Core OVERLAY deep\u2192exit 1.00\u00d7 (p=0.699) \u2014 no clear front enrichment",
+    "Core GFP\u2212 enter\u2192exit 1.39\u00d7 (p=0.0495)",
+    "Never overlay edge\u222acore; GFP\u00b1 overlay only within slide"
+  ]
+}

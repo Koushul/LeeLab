@@ -1,0 +1,51 @@
+{
+  "experiment": "E28S A223 hypoxia",
+  "filter": "H_adt<=8.0",
+  "n_h8": 3036,
+  "n_tumor_h8": 430,
+  "n_by_sample": {
+    "edge_gfp_plus": 1243,
+    "edge_gfp_minus": 823,
+    "core_gfp_plus": 651,
+    "core_gfp_minus": 319
+  },
+  "velocity_thresholds": {
+    "s_hi": 0.03849136112889535,
+    "s_lo": -0.5149209238080932,
+    "v_pos": 0.4549020214527329,
+    "v_up": 0.4549020214527329,
+    "v_dn": -0.4549020214527329
+  },
+  "hypoxia_genes": [
+    "Slc2a1",
+    "Hk2",
+    "Ldha",
+    "Pgk1",
+    "Bnip3",
+    "Vegfa",
+    "Egln3",
+    "Eno1",
+    "Pdk1",
+    "Gapdh",
+    "Aldoa",
+    "Pfkl",
+    "Ndrg1",
+    "Fam162a",
+    "P4ha1",
+    "Higd1a"
+  ],
+  "chip_rule": "edge and core are separate chips; GFP\u00b1 overlay only within slide",
+  "headline": {
+    "edge_enr": "1.25\u00d7 (p=0.205)",
+    "core_enr": "1.00\u00d7 (p=0.699)"
+  },
+  "dynamics_counts": {
+    "exiting_hypoxia": 117,
+    "entering_hypoxia": 100,
+    "normoxic_stable": 68,
+    "transitional": 63,
+    "persistent_hypoxia": 44,
+    "entering_deep_hypoxia": 26,
+    "reverted_stable": 12
+  }
+}

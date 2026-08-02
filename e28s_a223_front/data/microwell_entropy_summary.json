@@ -1,0 +1,24 @@
+{
+  "n": 3516,
+  "h_cut": 8.0,
+  "frac_pass": 0.863481228668942,
+  "n_pass": 3036,
+  "by_slide": {
+    "count": {
+      "core": 1112,
+      "edge": 2404
+    },
+    "median": {
+      "core": 5.999977917916905,
+      "edge": 6.080489938287532
+    }
+  },
+  "pass_by_sample": {
+    "edge_gfp_plus": 1243,
+    "edge_gfp_minus": 823,
+    "core_gfp_plus": 651,
+    "core_gfp_minus": 319
+  },
+  "layout": "48x48 MAP from H_adt (4-BC wells aggregated to row/col ADT halves)",
+  "chip_rule": "edge and core are separate chips; never overlay across slides"
+}

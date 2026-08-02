@@ -1,0 +1,30 @@
+{
+  "spatial": "H_adt<=8 MAP microwells",
+  "chip_rule": "edge and core are separate chips; GFP\u00b1 overlay only within slide",
+  "animations": [
+    {
+      "file": "core_GFP+_front_pulse.gif",
+      "label": "core_GFP+_front_pulse"
+    },
+    {
+      "file": "core_GFP-_front_pulse.gif",
+      "label": "core_GFP-_front_pulse"
+    },
+    {
+      "file": "core_OVERLAY_front_pulse.gif",
+      "label": "core_OVERLAY_front_pulse"
+    },
+    {
+      "file": "edge_GFP+_front_pulse.gif",
+      "label": "edge_GFP+_front_pulse"
+    },
+    {
+      "file": "edge_GFP-_front_pulse.gif",
+      "label": "edge_GFP-_front_pulse"
+    },
+    {
+      "file": "edge_OVERLAY_front_pulse.gif",
+      "label": "edge_OVERLAY_front_pulse"
+    }
+  ]
+}

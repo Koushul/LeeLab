@@ -88,26 +88,29 @@ def style_ax(ax, grid=False):
 
 
 def load():
-    adata = sc.read_h5ad("/ix1/ylee/shared/MC38_Hypoxia_001/reseq_finetune/mc38_tumor_reseq_finetuned.h5ad")
+    import sys
+
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from h8_spatial import load_h8_adata
+
+    adata = load_h8_adata()
     dyn = pd.read_csv(
         "/ix1/ylee/shared/MC38_Hypoxia_001/reseq_finetune/hypoxia_velocity/hypoxia_dynamics_per_cell.csv"
     ).set_index("barcode")
-    adata = adata[adata.obs_names.intersection(dyn.index)].copy()
-    for c in ["hypoxia_dynamics", "hypoxia_score", "v_hypoxia", "prolif_score"]:
+    for c in ["prolif_score"]:
         if c in dyn.columns:
-            adata.obs[c] = dyn.loc[adata.obs_names, c].values
-    if "spatial" not in adata.obsm:
-        adata.obsm["spatial"] = adata.obs[["spatial_coordinate_x", "spatial_coordinate_y"]].to_numpy()
-    adata.obs["is_tumor"] = (
-        adata.obs["cell_type_finetuned"].astype(str).str.contains("Tumor", case=False)
-        | adata.obs["cell_type"].astype(str).str.contains("Tumor", case=False)
-    ).to_numpy()
+            common = adata.obs_names.intersection(dyn.index)
+            adata.obs.loc[common, c] = dyn.loc[common, c].values
     return adata
 
 
 def sample_xy(adata, sample):
-    m = (adata.obs["sample"] == sample).to_numpy() & np.isfinite(adata.obsm["spatial"]).all(1)
-    sub = adata[m]
+    if sample in (None, "OVERLAY"):
+        m = np.isfinite(adata.obsm["spatial"]).all(1)
+        sub = adata[m]
+    else:
+        m = (adata.obs["sample"] == sample).to_numpy() & np.isfinite(adata.obsm["spatial"]).all(1)
+        sub = adata[m]
     return sub, np.asarray(sub.obsm["spatial"], float)
 
 
@@ -431,7 +434,10 @@ def fig_what_front_means():
 
 
 def fig_hero_board(adata):
-    tab = pd.read_csv(OUT / "coord_shuffle_front_test.csv")
+    tab_path = OUT / "h8_coord_shuffle_front_test.csv"
+    if not tab_path.exists():
+        tab_path = OUT / "coord_shuffle_front_test.csv"
+    tab = pd.read_csv(tab_path)
     enr = pd.read_csv(OUT / "front_enrichment_table.csv")
     fig = plt.figure(figsize=(12.2, 9.6), facecolor=RP["base"])
     gs = fig.add_gridspec(2, 2, hspace=0.32, wspace=0.28)
@@ -458,19 +464,41 @@ def fig_hero_board(adata):
     # B perm summary
     ax = fig.add_subplot(gs[0, 1])
     style_ax(ax, grid=True)
-    sub = tab[(tab["metric"] == "enr_deep_exit") & (tab["mode"] == "coord_tumor")]
+    if "mode" in tab.columns:
+        sub = tab[(tab["metric"] == "enr_deep_exit") & (tab["mode"] == "coord_tumor")]
+    else:
+        sub = tab[tab["metric"].astype(str).str.contains("deep", case=False)]
+        if "sample" not in sub.columns and "library" in sub.columns:
+            sub = sub.rename(columns={"library": "sample"})
+    if len(sub) == 0:
+        sub = tab.copy()
     xs = np.arange(len(sub))
-    ax.bar(xs - 0.18, sub.null_mean, width=0.36, color=RP["overlay"], label="null", edgecolor=RP["hl_med"])
-    ax.bar(xs + 0.18, sub.observed, width=0.36, color=[RP["love"], RP["foam"]], label="observed")
-    for i, r in enumerate(sub.itertuples()):
-        ax.text(i, max(r.observed, r.null_mean) + 0.08, f"p={r.p:.3g}", ha="center", fontsize=8, color=RP["subtle"])
-    ax.set_xticks(xs)
-    ax.set_xticklabels([f"{s}\nGFP{'−' if s=='E14S' else '+'}" for s in sub["sample"]])
+    null_col = "null_mean" if "null_mean" in sub.columns else ("null" if "null" in sub.columns else None)
+    obs_col = "observed" if "observed" in sub.columns else ("obs" if "obs" in sub.columns else None)
+    if null_col and obs_col and len(sub):
+        ax.bar(xs - 0.18, sub[null_col], width=0.36, color=RP["overlay"], label="null", edgecolor=RP["hl_med"])
+        cols = [RP["love"], RP["foam"], RP["iris"]][: len(sub)]
+        ax.bar(xs + 0.18, sub[obs_col], width=0.36, color=cols, label="observed")
+        for i, r in enumerate(sub.itertuples()):
+            obs_v = getattr(r, obs_col)
+            null_v = getattr(r, null_col)
+            p = getattr(r, "p", getattr(r, "p_ge_obs", getattr(r, "pval", np.nan)))
+            ax.text(i, max(obs_v, null_v) + 0.08, f"p={p:.3g}", ha="center", fontsize=8, color=RP["subtle"])
+        ax.set_xticks(xs)
+        labels = []
+        for s in sub["sample"].astype(str):
+            if s == "E14S":
+                labels.append("E14S\nGFP−")
+            elif s == "E15S":
+                labels.append("E15S\nGFP+")
+            else:
+                labels.append(s)
+        ax.set_xticklabels(labels)
     ax.set_ylabel("deep → exit enrichment")
-    ax.set_title("B   Tumor-coordinate shuffle", loc="left", color=RP["gold"])
+    ax.set_title("B   Tumor-label shuffle · H≤8", loc="left", color=RP["gold"])
     ax.legend(labelcolor=RP["subtle"])
 
-    # C/D maps
+    # C/D maps on H≤8 MAP microwells
     for col_i, sample in enumerate(["E14S", "E15S"]):
         ax = fig.add_subplot(gs[1, col_i])
         style_ax(ax)
@@ -497,7 +525,7 @@ def fig_hero_board(adata):
         for sp in ax.spines.values():
             sp.set_visible(False)
         gate = "GFP−" if sample == "E14S" else "GFP+"
-        ax.set_title(f"{'C' if col_i == 0 else 'D'}   {sample} {gate} front", loc="left", color=RP["gold"])
+        ax.set_title(f"{'C' if col_i == 0 else 'D'}   {sample} {gate} · H≤8 MAP", loc="left", color=RP["gold"])
 
     handles = [
         mpatches.Patch(color=RP["love"], label="enter-deep"),
@@ -506,7 +534,7 @@ def fig_hero_board(adata):
         Line2D([0], [0], color=RP["gold"], lw=2, label="kNN bridge"),
     ]
     fig.legend(handles=handles, loc="lower center", ncol=4, bbox_to_anchor=(0.5, 0.01), labelcolor=RP["subtle"])
-    fig.suptitle("Point 1 · Hypoxia is a front, not an island", fontsize=15, color=RP["text"], y=0.98)
+    fig.suptitle("Point 1 · Hypoxia is a front, not an island · H≤8", fontsize=15, color=RP["text"], y=0.98)
     fig.savefig(OUT / "point1_hero_board.png", dpi=220, bbox_inches="tight")
     plt.close(fig)
 
@@ -791,58 +819,39 @@ def fig_knn_contact(adata):
         ax.set_title(f"{sample}: deep↔exit bridges")
         ax.legend(loc="upper left", bbox_to_anchor=(1.01, 1), labelcolor=RP["subtle"])
         rows.append({"sample": sample, "deep_has_exit": obs, "p": p})
-    fig.suptitle("Enter-deep and exiting cells are spatial neighbors", color=RP["text"], fontsize=13)
+    fig.suptitle("Enter-deep and exiting cells are spatial neighbors · H≤8 MAP", color=RP["text"], fontsize=13)
     fig.tight_layout()
     fig.savefig(OUT / "point1_knn_contact_both.png", dpi=220, bbox_inches="tight")
     plt.close(fig)
 
 
-def main():
+def main(boards_only: bool = False):
     apply_theme()
-    print("loading…")
+    print("loading H≤8 MAP…")
     adata = load()
-    print("bridges…")
-    fig_front_bridges(adata)
-    print("enrichment…")
-    fig_enrichment_bars()
-    print("coord shuffle summary…")
-    fig_coord_shuffle_summary()
-    print("coord shuffle hists…")
-    fig_coord_shuffle_hists(adata)
+    if not boards_only:
+        print("bridges…")
+        fig_front_bridges(adata)
+        print("enrichment…")
+        fig_enrichment_bars()
+        print("coord shuffle summary…")
+        fig_coord_shuffle_summary()
+        print("coord shuffle hists…")
+        fig_coord_shuffle_hists(adata)
+        print("zooms/ribbons…")
+        fig_zooms_and_ribbons(adata)
+        print("entry/exit programs…")
+        fig_entry_exit_programs(adata.copy())
     print("what front means…")
     fig_what_front_means()
     print("hero…")
     fig_hero_board(adata)
-    print("zooms/ribbons…")
-    fig_zooms_and_ribbons(adata)
     print("knn contact…")
     fig_knn_contact(adata)
-    print("entry/exit programs…")
-    fig_entry_exit_programs(adata.copy())
-    # copy key figs into report sites
-    import shutil
-
-    for name in [
-        "point1_hero_board.png",
-        "front_enrichment_bars.png",
-        "coord_shuffle_summary.png",
-        "coord_shuffle_deep_exit_enrichment.png",
-        "coord_shuffle_front_score.png",
-        "what_front_means.png",
-        "point1_knn_contact_both.png",
-        "E14S_front_bridges.png",
-        "E15S_front_bridges.png",
-        "E14S_front_zooms.png",
-        "E15S_front_zooms.png",
-        "E14S_front_ribbons.png",
-        "E15S_front_ribbons.png",
-        "program_state_heatmap.png",
-    ]:
-        src = OUT / name
-        if src.exists():
-            shutil.copy(src, OUT / name)
     print("done")
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+
+    main(boards_only="--boards-only" in sys.argv)

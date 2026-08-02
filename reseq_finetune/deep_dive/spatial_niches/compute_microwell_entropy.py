@@ -198,48 +198,61 @@ def make_figures(df: pd.DataFrame, obs: pd.DataFrame):
     fig.savefig(OUT / "microwell_entropy_distribution.png", dpi=180, facecolor=RP["base"])
     plt.close(fig)
 
-    fig, axes = plt.subplots(1, 2, figsize=(12.2, 5.6))
+    fig, axes = plt.subplots(2, 2, figsize=(12.2, 10.2))
     fig.patch.set_facecolor(RP["base"])
-    for ax, sample in zip(axes, ["E14S", "E15S"]):
-        style_ax(ax)
-        sub = df[df["sample"] == sample].set_index("barcode_raw")
-        o = obs[obs["sample"] == sample].copy()
-        merged = o.join(sub[["entropy_bits", "map_prob"]], on="barcode_raw", how="inner")
-        x = pd.to_numeric(merged["spatial_coordinate_x"], errors="coerce")
-        y = pd.to_numeric(merged["spatial_coordinate_y"], errors="coerce")
-        m = np.isfinite(x) & np.isfinite(y)
-        if m.sum() == 0:
-            ax.set_title(f"{sample} · no coord overlap")
-            continue
-        vals = merged.loc[m, "entropy_bits"].to_numpy()
-        vmax = float(np.nanpercentile(vals, 99)) if len(vals) else 8.0
-        sca = ax.scatter(
-            x[m],
-            y[m],
-            c=vals,
-            s=6,
-            cmap="magma",
-            linewidths=0,
-            alpha=0.85,
-            vmin=0,
-            vmax=max(4.0, vmax),
-        )
-        ax.set_aspect("equal")
-        ax.set_xticks([])
-        ax.set_yticks([])
-        gate = "GFP−" if sample == "E14S" else "GFP+"
-        ax.set_title(f"{sample} {gate} · entropy on hard coords")
-        cb = fig.colorbar(sca, ax=ax, fraction=0.046, pad=0.02)
-        cb.set_label("bits", color=RP["subtle"])
-        cb.ax.yaxis.set_tick_params(color=RP["subtle"])
-        plt.setp(plt.getp(cb.ax.axes, "yticklabels"), color=RP["subtle"])
+    for row_i, use_map in enumerate([False, True]):
+        for col_i, sample in enumerate(["E14S", "E15S"]):
+            ax = axes[row_i, col_i]
+            style_ax(ax)
+            sub = df[df["sample"] == sample].copy()
+            if use_map:
+                x = pd.to_numeric(sub["map_row_idx"], errors="coerce")
+                y = pd.to_numeric(sub["map_col_idx"], errors="coerce")
+                vals = sub["entropy_bits"].to_numpy()
+                title_suffix = "MAP microwells"
+            else:
+                o = obs[obs["sample"] == sample].copy()
+                merged = o.join(
+                    sub.set_index("barcode_raw")[["entropy_bits", "map_prob"]],
+                    on="barcode_raw",
+                    how="inner",
+                )
+                x = pd.to_numeric(merged["spatial_coordinate_x"], errors="coerce")
+                y = pd.to_numeric(merged["spatial_coordinate_y"], errors="coerce")
+                vals = merged["entropy_bits"].to_numpy()
+                title_suffix = "hard demux (artifact)"
+            m = np.isfinite(x) & np.isfinite(y)
+            if m.sum() == 0:
+                ax.set_title(f"{sample} · no coord overlap")
+                continue
+            vmax = float(np.nanpercentile(vals[m], 99)) if m.sum() else 8.0
+            sca = ax.scatter(
+                x[m],
+                y[m],
+                c=vals[m],
+                s=6,
+                cmap="magma",
+                linewidths=0,
+                alpha=0.85,
+                vmin=0,
+                vmax=max(4.0, vmax),
+            )
+            ax.set_aspect("equal")
+            ax.set_xticks([])
+            ax.set_yticks([])
+            gate = "GFP−" if sample == "E14S" else "GFP+"
+            ax.set_title(f"{sample} {gate} · {title_suffix}")
+            cb = fig.colorbar(sca, ax=ax, fraction=0.046, pad=0.02)
+            cb.set_label("bits", color=RP["subtle"])
+            cb.ax.yaxis.set_tick_params(color=RP["subtle"])
+            plt.setp(plt.getp(cb.ax.axes, "yticklabels"), color=RP["subtle"])
     fig.suptitle(
-        "High entropy = ambiguous microwell (often low/zero ADT)",
+        "High entropy = ambiguous microwell · top=old demux · bottom=MAP (analysis coords)",
         color=RP["text"],
         fontsize=13,
-        y=0.98,
+        y=0.995,
     )
-    fig.tight_layout(rect=[0, 0, 1, 0.95])
+    fig.tight_layout(rect=[0, 0, 1, 0.97])
     fig.savefig(OUT / "microwell_entropy_spatial.png", dpi=180, facecolor=RP["base"])
     plt.close(fig)
 

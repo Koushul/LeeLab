@@ -35,26 +35,24 @@ OUT = Path("/ix1/ylee/shared/MC38_Hypoxia_001/reseq_finetune/deep_dive/spatial_n
 ANIM = OUT / "animations"
 ANIM.mkdir(parents=True, exist_ok=True)
 
+from h8_spatial import load_h8_adata, subset_xy  # noqa: E402
+
+_ADATA = None
+
+
+def get_adata():
+    global _ADATA
+    if _ADATA is None:
+        print("loading H≤8 MAP spatial…")
+        _ADATA = load_h8_adata()
+        print("n_cells", _ADATA.n_obs, dict(_ADATA.obs["sample"].value_counts()))
+    return _ADATA
+
 
 def load_sample(sample: str):
-    adata = sc.read_h5ad("/ix1/ylee/shared/MC38_Hypoxia_001/reseq_finetune/mc38_tumor_reseq_finetuned.h5ad")
-    dyn = pd.read_csv(
-        "/ix1/ylee/shared/MC38_Hypoxia_001/reseq_finetune/hypoxia_velocity/hypoxia_dynamics_per_cell.csv"
-    ).set_index("barcode")
-    adata = adata[adata.obs_names.intersection(dyn.index)].copy()
-    adata.obs["hypoxia_dynamics"] = dyn.loc[adata.obs_names, "hypoxia_dynamics"].values
-    if "spatial" not in adata.obsm:
-        adata.obsm["spatial"] = adata.obs[["spatial_coordinate_x", "spatial_coordinate_y"]].to_numpy()
-    tumor = (
-        adata.obs["cell_type_finetuned"].astype(str).str.contains("Tumor", case=False)
-        | adata.obs["cell_type"].astype(str).str.contains("Tumor", case=False)
-    ).to_numpy()
-    m = (adata.obs["sample"] == sample).to_numpy() & np.isfinite(adata.obsm["spatial"]).all(1)
-    sub = adata[m]
-    xy = np.asarray(sub.obsm["spatial"], float)
-    labs = sub.obs["hypoxia_dynamics"].astype(str).to_numpy()
-    tumor = tumor[m]
-    return xy, labs, tumor
+    adata = get_adata()
+    _sub, xy, labs, tumor, label = subset_xy(adata, sample)
+    return xy, labs, tumor, label
 
 
 def local_fields(xy, labs, tumor, k=40):
@@ -85,10 +83,14 @@ def pulse(t, period=1.0):
     return 0.55 + 0.45 * (0.5 * (1 + np.sin(2 * np.pi * t / period)))
 
 
+def gate_label(sample: str) -> str:
+    return {"E14S": "GFP−", "E15S": "GFP+", "OVERLAY": "chip overlay"}.get(sample, sample)
+
+
 def make_pulsating_front(sample: str, nframes=36, fps=12):
-    xy, labs, tumor = load_sample(sample)
+    xy, labs, tumor, label = load_sample(sample)
     f = local_fields(xy, labs, tumor)
-    gate = "GFP−" if sample == "E14S" else "GFP+"
+    gate = gate_label(label)
     # subsample background for speed
     bg_idx = np.arange(len(xy))
     if len(bg_idx) > 8000:
@@ -144,7 +146,7 @@ def make_pulsating_front(sample: str, nframes=36, fps=12):
     ax.set_yticks([])
     for sp in ax.spines.values():
         sp.set_visible(False)
-    title = ax.set_title(f"{sample} {gate} · hypoxia front", color=RP["text"], fontsize=13, pad=10)
+    title = ax.set_title(f"{label} {gate} · H≤8 front", color=RP["text"], fontsize=13, pad=10)
     ax.legend(loc="upper left", frameon=False, labelcolor=RP["subtle"], fontsize=8)
     fig.tight_layout()
 
@@ -164,11 +166,11 @@ def make_pulsating_front(sample: str, nframes=36, fps=12):
         exit_sc.set_sizes(np.full(f["exit"].sum(), 10 + 18 * px))
         enter_sc.set_alpha(0.55 + 0.4 * pe)
         exit_sc.set_alpha(0.55 + 0.4 * px)
-        title.set_text(f"{sample} {gate} · hypoxia front  ·  pulse")
+        title.set_text(f"{label} {gate} · H≤8 front  ·  pulse")
         return glow, enter_sc, exit_sc, title
 
     anim = FuncAnimation(fig, update, frames=nframes, interval=1000 / fps, blit=False)
-    path = ANIM / f"{sample}_front_pulse.gif"
+    path = ANIM / f"{label}_front_pulse.gif"
     anim.save(path, writer=PillowWriter(fps=fps))
     plt.close(fig)
     print("wrote", path)
@@ -176,9 +178,9 @@ def make_pulsating_front(sample: str, nframes=36, fps=12):
 
 
 def make_bridge_pulse(sample: str, nframes=36, fps=12):
-    xy, labs, tumor = load_sample(sample)
+    xy, labs, tumor, label = load_sample(sample)
     f = local_fields(xy, labs, tumor)
-    gate = "GFP−" if sample == "E14S" else "GFP+"
+    gate = gate_label(label)
     deep = (labs == "entering_deep_hypoxia") & tumor
     exit_ = f["exit"]
     knn = f["knn"]
@@ -210,7 +212,7 @@ def make_bridge_pulse(sample: str, nframes=36, fps=12):
     ax.set_yticks([])
     for sp in ax.spines.values():
         sp.set_visible(False)
-    ax.set_title(f"{sample} {gate} · deep↔exit bridges", color=RP["text"], fontsize=13, pad=10)
+    ax.set_title(f"{label} {gate} · H≤8 deep↔exit bridges", color=RP["text"], fontsize=13, pad=10)
     ax.legend(loc="upper left", frameon=False, labelcolor=RP["subtle"], fontsize=8)
     fig.tight_layout()
 
@@ -228,7 +230,7 @@ def make_bridge_pulse(sample: str, nframes=36, fps=12):
         return lines
 
     anim = FuncAnimation(fig, update, frames=nframes, interval=1000 / fps, blit=False)
-    path = ANIM / f"{sample}_bridge_pulse.gif"
+    path = ANIM / f"{label}_bridge_pulse.gif"
     anim.save(path, writer=PillowWriter(fps=fps))
     plt.close(fig)
     print("wrote", path)
@@ -237,8 +239,8 @@ def make_bridge_pulse(sample: str, nframes=36, fps=12):
 
 def make_continuum_wave(sample: str, nframes=48, fps=12):
     """Wave of emphasis traveling exit → persist → enter → deep."""
-    xy, labs, tumor = load_sample(sample)
-    gate = "GFP−" if sample == "E14S" else "GFP+"
+    xy, labs, tumor, label = load_sample(sample)
+    gate = gate_label(label)
     states = [
         ("exiting_hypoxia", RP["foam"], "exiting"),
         ("persistent_hypoxia", RP["iris"], "persistent"),
@@ -258,7 +260,7 @@ def make_continuum_wave(sample: str, nframes=48, fps=12):
     ax.set_yticks([])
     for sp in ax.spines.values():
         sp.set_visible(False)
-    title = ax.set_title(f"{sample} {gate} · continuum wave", color=RP["text"], fontsize=13, pad=10)
+    title = ax.set_title(f"{label} {gate} · H≤8 continuum wave", color=RP["text"], fontsize=13, pad=10)
     ax.legend(loc="upper left", frameon=False, labelcolor=RP["subtle"], fontsize=8)
     fig.tight_layout()
 
@@ -277,11 +279,11 @@ def make_continuum_wave(sample: str, nframes=48, fps=12):
             sc.set_sizes(np.full(n, 8 + 28 * amp))
             sc.set_alpha(0.25 + 0.7 * amp)
         active = states[int((t * 4) % 4)][2]
-        title.set_text(f"{sample} {gate} · continuum wave  ·  {active}")
+        title.set_text(f"{label} {gate} · H≤8 continuum  ·  {active}")
         return scs + [title]
 
     anim = FuncAnimation(fig, update, frames=nframes, interval=1000 / fps, blit=False)
-    path = ANIM / f"{sample}_continuum_wave.gif"
+    path = ANIM / f"{label}_continuum_wave.gif"
     anim.save(path, writer=PillowWriter(fps=fps))
     plt.close(fig)
     print("wrote", path)
@@ -289,9 +291,9 @@ def make_continuum_wave(sample: str, nframes=48, fps=12):
 
 
 def make_ribbon_breathe(sample: str, nframes=36, fps=12):
-    xy, labs, tumor = load_sample(sample)
+    xy, labs, tumor, label = load_sample(sample)
     f = local_fields(xy, labs, tumor)
-    gate = "GFP−" if sample == "E14S" else "GFP+"
+    gate = gate_label(label)
     front = f["front"]
     vmax = np.percentile(front, 99)
 
@@ -320,7 +322,7 @@ def make_ribbon_breathe(sample: str, nframes=36, fps=12):
     ax.set_yticks([])
     for sp in ax.spines.values():
         sp.set_visible(False)
-    ax.set_title(f"{sample} {gate} · front ribbon breathing", color=RP["text"], fontsize=13, pad=10)
+    ax.set_title(f"{label} {gate} · H≤8 front ribbon breathing", color=RP["text"], fontsize=13, pad=10)
     fig.tight_layout()
 
     def update(frame):
@@ -334,7 +336,7 @@ def make_ribbon_breathe(sample: str, nframes=36, fps=12):
         return (sc,)
 
     anim = FuncAnimation(fig, update, frames=nframes, interval=1000 / fps, blit=False)
-    path = ANIM / f"{sample}_ribbon_breathe.gif"
+    path = ANIM / f"{label}_ribbon_breathe.gif"
     anim.save(path, writer=PillowWriter(fps=fps))
     plt.close(fig)
     print("wrote", path)
@@ -343,20 +345,24 @@ def make_ribbon_breathe(sample: str, nframes=36, fps=12):
 
 def main():
     paths = []
-    for sample in ["E14S", "E15S"]:
+    for sample in ["E14S", "E15S", "OVERLAY"]:
         paths.append(make_pulsating_front(sample))
         paths.append(make_bridge_pulse(sample))
         paths.append(make_continuum_wave(sample))
         paths.append(make_ribbon_breathe(sample))
-    # tiny index json for the page
     import json
 
     (ANIM / "manifest.json").write_text(
         json.dumps(
             {
                 "theme": "rose-pine",
+                "spatial": "H<=8 MAP microwells",
                 "animations": [
-                    {"file": p.name, "sample": p.name.split("_")[0], "kind": "_".join(p.name.split("_")[1:]).replace(".gif", "")}
+                    {
+                        "file": p.name,
+                        "sample": p.name.split("_")[0],
+                        "kind": "_".join(p.name.split("_")[1:]).replace(".gif", ""),
+                    }
                     for p in paths
                 ],
             },

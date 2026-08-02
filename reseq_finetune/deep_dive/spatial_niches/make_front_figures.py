@@ -43,29 +43,17 @@ FRONT_STATES = [
 ]
 
 
+from h8_spatial import load_h8_adata, subset_xy  # noqa: E402
+
+
 def load():
-    adata = sc.read_h5ad("/ix1/ylee/shared/MC38_Hypoxia_001/reseq_finetune/mc38_tumor_reseq_finetuned.h5ad")
-    dyn = pd.read_csv(
-        "/ix1/ylee/shared/MC38_Hypoxia_001/reseq_finetune/hypoxia_velocity/hypoxia_dynamics_per_cell.csv"
-    ).set_index("barcode")
-    common = adata.obs_names.intersection(dyn.index)
-    adata = adata[common].copy()
-    for c in ["hypoxia_dynamics", "hypoxia_score", "v_hypoxia"]:
-        adata.obs[c] = dyn.loc[adata.obs_names, c].values
-    if "spatial" not in adata.obsm:
-        adata.obsm["spatial"] = adata.obs[["spatial_coordinate_x", "spatial_coordinate_y"]].to_numpy()
-    tumor = (
-        adata.obs["cell_type_finetuned"].astype(str).str.contains("Tumor", case=False)
-        | adata.obs["cell_type"].astype(str).str.contains("Tumor", case=False)
-    )
-    adata.obs["is_tumor"] = tumor.to_numpy()
-    return adata
+    print("loading H≤8 MAP spatial…")
+    return load_h8_adata()
 
 
 def sample_xy(adata, sample):
-    m = (adata.obs["sample"] == sample).to_numpy() & np.isfinite(adata.obsm["spatial"]).all(1)
-    sub = adata[m]
-    return sub, np.asarray(sub.obsm["spatial"], float)
+    sub, xy, _labs, _tumor, _label = subset_xy(adata, sample)
+    return sub, xy
 
 
 def draw_edges(ax, xy, src_mask, tgt_mask, k=8, max_dist=None, color="#f1c40f", lw=0.55, alpha=0.55):
@@ -554,7 +542,7 @@ def main():
     adata = load()
     fig_enrichment_bars()
     metrics = {}
-    for sample in ["E14S", "E15S"]:
+    for sample in ["E14S", "E15S", "OVERLAY"]:
         print("===", sample)
         sub, xy = sample_xy(adata, sample)
         max_dist = fig_front_map_with_bridges(sub, xy, sample)
@@ -564,7 +552,28 @@ def main():
         fig_local_gradient_field(sub, xy, sample)
         metrics[sample] = {"contact": contact, "dist": dstats, "max_dist": max_dist}
         print(sample, "contact", contact, "dist", dstats)
+        # also write h8_ aliases for the story site
+        for stem in [
+            f"{sample}_front_bridges",
+            f"{sample}_front_ribbons",
+            f"{sample}_front_zooms",
+            f"{sample}_island_vs_front",
+            f"{sample}_dist_to_exit",
+        ]:
+            src = OUT / f"{stem}.png"
+            if src.exists():
+                dst = OUT / f"h8_{stem}.png"
+                dst.write_bytes(src.read_bytes())
     fig_summary_panel(metrics)
+    # refresh story hero aliases from overlay ribbons if present
+    for src_name, dst_name in [
+        ("OVERLAY_front_ribbons.png", "h8_OVERLAY_front_ribbons.png"),
+        ("OVERLAY_front_bridges.png", "h8_OVERLAY_front_bridges.png"),
+        ("front_enrichment_bars.png", "h8_front_enrichment_bars.png"),
+    ]:
+        src = OUT / src_name
+        if src.exists():
+            (OUT / dst_name).write_bytes(src.read_bytes())
     pd.DataFrame(
         [
             {"sample": s, **{f"contact_{k}": v for k, v in (metrics[s]["contact"] or {}).items()}}
@@ -572,7 +581,7 @@ def main():
         ]
     ).to_csv(OUT / "front_contact_stats.csv", index=False)
     print("wrote", OUT)
-    print("files:", sorted(p.name for p in OUT.glob("*.png")))
+    print("files:", sorted(p.name for p in OUT.glob("*.png"))[:40])
 
 
 if __name__ == "__main__":

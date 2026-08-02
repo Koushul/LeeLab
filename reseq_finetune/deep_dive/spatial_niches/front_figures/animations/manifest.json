@@ -1,5 +1,6 @@
 {
   "theme": "rose-pine",
+  "spatial": "H<=8 MAP microwells",
   "animations": [
     {
       "file": "E14S_front_pulse.gif",
@@ -39,6 +40,26 @@
     {
       "file": "E15S_ribbon_breathe.gif",
       "sample": "E15S",
+      "kind": "ribbon_breathe"
+    },
+    {
+      "file": "OVERLAY_front_pulse.gif",
+      "sample": "OVERLAY",
+      "kind": "front_pulse"
+    },
+    {
+      "file": "OVERLAY_bridge_pulse.gif",
+      "sample": "OVERLAY",
+      "kind": "bridge_pulse"
+    },
+    {
+      "file": "OVERLAY_continuum_wave.gif",
+      "sample": "OVERLAY",
+      "kind": "continuum_wave"
+    },
+    {
+      "file": "OVERLAY_ribbon_breathe.gif",
+      "sample": "OVERLAY",
       "kind": "ribbon_breathe"
     }
   ]
